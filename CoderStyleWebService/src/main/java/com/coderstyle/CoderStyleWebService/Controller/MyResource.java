@@ -1,4 +1,4 @@
-package com.coderstyle.CoderStyleWebService;
+package com.coderstyle.CoderStyleWebService.Controller;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
