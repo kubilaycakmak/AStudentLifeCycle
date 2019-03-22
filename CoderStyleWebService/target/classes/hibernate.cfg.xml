@@ -25,5 +25,7 @@
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
         <property name="connection.pool_size">100</property>
         <mapping class="com.coderstyle.CoderStyleWebService.Hibernate.Entity.User" />
+        <mapping class="com.coderstyle.CoderStyleWebService.Hibernate.Entity.Company" />
+        <mapping class="com.coderstyle.CoderStyleWebService.Hibernate.Entity.Companyrole" />
     </session-factory>
 </hibernate-configuration>

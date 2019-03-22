@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="/name" method="POST">
-		<input type ="text" id="id" name="id">
-		<button>Tikla</button>
-	</form>
+	${name}
 </body>
 </html>

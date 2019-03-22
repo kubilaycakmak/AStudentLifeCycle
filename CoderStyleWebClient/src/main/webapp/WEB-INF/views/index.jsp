@@ -34,10 +34,10 @@
                     Account</p>
             </div>
 
-            <form action="signIn">
+            <form action="signIn" method="POST">
 
                 <div class="loginEmail" style="padding-top: 8px; padding-bottom: 8px">
-                    <input type="email" name="loginUsername" required
+                    <input type="input" name="loginUsername" required
                            style="width:368px !important; height:56px !important; display: block; margin-left: auto; margin-right: auto; padding:13px 15px; border:1px solid #dadce0"
                            type="text" placeholder="Email or Username">
                 </div>

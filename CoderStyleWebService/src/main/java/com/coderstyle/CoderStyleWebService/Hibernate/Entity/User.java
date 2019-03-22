@@ -3,11 +3,14 @@ package com.coderstyle.CoderStyleWebService.Hibernate.Entity;
 import java.util.Date;
 
 import javax.annotation.Generated;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -40,7 +43,7 @@ public class User {
 	private String lastname;
 	
 	@Column(name="birthday")
-	private java.util.Date birthday;
+	private Date birthday;
 	
 	@Column(name="phone")
 	private int phone;
@@ -51,16 +54,17 @@ public class User {
 	@Column(name="bio")
 	private String bio;
 	
-	@Column(name="cid")
-	private int cid;
+	@ManyToOne(targetEntity=Company.class ,cascade =CascadeType.ALL)
+	@JoinColumn(name="cid")
+	private Company cid;
 	
 	@Column(name="hintCode")
 	private int hintCode;
 	
 	public User() {}
-
-	public User(String nick, String password, String email, String firstname, String lastname,java.util.Date birthday,
-			int phone, String knowledge, String bio, int cid, int hintCode) {
+	
+	public User(String nick, String password, String email, String firstname, String lastname,Date birthday,
+			int phone, String knowledge, String bio, Company cid, int hintCode) {
 		super();
 		this.nick = nick;
 		this.password = password;
@@ -148,11 +152,11 @@ public class User {
 		this.bio = bio;
 	}
 
-	public int getCid() {
+	public Company getCid() {
 		return cid;
 	}
 
-	public void setCid(int cid) {
+	public void setCid(Company cid) {
 		this.cid = cid;
 	}
 
@@ -164,11 +168,11 @@ public class User {
 		this.hintCode = hintCode;
 	}
 
-	public java.util.Date getBirthday() {
+	public Date getBirthday() {
 		return birthday;
 	}
 
-	public void setBirthday(java.util.Date birthday) {
+	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}
 	

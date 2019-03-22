@@ -1,12 +1,16 @@
 package com.coderstyle.CoderStyleWebService.Controller;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import com.coderstyle.CoderStyleWebService.Hibernate.Utility.HibernateQueries;
 import com.coderstyle.CoderStyleWebService.Hibernate.Entity.*;
+
+import java.net.URISyntaxException;
 import java.util.List;
 /**
  * Root resource (exposed at "myresource" path)
@@ -26,4 +30,14 @@ public class MyResource {
         HibernateQueries hb = new HibernateQueries();
         return hb.allUsers();
     }
+    
+    @POST
+    @Consumes(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_XML)
+    @Path("login")
+    public User getUser(User user) throws URISyntaxException{
+    	HibernateQueries hb = new HibernateQueries();
+    	return hb.login(user);
+    }
+    
 }
