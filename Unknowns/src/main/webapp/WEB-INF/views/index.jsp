@@ -2,44 +2,44 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Sign in</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body style="background-color: #008080">
-    <div class="screen" style="height:100%; width:100%; padding-top: 235px;">
-        <div id="signInDiv">
+<div class="screen" style="height:100%; width:100%; padding-top: 235px;">
+    <div id="signInDiv">
 
-            <div class="signin">
-                <div class="content">
+        <div class="signin">
+            <div class="content">
 
-                    <div class="loginText">
-                        <br><br><br>
-                        <p>Unknowns</p>
-                        <p style="font-size: 16px !important;">Use your Strategy Game Account</p>
-                    </div>
-
-                    <form action="signIn" method="POST">
-
-                        <div class="loginEmail" style="padding-top: 8px; padding-bottom: 8px">
-                            <input type="input" name="loginUsername" required type="text"
-                                placeholder="Email or Username">
-                        </div>
-                        <div class="loginPassword" style="padding-top: 8px; padding-bottom: 8px">
-                            <input type="password" name="loginPassword" required type="text"
-                                placeholder="Enter your password">
-                        </div>
-                        <button>Forget password?</button>
-                        <button formaction="createAccount">Create account</button>
-                        <button type="submit">Sign in</button>
-
-                    </form>
+                <div class="loginText">
+                    <br><br><br>
+                    <p>Unknowns</p>
+                    <p style="font-size: 16px !important;">Use your Strategy Game Account</p>
                 </div>
+
+                <form action="signIn" method="POST">
+
+                    <div class="loginEmail" style="padding-top: 8px; padding-bottom: 8px">
+                        <input type="input" name="loginUsername" required type="text"
+                               placeholder="Email or Username">
+                    </div>
+                    <div class="loginPassword" style="padding-top: 8px; padding-bottom: 8px">
+                        <input type="password" name="loginPassword" required type="text"
+                               placeholder="Enter your password">
+                    </div>
+                    <button>Forget password?</button>
+                    <button formaction="createAccount">Create account</button>
+                    <button type="submit">Sign in</button>
+
+                </form>
             </div>
         </div>
     </div>
+</div>
 </body>
 
 </html>

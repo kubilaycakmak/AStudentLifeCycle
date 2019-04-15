@@ -2,48 +2,48 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Sign in</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body style="background-color: #008080">
-    <div class="screen" style="height:100%; width:100%; padding-top: 235px;">
-        <div id="signInDiv">
+<div class="screen" style="height:100%; width:100%; padding-top: 235px;">
+    <div id="signInDiv">
 
-            <div class="signin">
-                <div class="content">
+        <div class="signin">
+            <div class="content">
 
-                    <div class="loginText">
-                        <br><br>
-                        <p>Unknowns</p>
-                        <p style="font-size: 16px !important;">Change your password!</p>
-                    </div>
-
-                    <form action="changePass">
-
-                        <div class="changePassword" style="padding-top: 8px; padding-bottom: 8px">
-                            <input type="password" required placeholder="Enter new password">
-                        </div>
-                        <div class="changePassword" style="padding-top: 8px; padding-bottom: 8px">
-                            <input type="password" required placeholder="Re-enter new password">
-                        </div>
-                        <div class="footer" style="font-size:14px; padding-top: 38px;">
-
-                            <button type="">
-                                Create Account
-                            </button>
-                            <button type="submit">
-                                Submit
-                            </button>
-
-                        </div>
-                    </form>
+                <div class="loginText">
+                    <br><br>
+                    <p>Unknowns</p>
+                    <p style="font-size: 16px !important;">Change your password!</p>
                 </div>
+
+                <form action="changePass">
+
+                    <div class="changePassword" style="padding-top: 8px; padding-bottom: 8px">
+                        <input type="password" required placeholder="Enter new password">
+                    </div>
+                    <div class="changePassword" style="padding-top: 8px; padding-bottom: 8px">
+                        <input type="password" required placeholder="Re-enter new password">
+                    </div>
+                    <div class="footer" style="font-size:14px; padding-top: 38px;">
+
+                        <button type="">
+                            Create Account
+                        </button>
+                        <button type="submit">
+                            Submit
+                        </button>
+
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 </body>
 
 </html>
