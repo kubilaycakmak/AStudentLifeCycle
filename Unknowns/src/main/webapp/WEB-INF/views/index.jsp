@@ -45,7 +45,7 @@
 </html>
 <style>
     #signInDiv {
-        background-image: url(win95.png);
+        background-image: url('win95.png');
         background-repeat: no-repeat;
         background-size: 700px 500px;
         background-position: center;

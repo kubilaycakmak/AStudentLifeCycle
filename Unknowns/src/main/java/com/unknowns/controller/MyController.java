@@ -16,7 +16,7 @@ public class MyController {
 	
 	@RequestMapping("/*")
 	public String string() {
-		return "welcome";
+		return "CreateAccount";
 	}
 	
 }
