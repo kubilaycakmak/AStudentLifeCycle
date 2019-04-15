@@ -1,4 +1,4 @@
-package com.unknowns.start;
+package com.unknowns;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
