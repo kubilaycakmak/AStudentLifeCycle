@@ -31,7 +31,7 @@
                         <input type="password" name="loginPassword" required type="text"
                                placeholder="Enter your password">
                     </div>
-                    <button>Forget password?</button>
+                    <button formaction="forgetPassword">Forget password?</button>
                     <button formaction="createAccount">Create account</button>
                     <button type="submit">Sign in</button>
 
