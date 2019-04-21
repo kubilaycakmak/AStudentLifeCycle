@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Freelance</title>
+  <title>FastFood</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -8,7 +8,7 @@
 </head>
 <body>
     <ul>
-        <li><a class="active" href="home.html">HOME</a></li>
+        <li><a class="active" href="home.jsp">HOME</a></li>
         </form>
         </li>
         <li class="dropdown">
@@ -27,50 +27,44 @@
         <li><a href="">LOGOUT</a></li>
       </ul>
   <div class="container">
+   
     <section>
         <nav>
-            <a href="Freelance.html"><button class="c">FREELANCE</button></a>
-            <a href="House.html"><button class="c">HOUSE</button> </a>
-            <a href="Bank.html"> <button class="c">BANKS</button> </a>
-            <a href="FastFood.html"> <button class="c">FASTFOOD</button> </a>
-            <a href="Computer.html"> <button class="c">COMPUTER</button> </a>
-            <a href="Store.html"><button class="c">STORE</button> </a>
-            <a href="Hack.html"><button class="c">HACK</button> </a>
-            <a href="Hospital.html"><button class="c">HOSPITAL</button> </a>
-            <a href="Jail.html"> <button class="c">JAIL</button> </a>
-            <a href="Forex.html"> <button class="c">FOREX</button> </a>
+            <a href="Freelance.jsp"><button class="c">FREELANCE</button></a>
+            <a href="House.jsp"><button class="c">HOUSE</button> </a>
+            <a href="Bank.jsp"> <button class="c">BANKS</button> </a>
+            <a href="FastFood.jsp"> <button class="c">FASTFOOD</button> </a>
+            <a href="Computer.jsp"> <button class="c">COMPUTER</button> </a>
+            <a href="Store.jsp"><button class="c">STORE</button> </a>
+            <a href="Hack.jsp"><button class="c">HACK</button> </a>
+            <a href="Hospital.jsp"><button class="c">HOSPITAL</button> </a>
+            <a href="Jail.jsp"> <button class="c">JAIL</button> </a>
+            <a href="Forex.jsp"> <button class="c">FOREX</button> </a>
           </nav>
       <article>
         <div class="clearfix">
-          <h1 style="text-align:left">Freelance</h1>
-          <p style="color:white"><img class="pages-images" src="assets/images/fl.jpeg" style="width:170px;height:170px;margin-right:15px;">Essentially, a
-            freelance job is one where a person works for themselves, rather than for a company. While freelancers do
-            take on contract work for companies and organizations, they are ultimately self-employed.
+          <h1 style="text-align:left">FastFood</h1>
+          <p style="color:white"><img src="assets/images/ff.jpeg" style="width:170px;height:170px;margin-right:15px;"> Welcome to
+            UNKNOWNS BURGER!
           </p>
         </div>
-        <p style="font-size:20px; text-align:left">Job Selection:</p>
+        <p style="font-size:20px; text-align:left">Menu Selection:</p>
         <form action="">
           <select>
-            <option value="Select">Select...</option>
-            <option value="Job1">1-Job 1</option>
-            <option value="Job2">2-Job 2</option>
-            <option value="Job3">3-Job 3</option>
-            <option value="Job4">4-Job 4</option>
-            <option value="Job5">5-Job 5</option>
-            <!--you can add more jobs-->>
+            <option value="Select">Select a Menu...</option>
+            <option value="Job1">1-Menu 1</option>
+            <option value="Job2">2-Menu 2</option>
+            <option value="Job3">3-Menu 3</option>
+            <option value="Job4">4-Menu 4</option>
+            <option value="Job5">5-Menu 5</option>
+            <!--you can add more Menus-->>
           </select>
-
           <input type="submit" value="Submit">
-
         </form>
-
-        <!-- <p style="font-size:20px; text-align:left">Jobs Infos:</p>
+        <p style="font-size:20px; text-align:left">Menus Infos:</p>
         <table style="width:50%">
           <tr>
-            <th style="color: white">Job 1 Name</th>
-          </tr>
-          <tr>
-            <td style="color: white">Exp points required:</td>
+            <th style="color: white">Menu 1 Name</th>
           </tr>
           <tr>
             <td style="color: white">Strength points:</td>
@@ -82,16 +76,12 @@
             <td style="color: white">Happiness:</td>
           </tr>
           <tr>
-          <tr>
-            <td style="color: white">Salary:</td>
+            <td style="color: white">Cost:</td>
           </tr>
         </table>
         <table style="width:50%">
           <tr>
-            <th style="color: white">Job 2 Name</th>
-          </tr>
-          <tr>
-            <td style="color: white">Exp points required:</td>
+            <th style="color: white">Menu 2 Name</th>
           </tr>
           <tr>
             <td style="color: white">Strength points:</td>
@@ -104,15 +94,12 @@
           </tr>
           <tr>
           <tr>
-            <td style="color: white">Salary:</td>
+            <td style="color: white">Cost:</td>
           </tr>
         </table>
         <table style="width:50%">
           <tr>
-            <th style="color: white">Job 3 Name</th>
-          </tr>
-          <tr>
-            <td style="color: white">Exp points required:</td>
+            <th style="color: white">Menu 3 Name</th>
           </tr>
           <tr>
             <td style="color: white">Strength points:</td>
@@ -125,15 +112,12 @@
           </tr>
           <tr>
           <tr>
-            <td style="color: white">Salary:</td>
+            <td style="color: white">Cost:</td>
           </tr>
         </table>
         <table style="width:50%">
           <tr>
-            <th style="color: white">Job 4 Name</th>
-          </tr>
-          <tr>
-            <td style="color: white">Exp points required:</td>
+            <th style="color: white">Menu 4 Name</th>
           </tr>
           <tr>
             <td style="color: white">Strength points:</td>
@@ -146,15 +130,12 @@
           </tr>
           <tr>
           <tr>
-            <td style="color: white">Salary:</td>
+            <td style="color: white">Cost:</td>
           </tr>
         </table>
         <table style="width:50%">
           <tr>
-            <th style="color: white">Job 5 Name</th>
-          </tr>
-          <tr>
-            <td style="color: white">Exp points required:</td>
+            <th style="color: white">Menu 5 Name</th>
           </tr>
           <tr>
             <td style="color: white">Strength points:</td>
@@ -167,9 +148,10 @@
           </tr>
           <tr>
           <tr>
-            <td style="color: white">Salary:</td>
+            <td style="color: white">Cost:</td>
           </tr>
-        </table> -->
+        </table>
+        <!--you can add more Menuinfos-->>
       </article>
       <div class="column">
           <a href="">
