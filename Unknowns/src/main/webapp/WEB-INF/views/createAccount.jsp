@@ -23,27 +23,31 @@
                     <p style="font-size: 16px !important;">Create your account!</p>
                 </div>
 
-                <form action="singUp">
+                <form action="signUp" method="post">
                     <div class="signUpFirstName">
-                        <input type="text" placeholder="First name" required>
+                        <input type="text" placeholder="First name"  name="name" required>
                     </div>
                     <div class="SignUpLastName" style="padding-top: 8px; display: block;">
-                        <input type="text" placeholder="Last name" required>
+                        <input type="text" placeholder="Last name" name="lastname" required>
                     </div>
                     <div class="signUpEmail" style="padding-top: 8px; padding-bottom: 8px">
-                        <input type="email" placeholder="Email" required>
+                        <input type="email" placeholder="Email" name="email" required>
                     </div>
                     <div class="signUpNickname" style=" padding-bottom: 8px">
-                        <input type="nickname" placeholder="Nickname" required>
+                        <input type="nickname" placeholder="Nickname" name="nickname" required>
                     </div>
                     <div class="signUpPassword" style=" padding-bottom: 8px">
-                        <input type="password" placeholder="Password" required>
+                        <input type="password" placeholder="Password" name="password" required>
                     </div>
                     <div class="signUpHintcode" style=" padding-bottom: 8px">
-                        <input type="hintcode" placeholder="Hint Code" required>
+                        <input type="hintcode" placeholder="Hint Code" name="hintcode" required>
                     </div>
-                    <div class="warning" style="font-size:14px; line-height: 0px;">
-                    </div>
+                    
+                     	 <%
+    						if(null!=session.getAttribute("warning")){%>
+        					<div class="warning" style="font-size:14px; line-height: 0px;"><%=session.getAttribute("warning")%></div>
+        					<%session.invalidate(); %>
+   						<%}%>
                     <button style="position: relative; left: 150px;" class="btn btn-dark"  type="submit">
                         Submit
                     </button>
