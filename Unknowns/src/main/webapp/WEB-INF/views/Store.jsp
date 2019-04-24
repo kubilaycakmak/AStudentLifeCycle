@@ -8,7 +8,7 @@
 </head>
 <body>
     <ul>
-        <li><a class="active" href="home.jsp">HOME</a></li>
+        <li><a class="active" href="home">HOME</a></li>
         <li>
         </li>
         <li class="dropdown">
@@ -30,16 +30,16 @@
     
     <section>
       <nav>
-        <a href="Freelance.jsp"><button class="c">FREELANCE</button></a>
-        <a href="House.jsp"><button class="c">HOUSE</button> </a>
-        <a href="Bank.jsp"> <button class="c">BANKS</button> </a>
-        <a href="FastFood.jsp"> <button class="c">FASTFOOD</button> </a>
-        <a href="Computer.jsp"> <button class="c">COMPUTER</button> </a>
-        <a href="Store.jsp"><button class="c">STORE</button> </a>
-        <a href="Hack.jsp"><button class="c">HACK</button> </a>
-        <a href="Hospital.jsp"><button class="c">HOSPITAL</button> </a>
-        <a href="Jail.jsp"> <button class="c">JAIL</button> </a>
-        <a href="Forex.jsp"> <button class="c">FOREX</button> </a>
+        <a href="Freelance"><button class="c">FREELANCE</button></a>
+        <a href="House"><button class="c">HOUSE</button> </a>
+        <a href="Bank"> <button class="c">BANKS</button> </a>
+        <a href="FastFood"> <button class="c">FASTFOOD</button> </a>
+        <a href="Computer"> <button class="c">COMPUTER</button> </a>
+        <a href="Store"><button class="c">STORE</button> </a>
+        <a href="Hack"><button class="c">HACK</button> </a>
+        <a href="Hospital"><button class="c">HOSPITAL</button> </a>
+        <a href="Jail"> <button class="c">JAIL</button> </a>
+        <a href="Forex"> <button class="c">FOREX</button> </a>
       </nav>
       <article>
       </article>

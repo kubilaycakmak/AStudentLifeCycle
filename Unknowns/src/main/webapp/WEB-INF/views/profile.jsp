@@ -29,7 +29,7 @@
 
 <body>
     <ul class="navbar-top">
-        <li><a class="active" href="home.jsp">LOGO</a></li>
+        <li><a class="active" href="home">LOGO</a></li>
         </form>
         </li>
         <li><a href="">PROFILE</a></li>
