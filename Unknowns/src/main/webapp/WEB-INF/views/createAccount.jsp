@@ -42,6 +42,13 @@
                     <div class="signUpHintcode" style=" padding-bottom: 8px">
                         <input type="hintcode" placeholder="Hint Code" name="hintcode" required>
                     </div>
+                    <div class="signUpType" style=" padding-bottom: 8px">
+                    	<select>
+                    		<option value="1">Computer</option>
+                    		<option value="2">Hospital</option>
+                    		<option value="3">Law</option>
+                    	</select>
+                    </div>
                     
                      	 <%
     						if(null!=session.getAttribute("warning")){%>
