@@ -15,7 +15,7 @@
     </form>
     </li>
     <li class="dropdown">
-      <a href="javascript:void(0)" class="dropbtn">PROFILE</a>
+      <a href="profile" class="dropbtn">PROFILE</a>
       <div class="dropdown-content">
         <a href="">STUFF1</a>
         <a href="">STUFF2</a>
@@ -54,7 +54,7 @@
         <a href="">
           <img class="avatar">
         </a>
-		<h2>${user.name}</h2>
+		<h2>${user.userinfo.type}</h2>
         <br><br>
 
         <ul>

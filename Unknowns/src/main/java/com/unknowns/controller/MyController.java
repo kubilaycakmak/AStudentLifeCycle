@@ -17,58 +17,91 @@ public class MyController {
 	Queries queries;
 	HttpSession session;
 	@GetMapping("/index")
-	public String getindex() {
+	public String getindex(HttpServletRequest request) {
 		return "index";
 	}
 	
 	@RequestMapping("/createAccount")
-	public String getCreate() {
+	public String getCreate(HttpServletRequest request) {
 		return "createAccount";
 	}
 	
 	@PostMapping("/forgetPassword")
-	public String getForgetPassword() {
+	public String getForgetPassword(HttpServletRequest request) {
 		return "ForgetPassword";
 	}
+	@RequestMapping("home")
+	public String getHome(HttpServletRequest request) {
+		session = request.getSession();
+		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
+		return "home";
+	}
+	@RequestMapping("profile")
+	public String getProfile(HttpServletRequest request) {
+		session = request.getSession();
+		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
+		return "profile";
+	}
+	
 	@RequestMapping("Freelance")
-	public String getFreelance() {
+	public String getFreelance(HttpServletRequest request) {
+		session = request.getSession();
+		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
 		return "Freelance";
 	}
 	
 	@RequestMapping("House")
-	public String getHouse() {
+	public String getHouse(HttpServletRequest request) {
+		session = request.getSession();
+		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
 		return "House";
 	}
 	@RequestMapping("Bank")
-	public String getBank() {
+	public String getBank(HttpServletRequest request) {
+		session = request.getSession();
+		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
 		return "Bank";
 	}
 	@RequestMapping("FastFood")
-	public String getFastFood() {
+	public String getFastFood(HttpServletRequest request) {
+		session = request.getSession();
+		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
 		return "FastFood";
 	}
 	@RequestMapping("Computer")
-	public String getComputer() {
+	public String getComputer(HttpServletRequest request) {
+		session = request.getSession();
+		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
 		return "Computer";
 	}
 	@RequestMapping("Store")
-	public String getStore() {
+	public String getStore(HttpServletRequest request) {
+		session = request.getSession();
+		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
 		return "Store";
 	}
 	@RequestMapping("Hack")
-	public String getHack() {
+	public String getHack(HttpServletRequest request) {
+		session = request.getSession();
+		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
 		return "Hack";
 	}
 	@RequestMapping("Hospital")
-	public String getHospital() {
+	public String getHospital(HttpServletRequest request) {
+		session = request.getSession();
+		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
 		return "Hospital";
 	}
 	@RequestMapping("Jail")
-	public String getJail() {
+	public String getJail(HttpServletRequest request) {
+		session = request.getSession();
+		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
 		return "Jail";
 	}
 	@RequestMapping("Forex")
-	public String getForex() {
+	public String getForex(HttpServletRequest request) {
+		session = request.getSession();
+		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
 		return "Forex";
 	}
 	
@@ -98,6 +131,7 @@ public class MyController {
 		queries = Queries.getQueries();
 		if(queries.signIn(email, password)) {
 			session = request.getSession();
+			session.setAttribute("email", email);
 			session.setAttribute("user", queries.getUser(email));
 			return "home";
 		}
@@ -107,7 +141,7 @@ public class MyController {
 			return "index";
 		}
 	}
-	
+
 
 	
 	
