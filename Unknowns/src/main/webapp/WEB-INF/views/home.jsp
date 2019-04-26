@@ -54,7 +54,7 @@
         <a href="">
           <img class="avatar">
         </a>
-
+		<h2>${user.name}</h2>
         <br><br>
 
         <ul>

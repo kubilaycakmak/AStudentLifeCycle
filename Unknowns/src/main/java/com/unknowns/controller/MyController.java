@@ -30,6 +30,47 @@ public class MyController {
 	public String getForgetPassword() {
 		return "ForgetPassword";
 	}
+	@RequestMapping("Freelance")
+	public String getFreelance() {
+		return "Freelance";
+	}
+	
+	@RequestMapping("House")
+	public String getHouse() {
+		return "House";
+	}
+	@RequestMapping("Bank")
+	public String getBank() {
+		return "Bank";
+	}
+	@RequestMapping("FastFood")
+	public String getFastFood() {
+		return "FastFood";
+	}
+	@RequestMapping("Computer")
+	public String getComputer() {
+		return "Computer";
+	}
+	@RequestMapping("Store")
+	public String getStore() {
+		return "Store";
+	}
+	@RequestMapping("Hack")
+	public String getHack() {
+		return "Hack";
+	}
+	@RequestMapping("Hospital")
+	public String getHospital() {
+		return "Hospital";
+	}
+	@RequestMapping("Jail")
+	public String getJail() {
+		return "Jail";
+	}
+	@RequestMapping("Forex")
+	public String getForex() {
+		return "Forex";
+	}
 	
 	@PostMapping("/signUp")
 	public String createAccount(HttpServletRequest request) {
@@ -39,9 +80,10 @@ public class MyController {
 		String nickname = request.getParameter("nickname");
 		String password = request.getParameter("password");
 		String hintcode = request.getParameter("hintcode");
+		int type = Integer.parseInt(request.getParameter("type"));
 		session = request.getSession();
 		queries = Queries.getQueries();
-		if(queries.signUp(name, lastname, email, nickname, password, hintcode))
+		if(queries.signUp(name, lastname, email, nickname, password, hintcode,type))
 			return "index";
 		else {
 			session.setAttribute("warning", "Email or nickname already exists.");
@@ -55,6 +97,8 @@ public class MyController {
 		String password = request.getParameter("password");
 		queries = Queries.getQueries();
 		if(queries.signIn(email, password)) {
+			session = request.getSession();
+			session.setAttribute("user", queries.getUser(email));
 			return "home";
 		}
 		else {
@@ -63,6 +107,8 @@ public class MyController {
 			return "index";
 		}
 	}
+	
+
 	
 	
 	@RequestMapping("/*")
