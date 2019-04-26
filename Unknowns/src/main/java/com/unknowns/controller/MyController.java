@@ -141,10 +141,6 @@ public class MyController {
 			return "index";
 		}
 	}
-
-
-	
-	
 	@RequestMapping("/*")
 	public String string() {
 		return "404";

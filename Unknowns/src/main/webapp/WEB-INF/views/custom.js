@@ -1,3 +1,4 @@
+<script>
 //Go to top
 $(function () {
 			var save = document.getElementById("save");
@@ -82,3 +83,5 @@ $(function() {
   				$("a[rel='gallery']").colorbox();
 				$("#contact").colorbox({width:"500", height:"580", iframe:true});
 			});
+  
+  </script>

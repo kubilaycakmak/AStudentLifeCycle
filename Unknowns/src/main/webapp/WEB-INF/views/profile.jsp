@@ -5,9 +5,8 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>Resume</title>
-  <link type="text/css" rel="stylesheet" href="css/blue.css" />
-
-  <link type="text/css" rel="stylesheet" href="css/print.css" media="print" />
+  <%@ include file="blue.css"%>
+  <%@ include file="print.css"%>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!--[if IE 7]>
 <link href="css/ie7.css" rel="stylesheet" type="text/css" />
@@ -15,13 +14,14 @@
   <!--[if IE 6]>
 <link href="css/ie6.css" rel="stylesheet" type="text/css" />
 <![endif]-->
-  <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-  <script type="text/javascript" src="js/jquery.tipsy.js"></script>
-  <script type="text/javascript" src="js/cufon.yui.js"></script>
-  <script type="text/javascript" src="js/scrollTo.js"></script>
-  <script type="text/javascript" src="js/myriad.js"></script>
-  <script type="text/javascript" src="js/jquery.colorbox.js"></script>
-  <script type="text/javascript" src="js/custom.js"></script>
+	<%@ include file="jquery-1.4.2.min.js"%>
+    <%@ include file="jquery.tipsy.js"%>
+    <%@ include file="cufon.yui.js"%>
+    <%@ include file="scrollTo.js"%>
+    <%@ include file="myriad.js"%>
+    <%@ include file="jquery.colorbox.js"%>
+    <%@ include file="custom.js"%>
+    
   <script type="text/javascript">
     Cufon.replace('h1,h2');
   </script>

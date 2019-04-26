@@ -1,3 +1,4 @@
+<script>
 (function($) {
     function fixTitle($ele) {
         if ($ele.attr('title') || typeof($ele.attr('original-title')) != 'string') {
@@ -114,4 +115,4 @@
     };
     
 })(jQuery);
-
+</script>
