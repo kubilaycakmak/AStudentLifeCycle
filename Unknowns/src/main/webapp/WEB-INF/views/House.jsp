@@ -11,7 +11,7 @@
         <li><a class="active" href="home">HOME</a></li>
           </form></li>
         <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">PROFILE</a>
+                <a href="profile" class="dropbtn">PROFILE</a>
                 <div class="dropdown-content">
                   <a href="">STUFF1</a>
                   <a href="">STUFF2</a>
