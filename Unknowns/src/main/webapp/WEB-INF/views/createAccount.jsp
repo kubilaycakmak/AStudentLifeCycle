@@ -1,68 +1,62 @@
-<!DOCTYPE>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <%@ include file="style.css"%>
-    <%@ include file="b2.css"%>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<%@ include file="404style.css"%>
+	<title>404 HTML Template by Colorlib</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:700,900" rel="stylesheet">
+
+	<!-- Custom stlylesheet -->
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
 </head>
 
 <body>
-<div class="screen">
-    <div id="signInDiv">
 
-        <div class="signin">
-            <div class="content">
-                <div class="loginText">
-                    <p>Unknowns</p>
-                    <p style="font-size: 16px !important;">Create your account!</p>
-                </div>
+	<div id="notfound">
+		<div class="notfound">
 
-                <form action="signUp" method="post">
-                    <div class="signUpFirstName">
-                        <input type="text" placeholder="First name"  name="name" required>
-                    </div>
-                    <div class="SignUpLastName" style="padding-top: 8px; display: block;">
-                        <input type="text" placeholder="Last name" name="lastname" required>
-                    </div>
-                    <div class="signUpEmail" style="padding-top: 8px; padding-bottom: 8px">
-                        <input type="email" placeholder="Email" name="email" required>
-                    </div>
-                    <div class="signUpNickname" style=" padding-bottom: 8px">
-                        <input type="nickname" placeholder="Nickname" name="nickname" required>
-                    </div>
-                    <div class="signUpPassword" style=" padding-bottom: 8px">
-                        <input type="password" placeholder="Password" name="password" required>
-                    </div>
-                    <div class="signUpHintcode" style=" padding-bottom: 8px">
-                        <input type="hintcode" placeholder="Hint Code" name="hintcode" required>
-                    </div>
-                    <div class="signUpType" style=" padding-bottom: 8px">
-                    	<select name="type">
-                    		<option value="1">Computer</option>
-                    		<option value="2">Hospital</option>
-                    		<option value="3">Law</option>
-                    	</select>
-                    </div>
-                    
-                     	 <%
-    						if(null!=session.getAttribute("warning")){%>
-        					<div class="warning" style="font-size:14px; line-height: 0px;"><%=session.getAttribute("warning")%></div>
-        					<%session.invalidate(); %>
-   						<%}%>
-                    <button style="position: relative; left: 150px;" class="btn btn-dark"  type="submit">
-                        Submit
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-</body>
+			<div class="notfound-404">
+
+				<h1>LifeCycle</h1>
+
+				<h2>Register</h2>
+
+			</div>
+			<form action="signIn" method="POST">
+				<input id="notfound-input" type="text" placeholder="First Name" name="name" required>
+				<input id="notfound-input" type="text" placeholder="Last Name" name="lastname" required>
+				<input id="notfound-input" type="text" placeholder="Email" name="email" required>
+				<input id="notfound-input" type="text" placeholder="Username" name="nickname" required>
+				<input id="notfound-input" type="text" placeholder="Password" name="password" required>
+				<input id="notfound-input" type="text" placeholder="Hint Code" name="hintcode" required>
+				<br>
+					<select id="notfound-input" name="type">
+						<option value="1">Computer</option>
+						<option value="2">Hospital</option>
+						<option value="3">Law</option>
+					</select>
+					<br>
+					<br>
+				<a href="index">Login</a>
+				<input id="notfound-input_submit" type="submit" value="Register">
+			</form>
+		</div>
+		
+	</div>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>

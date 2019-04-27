@@ -14,6 +14,25 @@ body {
   height: 100vh;
   background: #030005;
 }
+#notfound-input {
+  position: relative;
+  height: 5vh;
+  background: #030005;
+  border: 1px solid #ff005a;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  color: white;
+}
+
+#notfound-input_submit{
+  position: relative;
+  height: 5vh;
+  background: #030005;
+  border: 1px solid #ff005a;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  color: #ff005a;
+}
 
 #notfound .notfound {
   position: absolute;
@@ -33,7 +52,7 @@ body {
 
 .notfound .notfound-404 {
   position: relative;
-  height: 180px;
+  height: 200px;
   margin-bottom: 20px;
   z-index: -1;
 }
@@ -63,7 +82,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: 110px;
+  top: 80px;
   font-size: 42px;
   font-weight: 700;
   color: #fff;
@@ -71,6 +90,25 @@ body {
   text-shadow: 0px 2px 0px #8400ff;
   letter-spacing: 13px;
   margin: 0;
+}
+
+.notfound input {
+  font-family: 'Montserrat', sans-serif;
+  display: inline-block;
+  text-transform: uppercase;
+  color: #ff005a;
+  text-decoration: none;
+  border: 2px solid;
+  background: transparent;
+  padding: 10px 40px;
+  font-size: 14px;
+  font-weight: 700;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.notfound input:hover {
+  color: #8400ff;
 }
 
 .notfound a {
