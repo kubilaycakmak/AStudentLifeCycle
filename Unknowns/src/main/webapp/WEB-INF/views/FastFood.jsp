@@ -49,7 +49,12 @@
           </p>
         </div>
         <p style="font-size:20px; text-align:left">Menu Selection:</p>
-        <form action="">
+        <%
+				if(null!=session.getAttribute("fastfood")){%>
+				<h3 style="font-size:14px; line-height: 0px;"><%=session.getAttribute("fastfood")%></h3>
+				<%session.removeAttribute("fastfood");%>
+   					<%}%>
+        <form action="fastfood">
           <select name="fastfoodChoose">
             <option value="m1">1-Menu 1</option>
             <option value="m2">2-Menu 2</option>
@@ -61,96 +66,7 @@
           <input type="submit" value="Submit">
         </form>
         <p style="font-size:20px; text-align:left">Menus Infos:</p>
-        <table style="width:50%">
-          <tr>
-            <th style="color: white">Menu 1 Name</th>
-          </tr>
-          <tr>
-            <td style="color: white">Strength points:</td>
-          </tr>
-          <tr>
-            <td style="color: white">Health points:</td>
-          </tr>
-          <tr>
-            <td style="color: white">Happiness:</td>
-          </tr>
-          <tr>
-            <td style="color: white">Cost:</td>
-          </tr>
-        </table>
-        <table style="width:50%">
-          <tr>
-            <th style="color: white">Menu 2 Name</th>
-          </tr>
-          <tr>
-            <td style="color: white">Strength points:</td>
-          </tr>
-          <tr>
-            <td style="color: white">Health points:</td>
-          </tr>
-          <tr>
-            <td style="color: white">Happiness:</td>
-          </tr>
-          <tr>
-          <tr>
-            <td style="color: white">Cost:</td>
-          </tr>
-        </table>
-        <table style="width:50%">
-          <tr>
-            <th style="color: white">Menu 3 Name</th>
-          </tr>
-          <tr>
-            <td style="color: white">Strength points:</td>
-          </tr>
-          <tr>
-            <td style="color: white">Health points:</td>
-          </tr>
-          <tr>
-            <td style="color: white">Happiness:</td>
-          </tr>
-          <tr>
-          <tr>
-            <td style="color: white">Cost:</td>
-          </tr>
-        </table>
-        <table style="width:50%">
-          <tr>
-            <th style="color: white">Menu 4 Name</th>
-          </tr>
-          <tr>
-            <td style="color: white">Strength points:</td>
-          </tr>
-          <tr>
-            <td style="color: white">Health points:</td>
-          </tr>
-          <tr>
-            <td style="color: white">Happiness:</td>
-          </tr>
-          <tr>
-          <tr>
-            <td style="color: white">Cost:</td>
-          </tr>
-        </table>
-        <table style="width:50%">
-          <tr>
-            <th style="color: white">Menu 5 Name</th>
-          </tr>
-          <tr>
-            <td style="color: white">Strength points:</td>
-          </tr>
-          <tr>
-            <td style="color: white">Health points:</td>
-          </tr>
-          <tr>
-            <td style="color: white">Happiness:</td>
-          </tr>
-          <tr>
-          <tr>
-            <td style="color: white">Cost:</td>
-          </tr>
-        </table>
-        <!--you can add more Menuinfos-->>
+        
       </article>
       <div class="column">
           <a href="">
