@@ -51,6 +51,52 @@ public class Queries {
 		List<User> users = session.createQuery("from User where email = '"+email+"'",User.class).list();
 		return users.get(0);
 	}
+	public boolean freelance(String choose,String email) {
+		boolean check = false;
+		int stamina = 0;
+		int xp = 0;
+		int money = 0;
+		List<User> users = session.createQuery("from User where email = '"+email+"'",User.class).list();
+		if(choose.equals("Job1")) {
+			stamina = 10;
+			xp = 1;
+			money = 25;
+		}
+		else if(choose.equals("Job2")) {
+			stamina = 20;
+			xp = 2;
+			money = 55;
+		}
+		else if(choose.equals("Job3")) {
+			stamina = 30;
+			xp = 3;
+			money = 115;
+		}
+		else if(choose.equals("Job4")) {
+			stamina = 40;
+			xp = 4;
+			money = 155;
+		}
+		else if(choose.equals("Job5")) {
+			stamina = 50;
+			xp = 5;
+			money = 205;
+		}
+		if(users.get(0).getUserinfo().getStamina() >= stamina) {
+			users.get(0).getUserinfo().setStamina(users.get(0).getUserinfo().getStamina()-stamina);
+			users.get(0).getUserinfo().setXp(users.get(0).getUserinfo().getXp()+xp);
+			users.get(0).getUserinfo().setMoney(users.get(0).getUserinfo().getMoney()+money);
+			users.get(0).getUserinfo().setKnowledge(null);
+			session = HibernateUtil.getSessionFactory().openSession();
+			transaction = session.beginTransaction();
+			session.update(users.get(0).getUserinfo());
+			session.update(users.get(0));
+			transaction.commit();
+			session.close();
+			check = true;
+		}	
+		return check;
+	}
 	public static Queries getQueries() {
 		if(queries == null)
 			queries = new Queries();

@@ -139,6 +139,22 @@ public class MyController {
 			return "index";
 		}
 	}
+	
+	@PostMapping("freelance")
+	public String freelance(HttpServletRequest request) {
+		session = request.getSession();
+		String email = (String) session.getAttribute("email");
+		queries = Queries.getQueries();
+		if(queries.freelance(request.getParameter("freelanceChoose"),email)) {
+			session.setAttribute("job", "Job successful");
+		}
+		else {
+			session.setAttribute("job", "Job unsuccesfull");
+		}
+		session.setAttribute("email", email);
+		session.setAttribute("user", queries.getUser(email));
+		return "Freelance";
+	}
 	@RequestMapping("/*")
 	public String string() {
 		return "404";

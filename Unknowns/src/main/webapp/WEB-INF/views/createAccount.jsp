@@ -36,6 +36,11 @@
 
 			</div>
 			<form action="signUp" method="POST">
+			<%
+    						if(null!=session.getAttribute("warning")){%>
+        					<div class="warning" style="font-size:14px; line-height: 0px;"><%=session.getAttribute("warning")%></div>
+        					<%session.invalidate(); %>
+   					<%}%>
 				<input id="notfound-input" type="text" placeholder="First Name" name="name" required>
 				<input id="notfound-input" type="text" placeholder="Last Name" name="lastname" required>
 				<input id="notfound-input" type="text" placeholder="Email" name="email" required>

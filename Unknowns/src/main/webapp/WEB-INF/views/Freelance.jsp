@@ -52,6 +52,11 @@
         
         <form action="freelance" method="POST">
           <select name="freelanceChoose">
+          	<%
+    						if(null!=session.getAttribute("job")){%>
+        					<div class="warning" style="font-size:14px; line-height: 0px;"><%=session.getAttribute("job")%></div>
+        					<%session.removeAttribute("job");%>
+   					<%}%>
             <option value="Job1">1-Job 1</option>
             <option value="Job2">2-Job 2</option>
             <option value="Job3">3-Job 3</option>
