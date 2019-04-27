@@ -180,7 +180,7 @@ article {
   border: 1px solid grey;
   float: right;
   width: 20%;
-  height: 550px;
+  height: 570px;
   padding: 5px;
   background-color: #3d3d3d;
   margin: 5pt;
@@ -335,8 +335,7 @@ p {
   font-family: 'Courier New', Courier, monospace;
   font-weight: bolder !important;
   font-weight: 400;
-  font-size: 32px;
-  color: #424347;
+  color: white;
   text-align: center;
 }
 

@@ -49,9 +49,9 @@
           </p>
         </div>
         <p style="font-size:20px; text-align:left">Job Selection:</p>
-        <form action="">
-          <select>
-            <option value="Select">Select...</option>
+        
+        <form action="freelance" method="POST">
+          <select name="freelanceChoose">
             <option value="Job1">1-Job 1</option>
             <option value="Job2">2-Job 2</option>
             <option value="Job3">3-Job 3</option>
