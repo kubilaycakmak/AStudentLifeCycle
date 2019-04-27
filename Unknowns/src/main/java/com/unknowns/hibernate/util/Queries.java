@@ -1,5 +1,6 @@
 package com.unknowns.hibernate.util;
 
+
 import java.util.List;
 
 import org.hibernate.Session;
@@ -31,8 +32,8 @@ public class Queries {
 			session.save(userinfo);
 			session.save(user);
 			transaction.commit();
-			session.close();
 		}
+		session.close();
 		return check;
 	}
 	public boolean signIn(String email,String password) {
@@ -86,15 +87,21 @@ public class Queries {
 			users.get(0).getUserinfo().setStamina(users.get(0).getUserinfo().getStamina()-stamina);
 			users.get(0).getUserinfo().setXp(users.get(0).getUserinfo().getXp()+xp);
 			users.get(0).getUserinfo().setMoney(users.get(0).getUserinfo().getMoney()+money);
-			users.get(0).getUserinfo().setKnowledge(null);
 			session = HibernateUtil.getSessionFactory().openSession();
 			transaction = session.beginTransaction();
+			if(users.get(0).getUserinfo().getKnowledge().size()!=0) {
+				users.get(0).getUserinfo().setKnowledge(users.get(0).getUserinfo().getKnowledge());
+			}
+			else {
+				users.get(0).getUserinfo().setKnowledge(null);
+			}
 			session.update(users.get(0).getUserinfo());
 			session.update(users.get(0));
 			transaction.commit();
-			session.close();
 			check = true;
+			List<Userinfo> userinfos = session.createQuery("from Userinfo",Userinfo.class).list();
 		}	
+		session.close();
 		return check;
 	}
 	public boolean fastfood(String choose,String email) {
@@ -122,21 +129,27 @@ public class Queries {
 			stamina = 100;
 			money = 25;
 		}
+		
 		if(users.get(0).getUserinfo().getMoney() >= money) {
 			if(users.get(0).getUserinfo().getStamina()+stamina >= 100)
 				users.get(0).getUserinfo().setStamina(100);
 			else
 				users.get(0).getUserinfo().setStamina(users.get(0).getUserinfo().getStamina()+stamina);
 			users.get(0).getUserinfo().setMoney(users.get(0).getUserinfo().getMoney()-money);
-			users.get(0).getUserinfo().setKnowledge(null);
+			if(users.get(0).getUserinfo().getKnowledge().size()!=0) {
+				users.get(0).getUserinfo().setKnowledge(users.get(0).getUserinfo().getKnowledge());
+			}
+			else {
+				users.get(0).getUserinfo().setKnowledge(null);
+			}
 			session = HibernateUtil.getSessionFactory().openSession();
 			transaction = session.beginTransaction();
 			session.update(users.get(0).getUserinfo());
 			session.update(users.get(0));
 			transaction.commit();
-			session.close();
 			check = true;
 		}	
+		session.close();
 		return check;
 	}
 	public static Queries getQueries() {
