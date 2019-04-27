@@ -14,7 +14,7 @@ import com.unknowns.hibernate.util.Queries;
 public class MyController {
 	Queries queries;
 	HttpSession session;
-	@GetMapping("/index")
+	@GetMapping({"/index","/"})
 	public String getindex(HttpServletRequest request) {
 		return "index";
 	}
