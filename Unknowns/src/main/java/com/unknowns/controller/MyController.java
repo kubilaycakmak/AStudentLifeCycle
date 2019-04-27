@@ -146,10 +146,10 @@ public class MyController {
 		String email = (String) session.getAttribute("email");
 		queries = Queries.getQueries();
 		if(queries.freelance(request.getParameter("freelanceChoose"),email)) {
-			session.setAttribute("job", "Job successful");
+			session.setAttribute("job", "Job Successful");
 		}
 		else {
-			session.setAttribute("job", "Job unsuccesfull");
+			session.setAttribute("job", "Job Unsuccesful");
 		}
 		session.setAttribute("email", email);
 		session.setAttribute("user", queries.getUser(email));

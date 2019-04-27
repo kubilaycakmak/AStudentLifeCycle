@@ -25,6 +25,9 @@
         <li><a href="">STATS</a></li>
         <li><a href="">HELP</a></li>
         <li><a href="">INVITE</a></li>
+        <%
+        	
+        %>
         <li><a>LOGOUT</a></li>
       </ul>
   <div class="container">

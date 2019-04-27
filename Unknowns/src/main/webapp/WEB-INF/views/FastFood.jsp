@@ -50,13 +50,12 @@
         </div>
         <p style="font-size:20px; text-align:left">Menu Selection:</p>
         <form action="">
-          <select>
-            <option value="Select">Select a Menu...</option>
-            <option value="Job1">1-Menu 1</option>
-            <option value="Job2">2-Menu 2</option>
-            <option value="Job3">3-Menu 3</option>
-            <option value="Job4">4-Menu 4</option>
-            <option value="Job5">5-Menu 5</option>
+          <select name="fastfoodChoose">
+            <option value="m1">1-Menu 1</option>
+            <option value="m2">2-Menu 2</option>
+            <option value="m3">3-Menu 3</option>
+            <option value="m4">4-Menu 4</option>
+            <option value="m5">5-Menu 5</option>
             <!--you can add more Menus-->>
           </select>
           <input type="submit" value="Submit">

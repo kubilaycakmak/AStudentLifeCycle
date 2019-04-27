@@ -43,20 +43,22 @@
       <article>
         <div class="clearfix">
           <h1 style="text-align:left">Freelance</h1>
+          
           <p style="color:white"><img class="pages-images" src="assets/images/fl.jpeg" style="width:170px;height:170px;margin-right:15px;">Essentially, a
             freelance job is one where a person works for themselves, rather than for a company. While freelancers do
             take on contract work for companies and organizations, they are ultimately self-employed.
           </p>
+          <%
+				if(null!=session.getAttribute("job")){%>
+				<h3 style="font-size:14px; line-height: 0px;"><%=session.getAttribute("job")%></h3>
+				<%session.removeAttribute("job");%>
+   					<%}%>
         </div>
         <p style="font-size:20px; text-align:left">Job Selection:</p>
         
         <form action="freelance" method="POST">
           <select name="freelanceChoose">
-          	<%
-    						if(null!=session.getAttribute("job")){%>
-        					<div class="warning" style="font-size:14px; line-height: 0px;"><%=session.getAttribute("job")%></div>
-        					<%session.removeAttribute("job");%>
-   					<%}%>
+          	
             <option value="Job1">1-Job 1</option>
             <option value="Job2">2-Job 2</option>
             <option value="Job3">3-Job 3</option>
