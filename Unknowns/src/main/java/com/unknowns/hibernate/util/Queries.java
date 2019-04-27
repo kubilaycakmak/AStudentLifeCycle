@@ -97,6 +97,48 @@ public class Queries {
 		}	
 		return check;
 	}
+	public boolean fastfood(String choose,String email) {
+		boolean check = false;
+		int stamina = 0;
+		int money = 0;
+		List<User> users = session.createQuery("from User where email = '"+email+"'",User.class).list();
+		if(choose.equals("m1")) {
+			stamina = 10;
+			money = 5;
+		}
+		else if(choose.equals("m2")) {
+			stamina = 20;
+			money = 10;
+		}
+		else if(choose.equals("m3")) {
+			stamina = 40;
+			money = 15;
+		}
+		else if(choose.equals("m4")) {
+			stamina = 50;
+			money = 20;
+		}
+		else if(choose.equals("m5")) {
+			stamina = 100;
+			money = 25;
+		}
+		if(users.get(0).getUserinfo().getMoney() >= money) {
+			if(users.get(0).getUserinfo().getStamina()+stamina >= 100)
+				users.get(0).getUserinfo().setStamina(100);
+			else
+				users.get(0).getUserinfo().setStamina(users.get(0).getUserinfo().getStamina()+stamina);
+			users.get(0).getUserinfo().setMoney(users.get(0).getUserinfo().getMoney()-money);
+			users.get(0).getUserinfo().setKnowledge(null);
+			session = HibernateUtil.getSessionFactory().openSession();
+			transaction = session.beginTransaction();
+			session.update(users.get(0).getUserinfo());
+			session.update(users.get(0));
+			transaction.commit();
+			session.close();
+			check = true;
+		}	
+		return check;
+	}
 	public static Queries getQueries() {
 		if(queries == null)
 			queries = new Queries();

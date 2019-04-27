@@ -54,7 +54,7 @@
 				<h3 style="font-size:14px; line-height: 0px;"><%=session.getAttribute("fastfood")%></h3>
 				<%session.removeAttribute("fastfood");%>
    					<%}%>
-        <form action="fastfood">
+        <form action="fastfood" method="POST">
           <select name="fastfoodChoose">
             <option value="m1">1-Menu 1</option>
             <option value="m2">2-Menu 2</option>
