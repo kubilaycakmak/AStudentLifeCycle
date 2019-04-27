@@ -35,7 +35,7 @@
 				<h2>Register</h2>
 
 			</div>
-			<form action="signIn" method="POST">
+			<form action="signUp" method="POST">
 				<input id="notfound-input" type="text" placeholder="First Name" name="name" required>
 				<input id="notfound-input" type="text" placeholder="Last Name" name="lastname" required>
 				<input id="notfound-input" type="text" placeholder="Email" name="email" required>
