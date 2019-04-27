@@ -171,38 +171,29 @@
           </tr>
         </table> -->
       </article>
+      
       <div class="column">
           <a href="">
             <img class="avatar">
           </a>
+          
+          <h3>${user.nickname}</h3>
   
-          <br><br>
+          <br>
   
           <ul>
-            <p style="color:white">HEALTH :</p>
-            <li><progress id="health" value="100" max="100"></progress></li>
-  
-          </ul>
-          <ul>
-            <p style="color:white">STRENGTH :</p>
-            <li><progress id="health" value="20" max="100">20</progress></li>
-            <!--just to show how the bar works-->
-  
-          </ul>
-          <ul>
-            <p style="color:white">HAPPINESS :</p>
-            <li><progress id="health" value="50" max="100"></progress></li>
+            <p style="color:white">STAMINA :</p>
+            <li><progress id="health" value="${user.userinfo.stamina}" max="100"></progress></li>
   
           </ul>
           <ul>
             <p style="color:white">EXPERIENCE:</p>
-            <li><progress id="EXPERIENCE" value="50" max="100"></progress></li>
-  
+            <li><progress id="EXPERIENCE" value="${user.userinfo.xp}" max="100"></progress></li>
           </ul>
   
           <br>
           <p style="color:white;">MONEY</p>
-          <h4><p>20$</p></h4>
+          <h4><p>${user.userinfo.money}$</p></h4>
   
           <br>
           <div>
