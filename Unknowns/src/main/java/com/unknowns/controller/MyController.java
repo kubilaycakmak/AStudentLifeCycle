@@ -47,6 +47,7 @@ public class MyController {
 	public String getFreelance(HttpServletRequest request) {
 		session = request.getSession();
 		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
+		session.setAttribute("time", queries.getFreelanceTime((String) session.getAttribute("email")));
 		return "Freelance";
 	}
 
@@ -68,6 +69,7 @@ public class MyController {
 	public String getFastFood(HttpServletRequest request) {
 		session = request.getSession();
 		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
+		session.setAttribute("time", queries.getFastFoodTime((String) session.getAttribute("email")));
 		return "FastFood";
 	}
 
@@ -158,6 +160,7 @@ public class MyController {
 		} else {
 			session.setAttribute("job", "Job Unsuccesful");
 		}
+		session.setAttribute("time", queries.getFreelanceTime(email));
 		session.setAttribute("email", email);
 		session.setAttribute("user", queries.getUser(email));
 		return "Freelance";
@@ -173,6 +176,7 @@ public class MyController {
 		} else {
 			session.setAttribute("fastfood", "Money is not enough");
 		}
+		session.setAttribute("time", queries.getFastFoodTime(email));
 		session.setAttribute("email", email);
 		session.setAttribute("user", queries.getUser(email));
 		return "FastFood";

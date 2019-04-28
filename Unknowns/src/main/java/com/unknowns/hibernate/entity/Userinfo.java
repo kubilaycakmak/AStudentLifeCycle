@@ -1,5 +1,6 @@
 package com.unknowns.hibernate.entity;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -12,33 +13,43 @@ import javax.persistence.OneToMany;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 
-
 @Entity
 public class Userinfo {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
-	
+
 	int xp;
 	int money;
 	int type;
 	int stamina;
-	
+
 	@OneToMany(fetch = FetchType.EAGER)
 	@Cascade(CascadeType.ALL)
 	List<Knowledge> knowledge;
+
+	Date freelancedate;
+	int freelancetype;
+
+	Date FastFooddate;
+	int FastFoodtype;
 
 	public Userinfo() {
 		super();
 	}
 
-	public Userinfo( int xp, int money, int type, int stamina, List<Knowledge> knowledge) {
+	public Userinfo(int xp, int money, int type, int stamina, List<Knowledge> knowledge, Date freelancedate,
+			int freelancetype, Date fastFooddate, int fastFoodtype) {
 		super();
 		this.xp = xp;
 		this.money = money;
 		this.type = type;
 		this.stamina = stamina;
 		this.knowledge = knowledge;
+		this.freelancedate = freelancedate;
+		this.freelancetype = freelancetype;
+		FastFooddate = fastFooddate;
+		FastFoodtype = fastFoodtype;
 	}
 
 	public int getId() {
@@ -88,6 +99,37 @@ public class Userinfo {
 	public void setKnowledge(List<Knowledge> knowledge) {
 		this.knowledge = knowledge;
 	}
-	
-	
+
+	public Date getFreelancedate() {
+		return freelancedate;
+	}
+
+	public void setFreelancedate(Date freelancedate) {
+		this.freelancedate = freelancedate;
+	}
+
+	public int getFreelancetype() {
+		return freelancetype;
+	}
+
+	public void setFreelancetype(int freelancetype) {
+		this.freelancetype = freelancetype;
+	}
+
+	public Date getFastFooddate() {
+		return FastFooddate;
+	}
+
+	public void setFastFooddate(Date fastFooddate) {
+		FastFooddate = fastFooddate;
+	}
+
+	public int getFastFoodtype() {
+		return FastFoodtype;
+	}
+
+	public void setFastFoodtype(int fastFoodtype) {
+		FastFoodtype = fastFoodtype;
+	}
+
 }

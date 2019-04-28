@@ -12,6 +12,7 @@
             <div id="headbar" class="cityofcrime" style="display: block;">
                 <ul>
                     <form method="post">
+                    	<div>${time}</div>
                         <li><input class="input-nav" formaction="/home" type="submit" value="Welcome" name="welcome">
                         </li>
                         <li><input class="input-nav" formaction="/user" type="submit" value="Character"
@@ -127,6 +128,7 @@
 				<h3 style="font-size:14px; line-height: 0px;"><%=session.getAttribute("job")%></h3>
 				<%session.removeAttribute("job");%>
    					<%}%></h2>
+
                 </div>
                 <div class="box" id="crimes">
                     <h2>Freelance Jobs</h2>

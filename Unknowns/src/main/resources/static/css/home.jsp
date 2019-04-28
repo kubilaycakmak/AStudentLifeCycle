@@ -1,9 +1,9 @@
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <head>
-<title></title>>
+<title"></title>>
 </title>
 <meta http-equiv="X-UA-Compatible" content="IE=9">
 <meta name="format-detection" content="telephone=no">
-<link rel="stylesheet" type="text/css" />
 <%@ include file="main.css"%>
 </head>
 
@@ -13,7 +13,6 @@
 			<div id="headbar" class="cityofcrime" style="display: block;">
 				<ul>
 					<form method="post">
-						<div>${time}</div>
 						<li><input class="input-nav" formaction="/home" type="submit"
 							value="Welcome" name="welcome"></li>
 						<li><input class="input-nav" formaction="/user" type="submit"
@@ -49,14 +48,19 @@
 						</div>
 						<div class="float_left characterPresentation">
 							<p>
-								is a <strong c:choose> <span c:when
-									test="${user.userinfo.type == '1'}">Computer Student</span> <span
-									c:when test="${user.userinfo.type == '2'}">Medicine
-										Student</span> <span c:when test="${user.userinfo.type == '3'}">Law
-										Student</span>
-
-
-
+								is a <c:if test = "${user.userinfo.type == 1}">
+       							  	Computer Student
+    							  </c:if>
+    							  <c:if test = "${user.userinfo.type == 2}">
+       							  	Medicine Student
+    							  </c:if>
+    							  <c:if test = "${user.userinfo.type == 3}">
+       							  	Law Student
+    							  </c:if>
+    							  
+								
+								
+						
 								</strong> and is located in <a href="">Istanbul Aydin University</a>
 							</p>
 							<p>
@@ -91,17 +95,21 @@
 							</div>
 						</div>
 					</div>
-					<div id="robbery">
-						<img
-							src="https://github.com/kubilayckmk/AStudentLifeCycle/blob/master/Unknowns/src/main/webapp/WEB-INF/views/assets/images/ff.jpeg?raw=true"
-							width="212px" height="140px">
-						<p>Fasfood is healthly for human health, So You need to eat..
 
-							Wait wait. its kinda little bit dangerious.</p>
-					</div>
 					<div class="clear"></div>
-
-
+					<div id="ctl00_cphLeftColumn_ctl00_divRecentEvents" class="box">
+						<h2>Recent diary entries</h2>
+						<ul class="noheader diaryExtraspace">
+							<!-- alt satırlarda dinamik -->
+						</ul>
+					</div>
+					<div id="ctl00_cphLeftColumn_ctl00_pnlHotTrace" class="box">
+						<h2>Hot Trace</h2>
+					</div>
+					<div class="box">
+					<h2>
+                            Prominent Clothes & Tattoos</h2>
+					</div>
 				</div>
 				<div id="ppm-sidemenu" role="navigation">
 					<div class="box">
@@ -121,79 +129,6 @@
 						</div>
 					</div>
 				</div>
-				<div>
-					<h2>
-						<%
-							if (null != session.getAttribute("job")) {
-						%>
-						<h3 style="font-size: 14px; line-height: 0px;"><%=session.getAttribute("job")%></h3>
-						<%
-							session.removeAttribute("job");
-						%>
-						<%
-							}
-						%>
-					</h2>
-				</div>
-				<div class="box" id="crimes">
-					<h2>Fastfood</h2>
-					<p>
-					<form action="fastfood" method="POST">
-						<select name="fastfoodChoose"
-							id="ctl00_cphLeftColumn_ctl00_ddlLocaleType"
-							class="maxwidth125px round">
-							<option value="m1">Menu1</option>
-							<option value="m2">Menu2</option>
-							<option value="m3">Menu3</option>
-							<option value="m4">Menu4</option>
-							<option value="m5">Menu5</option>
-						</select>
-						<p class="actionbuttons">
-							<input type="submit" name="ctl00$cphLeftColumn$ctl00$btnFind"
-								value="Eat me!" id="ctl00_cphLeftColumn_ctl00_btnFind">
-						</p>
-					</form>
-					</p>
-
-				</div>
-				<table class="data">
-					<tbody class="data-tbody">
-						<tr>
-							<th colspan="2" class="single">Shop Lift</th>
-						</tr>
-						<tr class="odd">
-							<td class="width40">Stamina required:</td>
-							<td><a id="ctl00_cphLeftColumn_ctl00_lnkAirport"
-								href="/World/Popmundo.aspx/Locale/26591">Helsinki-Vantaan
-									lentoasema</a></td>
-						</tr>
-						<tr class="even">
-							<td>Spirit:</td>
-							<td><a id="ctl00_cphLeftColumn_ctl00_lnkHospital"
-								href="/World/Popmundo.aspx/Locale/80029">Marian sairaala</a></td>
-						</tr>
-						<tr class="odd">
-							<td>Robery power:</td>
-							<td><a id="ctl00_cphLeftColumn_ctl00_lnkCityHall"
-								href="/World/Popmundo.aspx/Locale/26594">Helsingin
-									kaupungintalo</a></td>
-						</tr>
-						<tr class="even">
-							<td>Reward:</td>
-							<td><a id="ctl00_cphLeftColumn_ctl00_lnkCourthouse"
-								href="/World/Popmundo.aspx/Locale/198201">Oikeustalo</a></td>
-						</tr>
-						<tr class="odd">
-							<td>Success probability:</td>
-							<td><a id="ctl00_cphLeftColumn_ctl00_lnkHigway"
-								href="/World/Popmundo.aspx/Locale/2893834">Maantie
-									Maailmalle</a></td>
-						</tr>
-
-
-
-					</tbody>
-				</table>
 			</div>
 			<div class="clear center" style="background-color: #564d4f;">
 				<img
@@ -205,7 +140,6 @@
 		<div id="ppm-bottom-spacer"></div>
 		</div>
 	</form>
-
 
 </body>
 
