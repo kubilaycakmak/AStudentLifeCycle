@@ -1,3 +1,4 @@
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <head>
 <title"></title>>
 </title>
@@ -47,14 +48,19 @@
 						</div>
 						<div class="float_left characterPresentation">
 							<p>
-								is a <strong c:choose>
+								is a <c:if test = "${user.userinfo.type == 1}">
+       							  	Computer Student
+    							  </c:if>
+    							  <c:if test = "${user.userinfo.type == 2}">
+       							  	Medicine Student
+    							  </c:if>
+    							  <c:if test = "${user.userinfo.type == 3}">
+       							  	Law Student
+    							  </c:if>
+    							  
 								
-								<span c:when test="${user.userinfo.type == '1'}">Computer Student</span> 
-								<span c:when test="${user.userinfo.type == '2'}">Medicine Student</span>
-								<span c:when test="${user.userinfo.type == '3'}">Law Student</span>
 								
-								
-								
+						
 								</strong> and is located in <a href="">Istanbul Aydin University</a>
 							</p>
 							<p>

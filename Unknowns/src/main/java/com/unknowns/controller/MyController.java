@@ -124,12 +124,11 @@ public class MyController {
 		int type = Integer.parseInt(request.getParameter("type"));
 		session = request.getSession();
 		queries = Queries.getQueries();
-		if (queries.signUp(name, lastname, email, nickname, password, hintcode, type))
-			return "index";
-		else {
+		if (!queries.signUp(name, lastname, email, nickname, password, hintcode, type))
 			session.setAttribute("warning", "Email or nickname already exists.");
-			return "createAccount";
-		}
+			
+		return "index";
+		
 	}
 
 	@RequestMapping(value="signIn",method=RequestMethod.POST)
@@ -178,7 +177,13 @@ public class MyController {
 		session.setAttribute("user", queries.getUser(email));
 		return "FastFood";
 	}
-
+	
+	@RequestMapping(value="logout",method=RequestMethod.POST)
+	public String logout(HttpServletRequest request) {
+		session = request.getSession();
+		session.invalidate();
+		return "index";
+	}
 	@RequestMapping("/*")
 	public String string() {
 		return "404";
