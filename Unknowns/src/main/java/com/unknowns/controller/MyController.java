@@ -2,7 +2,7 @@ package com.unknowns.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,7 +24,7 @@ public class MyController {
 		return "createAccount";
 	}
 
-	@PostMapping("/forgetPassword")
+	@RequestMapping(value="/forgetPassword", method=RequestMethod.POST)
 	public String getForgetPassword(HttpServletRequest request) {
 		return "ForgetPassword";
 	}
@@ -113,7 +113,7 @@ public class MyController {
 		return "Forex";
 	}
 
-	@PostMapping("/signUp")
+	@RequestMapping(value="/signUp",method=RequestMethod.POST)
 	public String createAccount(HttpServletRequest request) {
 		String name = request.getParameter("name");
 		String lastname = request.getParameter("lastname");
@@ -132,7 +132,7 @@ public class MyController {
 		}
 	}
 
-	@PostMapping("signIn")
+	@RequestMapping(value="signIn",method=RequestMethod.POST)
 	public String signIn(HttpServletRequest request) {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
@@ -149,7 +149,7 @@ public class MyController {
 		}
 	}
 
-	@PostMapping("freelance")
+	@RequestMapping(value="freelance",method=RequestMethod.POST)
 	public String freelance(HttpServletRequest request) {
 		session = request.getSession();
 		String email = (String) session.getAttribute("email");
@@ -164,7 +164,7 @@ public class MyController {
 		return "Freelance";
 	}
 
-	@PostMapping("fastfood")
+	@RequestMapping(value="fastfood",method=RequestMethod.POST)
 	public String fastfood(HttpServletRequest request) {
 		session = request.getSession();
 		String email = (String) session.getAttribute("email");

@@ -44,7 +44,7 @@
         <div class="clearfix">
           <h1 style="text-align:left">Freelance</h1>
           
-          <p style="color:white"><img class="pages-images" src="assets/images/fl.jpeg" style="width:170px;height:170px;margin-right:15px;">Essentially, a
+          <p style="color:white"><img class="pages-images" src="https://github.com/kubilayckmk/AStudentLifeCycle/blob/master/Unknowns/src/main/webapp/WEB-INF/views/assets/images/fl.jpeg?raw=true" style="width:170px;height:170px;margin-right:15px;">Essentially, a
             freelance job is one where a person works for themselves, rather than for a company. While freelancers do
             take on contract work for companies and organizations, they are ultimately self-employed.
           </p>

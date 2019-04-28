@@ -48,6 +48,7 @@
 				<input id="notfound-input" type="text" placeholder="Password" name="password" required>
 				<input id="notfound-input" type="text" placeholder="Hint Code" name="hintcode" required>
 				<br>
+				<br>
 					<select id="notfound-input" name="type">
 						<option value="1">Computer</option>
 						<option value="2">Hospital</option>
