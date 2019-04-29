@@ -151,29 +151,49 @@
 					<p>
 					<form action="freelance" method="POST">
 						<select name="freelanceChoose"
-							id="ctl00_cphLeftColumn_ctl00_ddlLocaleType"
+							id="choice"
 							class="maxwidth125px round">
-							<option value="Job1">Job1</option>
-							<option value="Job2">Job2</option>
-							<option value="Job3">Job3</option>
-							<option value="Job4">Job4</option>
-							<option value="Job5">Job5</option>
+							<option value="1">Job1</option>
+							<option value="2">Job2</option>
+							<option value="3">Job3</option>
+							<option value="4">Job4</option>
+							<option value="5">Job5</option>
 						</select><br>
 						<p id="timer">${time}</p>
 						
 						<script>
+						
+						function getSelectedOption(choise){
+							var opt;
+							for(var i=0,len = choice.options.length; i<len;i++){
+								opt=choice.options[i];
+								if(opt.selected === true){
+									break;
+								}
+							}
+							return opt;
+						}
+						var opt = getSelectedOption(choice);
+						
+						console.log(opt.value);
 							window.addEventListener("load",function(){
+								var choice = document.getElementById("choice");
+								
+								var stamina = document.getElementById("stamina");
 								var timer = parseInt(document.getElementById("timer").innerHTML);
 								console.log(timer);
 								if(timer > 0){
 									document.getElementById("submitButton").disabled = true;
-									document.getElementById("submitButton").style.color = "red";
+									document.getElementById("submitButton").style.color = "grey";
 									console.log(timer);
 								}
 								else if(timer == 0){
 									document.getElementById("submitButton").disabled = false;
-									document.getElementById("submitButton").style.color = "yellow";
+									document.getElementById("submitButton").style.color = "green";
 								}
+								
+								
+								
 							});
 						</script>
 						<p class="actionbuttons">
@@ -187,35 +207,27 @@
 				<table class="data">
 					<tbody class="data-tbody">
 						<tr>
-							<th colspan="2" class="single">Shop Lift</th>
+							<th colspan="2" class="single">Freelance Job Info</th>
 						</tr>
 						<tr class="odd">
-							<td class="width40">Stamina required:</td>
-							<td><a id="ctl00_cphLeftColumn_ctl00_lnkAirport"
-								href="/World/Popmundo.aspx/Locale/26591">Helsinki-Vantaan
-									lentoasema</a></td>
+							<td class="width40" id="stamina">Stamina required:</td>
+							<td id="cstamina"></td>
 						</tr>
 						<tr class="even">
-							<td>Spirit:</td>
-							<td><a id="ctl00_cphLeftColumn_ctl00_lnkHospital"
-								href="/World/Popmundo.aspx/Locale/80029">Marian sairaala</a></td>
+							<td id="xp">Experience:</td>
+							<td id="cxp"></td>
 						</tr>
 						<tr class="odd">
-							<td>Robery power:</td>
-							<td><a id="ctl00_cphLeftColumn_ctl00_lnkCityHall"
-								href="/World/Popmundo.aspx/Locale/26594">Helsingin
-									kaupungintalo</a></td>
+							<td id="money">Money:</td>
+							<td id="cmoney"></td>
 						</tr>
 						<tr class="even">
-							<td>Reward:</td>
-							<td><a id="ctl00_cphLeftColumn_ctl00_lnkCourthouse"
-								href="/World/Popmundo.aspx/Locale/198201">Oikeustalo</a></td>
+							<td id="time">Time:</td>
+							<td id="ctime"></td>
 						</tr>
 						<tr class="odd">
-							<td>Success probability:</td>
-							<td><a id="ctl00_cphLeftColumn_ctl00_lnkHigway"
-								href="/World/Popmundo.aspx/Locale/2893834">Maantie
-									Maailmalle</a></td>
+							<td>Success or Failed:</td>
+							<td></td>
 						</tr>
 
 

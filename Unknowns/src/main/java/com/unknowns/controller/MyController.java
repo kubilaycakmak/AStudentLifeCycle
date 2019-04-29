@@ -114,6 +114,11 @@ public class MyController {
 		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
 		return "Forex";
 	}
+	
+	@RequestMapping("/help")
+	public String getHelp() {
+		return "help";
+	}
 
 	@RequestMapping(value="/signUp",method=RequestMethod.POST)
 	public String createAccount(HttpServletRequest request) {

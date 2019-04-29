@@ -170,7 +170,7 @@
 								}
 								else if(timer == 0){
 									document.getElementById("submitButton").disabled = false;
-									document.getElementById("submitButton").style.color = "yellow";
+									document.getElementById("submitButton").style.color = "orange";
 								}
 							});
 						</script>
@@ -190,29 +190,29 @@
 						</tr>
 						<tr class="odd">
 							<td class="width40">Stamina required:</td>
-							<td><a id="ctl00_cphLeftColumn_ctl00_lnkAirport"
+							<td><a id="j1"
 								href="/World/Popmundo.aspx/Locale/26591">Helsinki-Vantaan
 									lentoasema</a></td>
 						</tr>
 						<tr class="even">
 							<td>Spirit:</td>
-							<td><a id="ctl00_cphLeftColumn_ctl00_lnkHospital"
+							<td><a id="j2"
 								href="/World/Popmundo.aspx/Locale/80029">Marian sairaala</a></td>
 						</tr>
 						<tr class="odd">
 							<td>Robery power:</td>
-							<td><a id="ctl00_cphLeftColumn_ctl00_lnkCityHall"
+							<td><a id="j3"
 								href="/World/Popmundo.aspx/Locale/26594">Helsingin
 									kaupungintalo</a></td>
 						</tr>
 						<tr class="even">
 							<td>Reward:</td>
-							<td><a id="ctl00_cphLeftColumn_ctl00_lnkCourthouse"
+							<td><a id="j4"
 								href="/World/Popmundo.aspx/Locale/198201">Oikeustalo</a></td>
 						</tr>
 						<tr class="odd">
 							<td>Success probability:</td>
-							<td><a id="ctl00_cphLeftColumn_ctl00_lnkHigway"
+							<td><a id="j5"
 								href="/World/Popmundo.aspx/Locale/2893834">Maantie
 									Maailmalle</a></td>
 						</tr>

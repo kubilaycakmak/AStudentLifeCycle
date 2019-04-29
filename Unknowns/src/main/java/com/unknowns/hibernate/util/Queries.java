@@ -60,31 +60,31 @@ public class Queries {
 		int xp = 0;
 		int money = 0;
 		List<User> users = session.createQuery("from User where email = '"+email+"'",User.class).list();
-		if(choose.equals("Job1")) {
+		if(choose.equals("1")) {
 			stamina = 10;
 			xp = 1;
 			fchoose = 1;
 			money = 25;
 		}
-		else if(choose.equals("Job2")) {
+		else if(choose.equals("2")) {
 			stamina = 20;
 			xp = 2;
 			fchoose = 2;
 			money = 55;
 		}
-		else if(choose.equals("Job3")) {
+		else if(choose.equals("3")) {
 			stamina = 30;
 			xp = 3;
 			fchoose = 3;
 			money = 115;
 		}
-		else if(choose.equals("Job4")) {
+		else if(choose.equals("4")) {
 			stamina = 40;
 			xp = 4;
 			fchoose = 4;
 			money = 155;
 		}
-		else if(choose.equals("Job5")) {
+		else if(choose.equals("5")) {
 			stamina = 50;
 			xp = 5;
 			fchoose = 5;
