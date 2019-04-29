@@ -16,7 +16,6 @@
 			<div id="headbar" class="cityofcrime" style="display: block;">
 				<ul>
 					<form method="post">
-						<div>${time}</div>
 						<li><input class="input-nav" formaction="/home" type="submit"
 							value="Welcome" name="welcome"></li>
 						<li><input class="input-nav" formaction="/user" type="submit"
@@ -159,10 +158,27 @@
 							<option value="Job3">Job3</option>
 							<option value="Job4">Job4</option>
 							<option value="Job5">Job5</option>
-						</select>
+						</select><br>
+						<p id="timer">${time}</p>
+						
+						<script>
+							window.addEventListener("load",function(){
+								var timer = parseInt(document.getElementById("timer").innerHTML);
+								console.log(timer);
+								if(timer > 0){
+									document.getElementById("submitButton").disabled = true;
+									document.getElementById("submitButton").style.color = "red";
+									console.log(timer);
+								}
+								else if(timer == 0){
+									document.getElementById("submitButton").disabled = false;
+									document.getElementById("submitButton").style.color = "yellow";
+								}
+							});
+						</script>
 						<p class="actionbuttons">
 							<input type="submit" name="ctl00$cphLeftColumn$ctl00$btnFind"
-								value="work on it!" id="ctl00_cphLeftColumn_ctl00_btnFind">
+								value="work on it!" id="submitButton">
 						</p>
 					</form>
 					</p>

@@ -61,9 +61,6 @@
        							  	Law Student
     							  </c:if>
 
-
-
-
 								</strong> and is located in <a href="">Istanbul Aydin University</a>
 							</p>
 							<p>

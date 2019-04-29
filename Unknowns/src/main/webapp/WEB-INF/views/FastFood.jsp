@@ -156,11 +156,29 @@
 							<option value="m3">Menu3</option>
 							<option value="m4">Menu4</option>
 							<option value="m5">Menu5</option>
-						</select>
+						</select><br>
+						<p id="timer">${time}</p>
+						
+						<script>
+							window.addEventListener("load",function(){
+								var timer = parseInt(document.getElementById("timer").innerHTML);
+								console.log(timer);
+								if(timer > 0){
+									document.getElementById("submitButton").disabled = true;
+									document.getElementById("submitButton").style.color = "red";
+									console.log(timer);
+								}
+								else if(timer == 0){
+									document.getElementById("submitButton").disabled = false;
+									document.getElementById("submitButton").style.color = "yellow";
+								}
+							});
+						</script>
 						<p class="actionbuttons">
 							<input type="submit" name="ctl00$cphLeftColumn$ctl00$btnFind"
-								value="Eat me!" id="ctl00_cphLeftColumn_ctl00_btnFind">
+								value="Eat me!" id="submitButton">
 						</p>
+						
 					</form>
 					</p>
 
