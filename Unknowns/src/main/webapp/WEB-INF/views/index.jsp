@@ -20,14 +20,14 @@
         </div>
     </div>
     <div id="ppm-wrapper">
-        <div id="sub-header" role="banner">
+        <div id="sub-header" role="banner" style="height: 0 !important;">
 
             <div id="header-logo">
             </div>
         </div>
         <div id="ppm-main">
             <div id="topcolumn">
-                <div class="StartImage gameimage"></div>
+                <div class="StartImage gameimage" style="height: 100px !important;"></div>
             </div>
             <div id="ppm-content" role="main" class="content">
                 <h1 id="welcome">Welcome to Life-Cycle</h1>

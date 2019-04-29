@@ -1,5 +1,7 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <head>
-<title></title>>
+<title>
+	LifeCycle
 </title>
 <meta http-equiv="X-UA-Compatible" content="IE=9">
 <meta name="format-detection" content="telephone=no">
@@ -31,7 +33,8 @@
 			<div id="sub-header" role="banner">
 
 				<div id="header-logo">
-					<h1 align="center">Life-Cycle</h1>
+					<img alt="" height="100" width="500"
+						src="https://github.com/kubilayckmk/AStudentLifeCycle/blob/master/LogoMakr_1sEpyX.png?raw=true">
 				</div>
 			</div>
 			<div id="ppm-main">
@@ -49,11 +52,17 @@
 						</div>
 						<div class="float_left characterPresentation">
 							<p>
-								is a <strong c:choose> <span c:when
-									test="${user.userinfo.type == '1'}">Computer Student</span> <span
-									c:when test="${user.userinfo.type == '2'}">Medicine
-										Student</span> <span c:when test="${user.userinfo.type == '3'}">Law
-										Student</span>
+								is a 
+								<c:if test="${user.userinfo.type == 1}">
+       							  	Computer Student
+    							  </c:if>
+								<c:if test="${user.userinfo.type == 2}">
+       							  	Medicine Student
+    							  </c:if>
+								<c:if test="${user.userinfo.type == 3}">
+       							  	Law Student
+    							  </c:if>
+
 
 
 
@@ -195,7 +204,7 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="clear center" style="background-color: #564d4f;">
+			<div class="clear center" style="background-color: transparent;">
 				<img
 					src="https://github.com/kubilayckmk/cityofCrime/blob/master/jarcoding.png?raw=true"
 					style="position: relative; left: -20;">

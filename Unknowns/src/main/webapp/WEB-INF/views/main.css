@@ -12,7 +12,7 @@ div#topcolumn {
 }
 
 div.StartImage {
-    background: url("https://www.conservation.cam.ac.uk/images/campus.png/image") no-repeat;
+	background-color:transparent;
     height: 300px;
     max-width: 725px;
     background-size: cover;
@@ -62,7 +62,7 @@ th.single {
 }
 
 div#header-logo img {
-    margin: -15px 0 0 222px;
+    margin: 0 0 0 150px;
 }
 div.box {
     border-radius: 7px;
@@ -103,7 +103,7 @@ div#header-commands {
 }
 
 a {
-    color: #501111;
+    color: white;
     text-decoration: none;
 }
 
@@ -124,7 +124,7 @@ div.avatar_clean {
 }
 
 div#header-logo img {
-    margin: -15px 0 0 222px;
+    margin: 0 0 0 150px;
 }
 
 div#detachable {
@@ -254,7 +254,7 @@ div.signupBox {
     color: #fff;
     overflow: auto;
     padding: 15px;
-    background: url(http://pngimg.com/uploads/student/student_PNG62552.png) no-repeat !important;
+    background: url(https://cdn.zmescience.com/wp-content/uploads/2018/09/Staples_High_School2C_Westport2C_CT-1024x732.jpg) no-repeat !important;
     background-size: cover !important;
     border-radius: 30px;
 }
@@ -305,8 +305,8 @@ div#headbar ul li {
     display: inline;
 }
 div#sub-header {
-    background: #484143;
-    height: 65px;
+    background: rgb(45, 40, 41,0.1);
+    height: 90px;
     border-radius: 7px 7px 0 0;
     -moz-border-radius: 7px 7px 0 0;
     -webkit-border-radius: 7px 7px 0 0;
@@ -322,7 +322,7 @@ div#ppm-bottom-spacer {
     text-align: center!important;
 }
 div#ppm-footer {
-    border-bottom: 20px solid #564d4f;
+    border-bottom: 20px solid transparent;
     border-bottom-right-radius: 7px;
     border-bottom-left-radius: 7px;
 }
@@ -374,7 +374,7 @@ div#topcolumn {
 }
 
 div.StartImage {
-    background: url("https://www.conservation.cam.ac.uk/images/campus.png/image") no-repeat;
+	background-color: transparent;
     height: 300px;
     max-width: 725px;
     background-size: cover;
@@ -393,7 +393,7 @@ form {
 }
 
 div#header-logo img {
-    margin: -15px 0 0 222px;
+    margin: 0 0 0 150px;
 }
 
 div#header,
@@ -449,7 +449,7 @@ div.avatar {
 }
 
 div#header-logo img {
-    margin: -15px 0 0 222px;
+    margin: 0 0 0 150px;
 }
 
 div#detachable {
@@ -505,7 +505,7 @@ h1, h2 {
     border-color: -moz-use-text-color #564d4f #564d4f -moz-use-text-color;
     border-style: none #87777c #87777c none;
     border-width: medium 1px 1px medium;
-    background: none repeat scroll 0 0  #564d4fc5;
+    background: none repeat scroll 0 0  transparent;
     -moz-border-bottom-colors: none;
     -moz-border-image: none;
     -moz-border-left-colors: none;
@@ -579,7 +579,7 @@ ul li {
 }
 
 div#ppm-main {
-    background-color: #564d4f;
+    background-color: transparent;
 }
 
 div#ppm-main {
@@ -643,7 +643,7 @@ div.box {
 div.box,
 table.data tr.even td,
 div.editor a.button:hover {
-    background: #87777c;
+    background: darkslategrey;
 }
 
 div#ppm-sidemenu {
