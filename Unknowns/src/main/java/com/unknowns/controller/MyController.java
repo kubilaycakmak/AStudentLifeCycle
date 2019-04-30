@@ -91,6 +91,7 @@ public class MyController {
 	@RequestMapping("Jail")
 	public String getJail(HttpServletRequest request) {
 		session = request.getSession();
+		session.setAttribute("time", queries.getJailTime((String) session.getAttribute("email")));
 		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
 		return "Jail";
 	}
@@ -168,12 +169,48 @@ public class MyController {
 		return "FastFood";
 	}
 	
+	@RequestMapping(value="hack",method=RequestMethod.POST)
+	public String hack(HttpServletRequest request) {
+		session = request.getSession();
+		String email = (String)session.getAttribute("email");
+		int result = queries.hack(request.getParameter("hackChoose"), email);
+		if(result == 0) {
+			session.setAttribute("hack", "Hack Unsuccessful");
+		}
+		else if(result == 1) {
+			session.setAttribute("hack", "Hack Successful");
+		}
+		else if(result == 2) {
+			session.setAttribute("hack", "You are in jail now");
+		}
+		session.setAttribute("time", queries.getHackTime(email));
+		session.setAttribute("email", email);
+		session.setAttribute("user", queries.getUser(email));
+		return "Hack";
+	}
+	@RequestMapping(value="bribe",method=RequestMethod.POST)
+	public String bribe(HttpServletRequest request) {
+		session = request.getSession();
+
+		String email = (String)session.getAttribute("email");
+		if(queries.bribe(email)) {
+			session.setAttribute("bribe", "You are free!");
+		}
+		else
+			session.setAttribute("bribe", "You don't have enough money");
+		
+		session.setAttribute("email", email);
+		session.setAttribute("user", queries.getUser(email));
+		return "Jail";
+	}
+	
 	@RequestMapping(value="logout",method=RequestMethod.POST)
 	public String logout(HttpServletRequest request) {
 		session = request.getSession();
 		session.invalidate();
 		return "index";
 	}
+
 	@RequestMapping("/*")
 	public String string() {
 		return "404";
