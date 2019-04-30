@@ -14,7 +14,7 @@
             <ul>
                 <li><a href="">Welcome</a></li>
                 <li><a href="">About Us</a></li>
-                <li><a href="help">Help</a></li>
+                <li><a href="">Help</a></li>
                 <li><a href="">Contact</a></li>
             </ul>
         </div>

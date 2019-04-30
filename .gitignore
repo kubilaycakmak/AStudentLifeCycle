@@ -144,3 +144,5 @@ fabric.properties
 /build/
 
 Servers
+.vscode/settings.json
+.vscode/launch.json

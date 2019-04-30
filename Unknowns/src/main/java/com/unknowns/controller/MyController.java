@@ -5,7 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+// import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.unknowns.hibernate.util.Queries;
 
@@ -51,12 +51,6 @@ public class MyController {
 		return "Freelance";
 	}
 
-	@RequestMapping("House")
-	public String getHouse(HttpServletRequest request) {
-		session = request.getSession();
-		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
-		return "House";
-	}
 
 	@RequestMapping("Bank")
 	public String getBank(HttpServletRequest request) {
@@ -73,18 +67,17 @@ public class MyController {
 		return "FastFood";
 	}
 
-	@RequestMapping("Computer")
-	public String getComputer(HttpServletRequest request) {
-		session = request.getSession();
-		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
-		return "Computer";
-	}
-
 	@RequestMapping("Store")
 	public String getStore(HttpServletRequest request) {
 		session = request.getSession();
 		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
 		return "Store";
+	}
+	@RequestMapping("Company")
+	public String getCompany(HttpServletRequest request) {
+		session = request.getSession();
+		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
+		return "Company";
 	}
 
 	@RequestMapping("Hack")
@@ -94,12 +87,6 @@ public class MyController {
 		return "Hack";
 	}
 
-	@RequestMapping("Hospital")
-	public String getHospital(HttpServletRequest request) {
-		session = request.getSession();
-		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
-		return "Hospital";
-	}
 
 	@RequestMapping("Jail")
 	public String getJail(HttpServletRequest request) {
@@ -108,12 +95,6 @@ public class MyController {
 		return "Jail";
 	}
 
-	@RequestMapping("Forex")
-	public String getForex(HttpServletRequest request) {
-		session = request.getSession();
-		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
-		return "Forex";
-	}
 	
 	@RequestMapping("/help")
 	public String getHelp() {

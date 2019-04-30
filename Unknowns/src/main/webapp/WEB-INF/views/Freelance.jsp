@@ -123,10 +123,8 @@
 								<li><a href="Bank">Bank</a></li>
 								<li><a href="Store">Store</a></li>
 								<li id="mnuToolTipSongs"><a href="Hack">Hack</a></li>
-								<li><a href="Hospital">Hospital</a></li>
 								<li><a href="Jail">Jail</a></li>
-								<li><a href="Forex">Forex</a></li>
-								<li><a href="Course">Course</a></li>
+								<li><a href="Company">Company</a></li>
 							</ul>
 						</div>
 					</div>
