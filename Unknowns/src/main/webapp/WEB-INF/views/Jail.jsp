@@ -104,10 +104,12 @@
 					<div id="ctl00_cphLeftColumn_ctl00_divRecentEvents" class="box">
 						<h2>JAIL</h2>
 						<ul class="noheader diaryExtraspace">
-              <p>Status: You are in jail for ${time} second</p>
-              <p>Need for Free: ${user.userinfo.jail} </p>
-			<form action="/bribe" method="post">
-                <input type="submit" value="Submit" name="bribe">
+              <p>Status: </p>
+              <p>Need for Free: </p>
+							<form>
+                <input type="number" placeholder="Bribe" name="bribe">
+                <br><br>
+                <input formaction="/bribe" type="submit" value="Submit" name="bribe">
               </form>
 						</ul>
 					</div>
@@ -140,19 +142,7 @@
 		<div id="ppm-bottom-spacer"></div>
 		</div>
 	</form>
-						<script>
-							window.addEventListener("load",function(){
-								if(${user.userinfo.jail} != 0){
-									document.getElementById("submitButton").disabled = false;
-									document.getElementById("submitButton").style.color = "green";
-								}
-								else{
-									document.getElementById("submitButton").disabled = true;
-									document.getElementById("submitButton").style.color = "grey";
-								}
-							});
-						
-						</script>
+
 </body>
 
 </html>

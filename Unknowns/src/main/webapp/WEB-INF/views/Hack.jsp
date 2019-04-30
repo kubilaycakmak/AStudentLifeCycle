@@ -147,8 +147,8 @@
 				<div class="box" id="crimes">
 					<h2>Freelance Jobs</h2>
 					<p>
-					<form action="hack" method="POST">
-						<select name="hackChoose"
+					<form action="freelance" method="POST">
+						<select name="freelanceChoose"
 							id="choice"
 							class="maxwidth125px round">
 							<option value="1">Attack Wifi</option>

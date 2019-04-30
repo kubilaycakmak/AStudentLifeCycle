@@ -26,7 +26,7 @@ public class Userinfo {
 
 	@OneToMany(fetch = FetchType.EAGER)
 	@Cascade(CascadeType.ALL)
-	List<Company> Company;
+	List<Knowledge> knowledge;
 
 	Date freelancedate;
 	int freelancetype;
@@ -34,28 +34,22 @@ public class Userinfo {
 	Date FastFooddate;
 	int FastFoodtype;
 
-	int jail;
-	
-	Date Hackdate;
-	
 	public Userinfo() {
 		super();
 	}
 
-	public Userinfo(int xp, int money, int type, int stamina, List<Company> Company, Date freelancedate,
-			int freelancetype, Date fastFooddate, int fastFoodtype,Date Hackdate,int jail) {
+	public Userinfo(int xp, int money, int type, int stamina, List<Knowledge> knowledge, Date freelancedate,
+			int freelancetype, Date fastFooddate, int fastFoodtype) {
 		super();
 		this.xp = xp;
 		this.money = money;
 		this.type = type;
 		this.stamina = stamina;
-		this.Company = Company;
+		this.knowledge = knowledge;
 		this.freelancedate = freelancedate;
 		this.freelancetype = freelancetype;
-		this.FastFooddate = fastFooddate;
-		this.FastFoodtype = fastFoodtype;
-		this.Hackdate = Hackdate;
-		this.jail = jail;
+		FastFooddate = fastFooddate;
+		FastFoodtype = fastFoodtype;
 	}
 
 	public int getId() {
@@ -98,12 +92,12 @@ public class Userinfo {
 		this.stamina = stamina;
 	}
 
-	public List<Company> getCompany() {
-		return Company;
+	public List<Knowledge> getKnowledge() {
+		return knowledge;
 	}
 
-	public void setCompany(List<Company> Company) {
-		this.Company = Company;
+	public void setKnowledge(List<Knowledge> knowledge) {
+		this.knowledge = knowledge;
 	}
 
 	public Date getFreelancedate() {
@@ -137,22 +131,5 @@ public class Userinfo {
 	public void setFastFoodtype(int fastFoodtype) {
 		FastFoodtype = fastFoodtype;
 	}
-
-	public Date getHackdate() {
-		return Hackdate;
-	}
-
-	public void setHackdate(Date hackdate) {
-		Hackdate = hackdate;
-	}
-
-	public int getJail() {
-		return jail;
-	}
-
-	public void setJail(int jail) {
-		this.jail = jail;
-	}
-	
 
 }

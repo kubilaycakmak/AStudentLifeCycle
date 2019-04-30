@@ -12,7 +12,7 @@
         <!--<property name="connection.pool_size">1</property>-->
         <!-- Select our SQL dialect -->
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
-        <!-- <property name="hibernate.hbm2ddl.auto">create</property>-->
+        <!-- <property name="hibernate.hbm2ddl.auto">create</property> -->
         <!-- Echo the SQL to stdout -->
         <property name="show_sql">true</property>
         <!-- Set the current session context -->
@@ -26,7 +26,7 @@
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
         <mapping class="com.unknowns.hibernate.entity.User" />
         <mapping class="com.unknowns.hibernate.entity.Userinfo" />
-        <mapping class="com.unknowns.hibernate.entity.Company" />
-        <mapping class="com.unknowns.hibernate.entity.Workers" />
+        <mapping class="com.unknowns.hibernate.entity.Knowledge" />
+          
     </session-factory>
 </hibernate-configuration>

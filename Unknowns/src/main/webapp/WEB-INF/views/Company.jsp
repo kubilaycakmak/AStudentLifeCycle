@@ -99,13 +99,13 @@
 					<div id="ctl00_cphLeftColumn_ctl00_divRecentEvents" class="box">
 						<h2>Company</h2>
 						<ul class="noheader diaryExtraspace">
-                            <c:if test="${User.Userinfo.company == null}">
+                            <c:if test="${/* == null*/}">
        							  	 <form formaction="/createCompany">
                                         <input type="text" placeholder="Company Name">
                                         <input type="submit" value="Create">
                                     </form>
     							  </c:if>
-								<c:if test="${User.Userinfo.company != null}">
+								<c:if test="${/* == 1*/}">
     							  </c:if>
                            
 						</ul>
@@ -113,9 +113,9 @@
 					<div id="ctl00_cphLeftColumn_ctl00_pnlHotTrace" class="box">
 						<h2>Hiring</h2>
                             <p>You have null employee.</p>
-                                <c:if test="${User.Userinfo.Company.workers == null}">
+                                <c:if test="${/* == null*/}">
     							  </c:if>
-								<c:if test="${User.Userinfo.Company.workers != null}">
+								<c:if test="${/* == 1*/}">
                                     <form formaction="/hiring">
                                         <input type="submit" value="Hire">
                                     </form>
@@ -126,9 +126,9 @@
                             <p>employee 1: null lv</p>
                             <p>employee 1: null lv</p>
                             <p>employee 1: null lv</p>
-                                <c:if test="${User.Userinfo.Company.workers == null}">
+                                <c:if test="${/* == null*/}">
     							  </c:if>
-								<c:if test="${User.Userinfo.Company.workers != null}">
+								<c:if test="${/* == 1*/}">
                                     <form formaction="/improve">
                                         <input type="submit" value="Improve">
                                     </form>
