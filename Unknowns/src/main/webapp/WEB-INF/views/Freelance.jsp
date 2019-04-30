@@ -227,9 +227,6 @@
 							<td>Success or Failed:</td>
 							<td></td>
 						</tr>
-
-
-
 					</tbody>
 				</table>
 			</div>
