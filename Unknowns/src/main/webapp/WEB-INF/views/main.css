@@ -176,7 +176,7 @@ input,
 select,
 textarea {
     font-family: "Lucida Grande", Verdana, Sans-Serif;
-    font-size: 11px;
+    font-size: 11px !important;
 }
 
 div#detachable {
