@@ -15,7 +15,6 @@
 			<div id="headbar" class="cityofcrime" style="display: block;">
 				<ul>
 					<form method="post">
-						<div>${time}</div>
 						<li><input class="input-nav" formaction="/home" type="submit"
 							value="Welcome" name="welcome"></li>
 						<li><input class="input-nav" formaction="/user" type="submit"

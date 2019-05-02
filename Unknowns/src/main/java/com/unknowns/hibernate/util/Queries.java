@@ -1,5 +1,6 @@
 package com.unknowns.hibernate.util;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
@@ -8,6 +9,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.unknowns.hibernate.entity.Company;
+import com.unknowns.hibernate.entity.Items;
 import com.unknowns.hibernate.entity.User;
 import com.unknowns.hibernate.entity.Userinfo;
 import com.unknowns.hibernate.entity.Workers;
@@ -103,6 +105,11 @@ public class Queries {
 			transaction = session.beginTransaction();
 			if (users.get(0).getUserinfo().getCompany() != null) {
 				users.get(0).getUserinfo().setCompany(users.get(0).getUserinfo().getCompany());
+				if(users.get(0).getUserinfo().getCompany().getWorkers().size() != 0) {
+					users.get(0).getUserinfo().getCompany().setWorkers(users.get(0).getUserinfo().getCompany().getWorkers());
+				} else {
+					users.get(0).getUserinfo().getCompany().setWorkers(null);
+				}
 			} else {
 				users.get(0).getUserinfo().setCompany(null);
 			}
@@ -152,12 +159,19 @@ public class Queries {
 			users.get(0).getUserinfo().setMoney(users.get(0).getUserinfo().getMoney() - money);
 			users.get(0).getUserinfo().setFastFooddate(new Date());
 			users.get(0).getUserinfo().setFastFoodtype(fchoose);
+	
 			if (users.get(0).getUserinfo().getCompany() != null) {
 				users.get(0).getUserinfo().setCompany(users.get(0).getUserinfo().getCompany());
+				if(users.get(0).getUserinfo().getCompany().getWorkers().size() != 0) {
+					users.get(0).getUserinfo().getCompany().setWorkers(users.get(0).getUserinfo().getCompany().getWorkers());
+				} else {
+					users.get(0).getUserinfo().getCompany().setWorkers(null);
+				}
 			} else {
 				users.get(0).getUserinfo().setCompany(null);
 			}
-			session = HibernateUtil.getSessionFactory().openSession();
+
+			session = HibernateUtil.getSessionFactory().getCurrentSession();
 			transaction = session.beginTransaction();
 			session.update(users.get(0).getUserinfo());
 			session.update(users.get(0));
@@ -406,13 +420,101 @@ public class Queries {
 		List<User> users = session.createQuery("from User where email = '"+email+"'",User.class).list();
 		if(users.get(0).getUserinfo().getXp() >= 100) {
 			List<Workers> workers = null;
-			Company company = new Company(CompanyName,workers);
+			Items items = new Items(0,0,0,0,0);
+			Company company = new Company(CompanyName,workers,items);
 			users.get(0).getUserinfo().setCompany(company);
 			transaction = session.beginTransaction();
+			session.save(items);
 			session.save(company);
 			session.update(users.get(0));
 			transaction.commit();
 			session.close();
 		}
 	}
+	public void hire(String email) {
+		session = HibernateUtil.getSessionFactory().openSession();
+		List<Workers> workers = new ArrayList<Workers>() ;
+ 		List<User> users = session.createQuery("from User where email = '"+email+"'",User.class).list();
+		if(users.get(0).getUserinfo().getCompany().getWorkers().size() < users.get(0).getUserinfo().getXp()/50) {
+			if(users.get(0).getUserinfo().getCompany().getWorkers().size() != 0) 
+				workers = users.get(0).getUserinfo().getCompany().getWorkers();
+			Workers worker = new Workers(1);
+			workers.add(worker);
+			users.get(0).getUserinfo().getCompany().setWorkers(workers);
+			transaction = session.beginTransaction();
+			session.save(worker);
+			session.update(users.get(0));
+			transaction.commit();
+			session.close();
+		}
+	}
+
+	public void improve(String workerid, String email) {
+		int money = 0 ;
+		session = HibernateUtil.getSessionFactory().openSession();
+ 		List<User> users = session.createQuery("from User where email = '"+email+"'",User.class).list();
+		List<Workers> workers = session.createQuery("from Workers where id = '"+workerid+"'",Workers.class).list();
+		if(workers.get(0).getLvl() <5) {
+			if(workers.get(0).getLvl() == 1)
+				money = 50;
+			if(workers.get(0).getLvl() == 2)
+				money = 75;
+			if(workers.get(0).getLvl() == 3)
+				money = 100;
+			if(workers.get(0).getLvl() == 4)
+				money = 125;
+			if(workers.get(0).getLvl() == 5)
+				money = 150;
+			
+			if(money <= users.get(0).getUserinfo().getMoney()) {
+				workers.get(0).setLvl(workers.get(0).getLvl()+1);
+				users.get(0).getUserinfo().setMoney(users.get(0).getUserinfo().getMoney()-money);
+				
+				transaction = session.beginTransaction();
+				session.update(workers.get(0));
+				session.update(users.get(0));
+				transaction.commit();
+				session.close();
+			}
+
+		}
+	}
+
+	public void buy(String id, String email) {
+		int money = 0 ;
+		session = HibernateUtil.getSessionFactory().openSession();
+ 		List<User> users = session.createQuery("from User where email = '"+email+"'",User.class).list();
+		switch (id) {
+		case "1":
+			money = 1000;
+			users.get(0).getUserinfo().getCompany().getItems().setCount1(users.get(0).getUserinfo().getCompany().getItems().getCount1()+1);
+			break;
+		case "2":
+			money = 2000;
+			users.get(0).getUserinfo().getCompany().getItems().setCount2(users.get(0).getUserinfo().getCompany().getItems().getCount2()+1);
+			break;
+		case "3":
+			money = 3000;
+			users.get(0).getUserinfo().getCompany().getItems().setCount3(users.get(0).getUserinfo().getCompany().getItems().getCount3()+1);
+			break;
+		case "4":
+			money = 4000;
+			users.get(0).getUserinfo().getCompany().getItems().setCount4(users.get(0).getUserinfo().getCompany().getItems().getCount4()+1);
+			break;
+		case "5":
+			money = 5000;
+			users.get(0).getUserinfo().getCompany().getItems().setCount5(users.get(0).getUserinfo().getCompany().getItems().getCount5()+1);
+			break;
+		}
+		if(money <= users.get(0).getUserinfo().getMoney()) {
+			users.get(0).getUserinfo().setMoney(users.get(0).getUserinfo().getMoney()-money);
+			transaction = session.beginTransaction();
+			session.update(users.get(0));
+			transaction.commit();
+			session.close();
+		}
+			
+		
+	}
+
 }

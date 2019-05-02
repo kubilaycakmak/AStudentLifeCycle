@@ -99,40 +99,40 @@
 					<div id="ctl00_cphLeftColumn_ctl00_divRecentEvents" class="box">
 						<h2>Company</h2>
 						<ul class="noheader diaryExtraspace">
-                            <c:if test="${User.userinfo.company == null}">
+                            <c:if test="${user.userinfo.company == null}">
        							  	 <form formaction="/createCompany" method="POST">
                                         <input type="text" placeholder="Company Name" name="CompanyName">
                                         <input type="submit" value="Create" formaction="createCompany">
                                     </form>
     							  </c:if>
-							<c:if test="${User.userinfo.company == null}">
-									${User.Userinfo.Company.Name }
+							<c:if test="${user.userinfo.company != null}">
+									${user.userinfo.company.name }
     							  </c:if>
                            
 						</ul>
 					</div>
 					<div id="ctl00_cphLeftColumn_ctl00_pnlHotTrace" class="box">
 						<h2>Hiring</h2>
-                            <p>You have null employee.</p>
-                                <c:if test="${User.Userinfo.Company.workers == null}">
+                            <p>You have ${user.userinfo.company.workers.size() } employee.</p>
+                                <c:if test="${user.userinfo.company == null}">
     							  </c:if>
-								<c:if test="${User.Userinfo.Company.workers != null}">
-                                    <form formaction="/hiring">
-                                        <input type="submit" value="Hire">
+								<c:if test="${user.userinfo.company.workers != null}">
+                                    <form formaction="/hiring" method="POST">
+                                        <input type="submit" value="Hire" formaction="hiring">
                                     </form>
     							  </c:if>
 					</div>
 					<div class="box">
 						<h2>Improvement</h2>
-                            <p>employee 1: null lv</p>
-                            <p>employee 1: null lv</p>
-                            <p>employee 1: null lv</p>
-                                <c:if test="${User.Userinfo.Company.workers == null}">
+                                <c:if test="${user.userinfo.company.workers.size() == 0}">
     							  </c:if>
-								<c:if test="${User.Userinfo.Company.workers != null}">
-                                    <form formaction="/improve">
-                                        <input type="submit" value="Improve">
-                                    </form>
+								<c:if test="${user.userinfo.company.workers.size() != 0}">
+									<c:forEach var = "worker" items="${user.userinfo.company.workers }">
+        								<form formaction="${worker.id}" method="POST">
+                                        	<p>${worker.lvl } : <input type="submit" value="Improve" formaction="/improve=${worker.id}" ></p>
+                                    	</form>
+     								 </c:forEach>
+                                   
     							  </c:if>
 					</div>
 				</div>

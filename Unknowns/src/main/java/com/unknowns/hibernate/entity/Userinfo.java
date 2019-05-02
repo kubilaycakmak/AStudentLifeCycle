@@ -39,6 +39,7 @@ public class Userinfo {
 	
 	Date Hackdate;
 	
+
 	public Userinfo() {
 		super();
 	}

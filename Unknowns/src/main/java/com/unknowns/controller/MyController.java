@@ -2,9 +2,12 @@ package com.unknowns.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.ws.rs.PathParam;
+
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 // import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.unknowns.hibernate.util.Queries;
@@ -205,14 +208,42 @@ public class MyController {
 	}
 	@RequestMapping(value="createCompany",method = RequestMethod.POST)
 	public String createCompany(HttpServletRequest request) {
-		System.out.println("i");
 		session = request.getSession();
 		String email = (String)session.getAttribute("email");
 		String CompanyName = request.getParameter("CompanyName");
-		session.setAttribute("email", email);
 		queries.CreateCompany(email,CompanyName);
-		
+		session.setAttribute("user", queries.getUser(email));
+		session.setAttribute("email", email);
 		return "Company";
+	}
+	@RequestMapping(value="hiring",method=RequestMethod.POST)
+	public String Hiring(HttpServletRequest request) {
+		session = request.getSession();
+		String email = (String)session.getAttribute("email");
+		queries.hire(email);
+		session.setAttribute("user", queries.getUser(email));
+		session.setAttribute("email", email);
+		return "Company";
+	}
+	
+	@RequestMapping(value="/improve={id}",method = RequestMethod.POST)
+	public String Improve(HttpServletRequest request, @PathVariable("id") String id) {
+		System.out.println(id);
+		session = request.getSession();
+		String email = (String)session.getAttribute("email");
+		queries.improve(id,email);
+		session.setAttribute("user", queries.getUser(email));
+		session.setAttribute("email", email);
+		return "Company";
+	}
+	@RequestMapping(value="/buy={id}",method = RequestMethod.POST)
+	public String buy(HttpServletRequest request, @PathVariable("id") String id) {
+		session = request.getSession();
+		String email = (String)session.getAttribute("email");
+		queries.buy(id,email);
+		session.setAttribute("user", queries.getUser(email));
+		session.setAttribute("email", email);
+		return "Store";
 	}
 	
 	@RequestMapping(value="logout",method=RequestMethod.POST)

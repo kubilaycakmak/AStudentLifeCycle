@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
@@ -24,14 +25,19 @@ public class Company {
 	@Cascade(CascadeType.ALL)
 	List<Workers> workers;
 
+	@OneToOne
+	@Cascade(CascadeType.ALL)
+	Items items;
+	
 	public Company() {
 		super();
 	}
 
-	public Company(String name, List<Workers> workers) {
+	public Company(String name, List<Workers> workers,Items items) {
 		super();
 		this.name = name;
 		this.workers = workers;
+		this.items = items;
 	}
 
 	public int getId() {
@@ -58,4 +64,13 @@ public class Company {
 		this.workers = workers;
 	}
 
+	public Items getItems() {
+		return items;
+	}
+
+	public void setItems(Items items) {
+		this.items = items;
+	}
+	
+	
 }
