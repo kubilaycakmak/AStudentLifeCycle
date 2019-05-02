@@ -129,7 +129,7 @@
                                     <div class="modal-body">
                                         <textarea id="messagesTextArea" rows="10" cols="46"></textarea>
                                         <textarea id="usersTextArea" rows="10" cols="10" readonly="readonly"></textarea><br>
-                                        <input id="textMessage" size="52" type="text" value="${user.name }"><input type="button" onclick="sendMessage();" value="Send">
+                                        <input id="textMessage" size="52" type="text" value="${user.nickname }"><input type="button" onclick="sendMessage();" value="Send">
                                         <script type="text/javascript">
                                             var webSocket = new WebSocket("ws://localhost:8080/WebSocketTest03/endpointserverdemo");
                                             var messagesTextArea = document.getElementById("messagesTextArea");
