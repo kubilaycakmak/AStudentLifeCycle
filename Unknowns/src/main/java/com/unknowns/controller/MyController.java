@@ -203,6 +203,17 @@ public class MyController {
 		session.setAttribute("user", queries.getUser(email));
 		return "Jail";
 	}
+	@RequestMapping(value="createCompany",method = RequestMethod.POST)
+	public String createCompany(HttpServletRequest request) {
+		System.out.println("i");
+		session = request.getSession();
+		String email = (String)session.getAttribute("email");
+		String CompanyName = request.getParameter("CompanyName");
+		session.setAttribute("email", email);
+		queries.CreateCompany(email,CompanyName);
+		
+		return "Company";
+	}
 	
 	@RequestMapping(value="logout",method=RequestMethod.POST)
 	public String logout(HttpServletRequest request) {

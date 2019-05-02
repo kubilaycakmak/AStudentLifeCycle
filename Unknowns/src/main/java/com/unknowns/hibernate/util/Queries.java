@@ -7,8 +7,10 @@ import java.util.Random;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import com.unknowns.hibernate.entity.Company;
 import com.unknowns.hibernate.entity.User;
 import com.unknowns.hibernate.entity.Userinfo;
+import com.unknowns.hibernate.entity.Workers;
 
 public class Queries {
 	static Session session;
@@ -99,7 +101,7 @@ public class Queries {
 			users.get(0).getUserinfo().setFreelancetype(fchoose);
 			session = HibernateUtil.getSessionFactory().openSession();
 			transaction = session.beginTransaction();
-			if (users.get(0).getUserinfo().getCompany().size() != 0) {
+			if (users.get(0).getUserinfo().getCompany() != null) {
 				users.get(0).getUserinfo().setCompany(users.get(0).getUserinfo().getCompany());
 			} else {
 				users.get(0).getUserinfo().setCompany(null);
@@ -150,7 +152,7 @@ public class Queries {
 			users.get(0).getUserinfo().setMoney(users.get(0).getUserinfo().getMoney() - money);
 			users.get(0).getUserinfo().setFastFooddate(new Date());
 			users.get(0).getUserinfo().setFastFoodtype(fchoose);
-			if (users.get(0).getUserinfo().getCompany().size() != 0) {
+			if (users.get(0).getUserinfo().getCompany() != null) {
 				users.get(0).getUserinfo().setCompany(users.get(0).getUserinfo().getCompany());
 			} else {
 				users.get(0).getUserinfo().setCompany(null);
@@ -214,7 +216,7 @@ public class Queries {
 			result=2;
 		}
 		users.get(0).getUserinfo().setHackdate(new Date());
-		if (users.get(0).getUserinfo().getCompany().size() != 0) {
+		if (users.get(0).getUserinfo().getCompany() != null) {
 			users.get(0).getUserinfo().setCompany(users.get(0).getUserinfo().getCompany());
 		} else {
 			users.get(0).getUserinfo().setCompany(null);
@@ -377,7 +379,7 @@ public class Queries {
 			users.get(0).getUserinfo().setFreelancetype(0);
 			check = true;
 		}
-		if (users.get(0).getUserinfo().getCompany().size() != 0) {
+		if (users.get(0).getUserinfo().getCompany() != null) {
 			users.get(0).getUserinfo().setCompany(users.get(0).getUserinfo().getCompany());
 		} else {
 			users.get(0).getUserinfo().setCompany(null);
@@ -397,5 +399,20 @@ public class Queries {
 			queries = new Queries();
 
 		return queries;
+	}
+
+	public void CreateCompany(String email,String CompanyName) {
+		session = HibernateUtil.getSessionFactory().openSession();
+		List<User> users = session.createQuery("from User where email = '"+email+"'",User.class).list();
+		if(users.get(0).getUserinfo().getXp() >= 100) {
+			List<Workers> workers = null;
+			Company company = new Company(CompanyName,workers);
+			users.get(0).getUserinfo().setCompany(company);
+			transaction = session.beginTransaction();
+			session.save(company);
+			session.update(users.get(0));
+			transaction.commit();
+			session.close();
+		}
 	}
 }

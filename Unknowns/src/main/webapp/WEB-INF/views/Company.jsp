@@ -99,13 +99,14 @@
 					<div id="ctl00_cphLeftColumn_ctl00_divRecentEvents" class="box">
 						<h2>Company</h2>
 						<ul class="noheader diaryExtraspace">
-                            <c:if test="${User.Userinfo.company == null}">
-       							  	 <form formaction="/createCompany">
-                                        <input type="text" placeholder="Company Name">
-                                        <input type="submit" value="Create">
+                            <c:if test="${User.userinfo.company == null}">
+       							  	 <form formaction="/createCompany" method="POST">
+                                        <input type="text" placeholder="Company Name" name="CompanyName">
+                                        <input type="submit" value="Create" formaction="createCompany">
                                     </form>
     							  </c:if>
-								<c:if test="${User.Userinfo.company != null}">
+							<c:if test="${User.userinfo.company == null}">
+									${User.Userinfo.Company.Name }
     							  </c:if>
                            
 						</ul>

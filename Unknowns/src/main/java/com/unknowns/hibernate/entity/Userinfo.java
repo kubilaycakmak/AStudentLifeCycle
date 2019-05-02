@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
@@ -24,9 +25,9 @@ public class Userinfo {
 	int type;
 	int stamina;
 
-	@OneToMany(fetch = FetchType.EAGER)
+	@OneToOne
 	@Cascade(CascadeType.ALL)
-	List<Company> Company;
+	Company Company;
 
 	Date freelancedate;
 	int freelancetype;
@@ -42,7 +43,7 @@ public class Userinfo {
 		super();
 	}
 
-	public Userinfo(int xp, int money, int type, int stamina, List<Company> Company, Date freelancedate,
+	public Userinfo(int xp, int money, int type, int stamina, Company Company, Date freelancedate,
 			int freelancetype, Date fastFooddate, int fastFoodtype,Date Hackdate,int jail) {
 		super();
 		this.xp = xp;
@@ -98,11 +99,11 @@ public class Userinfo {
 		this.stamina = stamina;
 	}
 
-	public List<Company> getCompany() {
+	public Company getCompany() {
 		return Company;
 	}
 
-	public void setCompany(List<Company> Company) {
+	public void setCompany(Company Company) {
 		this.Company = Company;
 	}
 

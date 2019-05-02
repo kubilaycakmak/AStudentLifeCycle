@@ -108,107 +108,74 @@
                   <td class="width40" id="stamina">Laptop</td>
                   <td id="cstamina">16GBRAM</td>
                   <td id="cstamina">$1000</td>
-                  <td><input formaction="/buy" type="submit" value="buy"></td>
+                  <td><input formaction="/buy/id=1" type="submit" value="buy"></td>
                   <td id="cstamina">null</td>
                 </tr>
                 <tr class="even">
                   <td class="width40" id="stamina">Laptop</td>
                   <td id="cstamina">1</td>
                   <td id="cstamina">1</td>
-                  <td><input formaction="/buy" type="submit" value="buy"></td>
+                  <td><input formaction="/buy/id=2" type="submit" value="buy"></td>
                   <td id="cstamina">null</td>
                 </tr>
                 <tr class="odd">
                   <td class="width40" id="stamina">Laptop</td>
                   <td id="cstamina">1</td>
                   <td id="cstamina">1</td>
-                  <td><input formaction="/buy" type="submit" value="buy"></td>
+                  <td><input formaction="/buy/id=3" type="submit" value="buy"></td>
                   <td id="cstamina">null</td>
                 </tr>
                 <tr class="even">
                   <td class="width40" id="stamina">Laptop</td>
                   <td id="cstamina">1</td>
                   <td id="cstamina">1</td>
-                  <td><input formaction="/buy" type="submit" value="buy"></td>
+                  <td><input formaction="/buy/id=4" type="submit" value="buy"></td>
                   <td id="cstamina">null</td>
                 </tr>
                 <tr class="odd">
                   <td class="width40" id="stamina">Laptop</td>
                   <td id="cstamina">1</td>
                   <td id="cstamina">1</td>
-                  <td><input formaction="/buy" type="submit" value="buy"></td>
+                  <td><input formaction="/buy/id=5" type="submit" value="buy"></td>
                   <td id="cstamina">null</td>
                 </tr>
                 <tr class="odd">
                   <td class="width40" id="stamina">Laptop</td>
                   <td id="cstamina">1</td>
                   <td id="cstamina">1</td>
-                  <td><input formaction="/buy" type="submit" value="buy"></td>
+                  <td><input formaction="/buy/id=6" type="submit" value="buy"></td>
                   <td id="cstamina">null</td>
                 </tr>
                 <tr class="even">
                   <td class="width40" id="stamina">Laptop</td>
                   <td id="cstamina">1</td>
                   <td id="cstamina">1</td>
-                  <td><input formaction="/buy" type="submit" value="buy"></td>
+                  <td><input formaction="/buy/id=7" type="submit" value="buy"></td>
                   <td id="cstamina">null</td>
                 </tr>
                 <tr class="odd">
                   <td class="width40" id="stamina">Laptop</td>
                   <td id="cstamina">1</td>
                   <td id="cstamina">1</td>
-                  <td><input formaction="/buy" type="submit" value="buy"></td>
+                  <td><input formaction="/buy/id=8" type="submit" value="buy"></td>
                   <td id="cstamina">null</td>
                 </tr>
                 <tr class="even">
                   <td class="width40" id="stamina">Laptop</td>
                   <td id="cstamina">1</td>
                   <td id="cstamina">1</td>
-                  <td><input formaction="/buy" type="submit" value="buy"></td>
+                  <td><input formaction="/buy/id=9" type="submit" value="buy"></td>
                   <td id="cstamina">null</td>
                 </tr>
                 <tr class="odd">
                   <td class="width40" id="stamina">Laptop</td>
                   <td id="cstamina">1</td>
                   <td id="cstamina">1</td>
-                  <td><input formaction="/buy" type="submit" value="buy"></td>
+                  <td><input formaction="/buy/id=10" type="submit" value="buy"></td>
                   <td id="cstamina">null</td>
                 </tr>
-                <tr class="odd">
-                  <td class="width40" id="stamina">Laptop</td>
-                  <td id="cstamina">1</td>
-                  <td id="cstamina">1</td>
-                  <td><input formaction="/buy" type="submit" value="buy"></td>
-                  <td id="cstamina">null</td>
-                </tr>
-                <tr class="even">
-                  <td class="width40" id="stamina">Laptop</td>
-                  <td id="cstamina">1</td>
-                  <td id="cstamina">1</td>
-                  <td><input formaction="/buy" type="submit" value="buy"></td>
-                  <td id="cstamina">null</td>
-                </tr>
-                <tr class="odd">
-                  <td class="width40" id="stamina">Laptop</td>
-                  <td id="cstamina">1</td>
-                  <td id="cstamina">1</td>
-                  <td><input formaction="/buy" type="submit" value="buy"></td>
-                  <td id="cstamina">null</td>
-                </tr>
-                <tr class="even">
-                  <td class="width40" id="stamina">Laptop</td>
-                  <td id="cstamina">1</td>
-                  <td id="cstamina">1</td>
-                  <td><input formaction="/buy" type="submit" value="buy"></td>
-                  <td id="cstamina">null</td>
-                </tr>
-                <tr class="odd">
-                  <td class="width40" id="stamina">Laptop</td>
-                  <td id="cstamina">1</td>
-                  <td id="cstamina">1</td>
-                  <td><input formaction="/buy" type="submit" value="buy"></td>
-                  <td id="cstamina">null</td>
-                </tr>
+
+
               </tbody>
             </table>
           </div>
