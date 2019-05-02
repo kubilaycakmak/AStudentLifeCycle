@@ -18,7 +18,7 @@
 					<form method="post">
 						<li><input class="input-nav" formaction="/home" type="submit"
 							value="Welcome" name="welcome"></li>
-						<li><input class="input-nav" formaction="/user" type="submit"
+						<li><input class="input-nav" formaction="/profile" type="submit"
 							value="Character" name="character"></li>
 						<li><input class="input-nav" formaction="/help" type="submit"
 							value="Help" name="help"></li>

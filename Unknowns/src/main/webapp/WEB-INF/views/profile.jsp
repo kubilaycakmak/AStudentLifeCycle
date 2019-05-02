@@ -1,19 +1,11 @@
-<!DOCTYPE html
-  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>Resume</title>
   <%@ include file="blue.css"%>
   <%@ include file="print.css"%>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!--[if IE 7]>
-<link href="css/ie7.css" rel="stylesheet" type="text/css" />
-<![endif]-->
-  <!--[if IE 6]>
-<link href="css/ie6.css" rel="stylesheet" type="text/css" />
-<![endif]-->
 	<%@ include file="jquery-1.4.2.min.js"%>
     <%@ include file="jquery.tipsy.js"%>
     <%@ include file="cufon.yui.js"%>
@@ -29,15 +21,7 @@
 
 <body>
     <ul class="navbar-top">
-        <li><a class="active" href="home">LOGO</a></li>
-        </form>
-        </li>
-        <li><a href="">PROFILE</a></li>
-        <li><a href="">CREDITS</a></li>
-        <li><a href="">STATS</a></li>
-        <li><a href="">HELP</a></li>
-        <li><a href="">INVITE</a></li>
-        <li><a href="">LOGOUT</a></li>
+        <li><a class="active" href="home">HOME</a></li>
       </ul>
   <!-- Begin Wrapper -->
   <div id="wrapper">
@@ -55,7 +39,7 @@
             <!-- Begin Personal Information -->
             
             <div class="self">
-              <h1 class="name" contenteditable="false">John Smith <br />
+              <h1 class="name" contenteditable="false">adasd<br/>
                 <span>Interactive Designer</span></h1>
               <ul>
                 <li class="ad" id="ad" contenteditable="false">111 Lorem Street, 34785, Ipsum City</li>

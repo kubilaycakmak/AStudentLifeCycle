@@ -210,6 +210,10 @@ public class MyController {
 		session.invalidate();
 		return "index";
 	}
+	@RequestMapping(value = "/profile", method = RequestMethod.GET)
+	public String getCharacter(){
+		return "profile";
+	}
 
 	@RequestMapping("/*")
 	public String string() {
