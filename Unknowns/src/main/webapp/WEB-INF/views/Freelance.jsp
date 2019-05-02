@@ -130,19 +130,6 @@
 					</div>
 				</div>
 				<div>
-					<h2>
-						<%
-							if (null != session.getAttribute("job")) {
-						%>
-						<h3 style="font-size: 14px; line-height: 0px;"><%=session.getAttribute("job")%></h3>
-						<%
-							session.removeAttribute("job");
-						%>
-						<%
-							}
-						%>
-					</h2>
-
 				</div>
 				<div class="box" id="crimes">
 					<h2>Freelance Jobs</h2>
@@ -151,47 +138,72 @@
 						<select name="freelanceChoose"
 							id="choice"
 							class="maxwidth125px round">
+							<option value="info">Select the Freelance</option>
 							<option value="1">Job1</option>
 							<option value="2">Job2</option>
 							<option value="3">Job3</option>
 							<option value="4">Job4</option>
 							<option value="5">Job5</option>
 						</select><br>
-						<p id="timer">${time}</p>
-						
+					<p id="timer" style="display: none">${time}</p>
+					<div><span id="time1" style="color: white;"></span></div>
 						<script>
-						
-						function getSelectedOption(choise){
-							var opt;
-							for(var i=0,len = choice.options.length; i<len;i++){
-								opt=choice.options[i];
-								if(opt.selected === true){
-									break;
-								}
-							}
-							return opt;
-						}
-						var opt = getSelectedOption(choice);
-						
-						console.log(opt.value);
-							window.addEventListener("load",function(){
+							window.addEventListener("load",function() {
 								var choice = document.getElementById("choice");
-								
-								var stamina = document.getElementById("stamina");
+								var freeElement = document.querySelectorAll("td > p");
 								var timer = parseInt(document.getElementById("timer").innerHTML);
-								console.log(timer);
-								if(timer > 0){
+
+								if (timer > 0) {
 									document.getElementById("submitButton").disabled = true;
 									document.getElementById("submitButton").style.color = "grey";
-									console.log(timer);
-								}
-								else if(timer == 0){
+								} else if (timer == 0) {
 									document.getElementById("submitButton").disabled = false;
 									document.getElementById("submitButton").style.color = "green";
 								}
-								
-								
-								
+								choice.addEventListener("change", function () {
+									var freeOption = this.options[this.selectedIndex].value;
+									if(freeOption == "info"){
+										document.getElementById("submitButton").disabled = true;
+										document.getElementById("submitButton").style.color = "grey";
+									}
+									else if (freeOption == "1") {
+										freeElement[0].textContent = "-  10";
+										freeElement[1].textContent = "+  1";
+										freeElement[2].textContent = "+ $10";
+									} else if (freeOption == "2") {
+										freeElement[0].textContent = "-  15";
+										freeElement[1].textContent = "+  2";
+										freeElement[2].textContent = "+ $20";
+									} else if (freeOption == "3") {
+										freeElement[0].textContent = "-  20";
+										freeElement[1].textContent = "+  3";
+										freeElement[2].textContent = "+ $30";
+									} else if (freeOption == "4") {
+										freeElement[0].textContent = "-  20";
+										freeElement[1].textContent = "+  3";
+										freeElement[2].textContent = "+ $30";
+									} else if (freeOption == "5") {
+										freeElement[0].textContent = "-  20";
+										freeElement[1].textContent = "+  3";
+										freeElement[2].textContent = "+ $30";
+									}
+								});
+
+								function startTimer(duration, display) {
+									var timer = duration, number;
+									setInterval(function () {
+										number = parseInt(timer, 10);
+										number = number < 10 ? "0" + number : number;
+										display.textContent =  number;
+
+										if (--timer < 0) {
+											timer = duration;
+										}
+									}, 1000);
+								}
+								var fiveMinutes = timer,
+										display = document.querySelector('#time1');
+								startTimer(fiveMinutes, display);
 							});
 						</script>
 						<p class="actionbuttons">
@@ -209,23 +221,27 @@
 						</tr>
 						<tr class="odd">
 							<td class="width40" id="stamina">Stamina required:</td>
-							<td id="cstamina"></td>
+							<td><p class="required">-</p></td>
 						</tr>
 						<tr class="even">
 							<td id="xp">Experience:</td>
-							<td id="cxp"></td>
+							<td><p class="required">-</p></td>
 						</tr>
 						<tr class="odd">
 							<td id="money">Money:</td>
-							<td id="cmoney"></td>
+							<td><p class="required">-</p></td>
 						</tr>
 						<tr class="even">
 							<td id="time">Time:</td>
-							<td id="ctime"></td>
+							<td><p class="required">-DEMO-</p></td>
 						</tr>
-						<tr class="odd">
-							<td>Success or Failed:</td>
-							<td></td>
+						<tr>
+							<td>Job Status:</td>
+
+							<%if (null != session.getAttribute("job")) {%>
+							<td><p class="required"><%=session.getAttribute("job")%></p></td>
+							<%session.removeAttribute("job");%>
+							<%}%>
 						</tr>
 					</tbody>
 				</table>

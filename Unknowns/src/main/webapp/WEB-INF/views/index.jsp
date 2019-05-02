@@ -2,8 +2,6 @@
     <title>City of Crime</title>
     <meta http-equiv="X-UA-Compatible" content="IE=9">
     <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
-    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
     <%@ include file="main.css"%>
 
 </head>

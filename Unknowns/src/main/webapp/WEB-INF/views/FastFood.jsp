@@ -52,7 +52,7 @@
 						</div>
 						<div class="float_left characterPresentation">
 							<p>
-								is a 
+								is a
 								<c:if test="${user.userinfo.type == 1}">
        							  	Computer Student
     							  </c:if>
@@ -146,79 +146,110 @@
 					<h2>Fastfood</h2>
 					<p>
 					<form action="fastfood" method="POST">
-						<select name="fastfoodChoose"
-							id="ctl00_cphLeftColumn_ctl00_ddlLocaleType"
+						<select name="fastfoodChoose" id="choice"
 							class="maxwidth125px round">
+                            <option value="info">Select the Menu</option>
 							<option value="m1">Menu1</option>
 							<option value="m2">Menu2</option>
 							<option value="m3">Menu3</option>
 							<option value="m4">Menu4</option>
 							<option value="m5">Menu5</option>
 						</select><br>
-						<p id="timer">${time}</p>
-						
+					<p id="timer" style="display: none">${time}</p>
+					<div><span id="time1" style="color: white;"></span></div>
+
 						<script>
 							window.addEventListener("load",function(){
+                                var choice = document.getElementById("choice");
 								var timer = parseInt(document.getElementById("timer").innerHTML);
-								console.log(timer);
+                                var freeElement = document.querySelectorAll("td > p");
 								if(timer > 0){
 									document.getElementById("submitButton").disabled = true;
 									document.getElementById("submitButton").style.color = "red";
-									console.log(timer);
 								}
 								else if(timer == 0){
 									document.getElementById("submitButton").disabled = false;
 									document.getElementById("submitButton").style.color = "orange";
 								}
+
+								choice.addEventListener("change", function () {
+									var freeOption = this.options[this.selectedIndex].value;
+									if(freeOption == "info"){
+										document.getElementById("submitButton").disabled = true;
+										document.getElementById("submitButton").style.color = "grey";
+									}
+									else if (freeOption == "m1") {
+										freeElement[0].textContent = "-  10";
+										freeElement[1].textContent = "+ $10";
+									} else if (freeOption == "m2") {
+										freeElement[0].textContent = "-  15";
+										freeElement[1].textContent = "+ $20";
+									} else if (freeOption == "m3") {
+										freeElement[0].textContent = "-  20";
+										freeElement[1].textContent = "+ $30";
+									} else if (freeOption == "m4") {
+										freeElement[0].textContent = "-  20";
+										freeElement[1].textContent = "+ $30";
+									} else if (freeOption == "m5") {
+										freeElement[0].textContent = "-  20";
+										freeElement[1].textContent = "+ $30";
+									}
+								});
+
+								function startTimer(duration, display) {
+									var timer = duration, number;
+									setInterval(function () {
+										number = parseInt(timer, 10);
+										number = number < 10 ? "0" + number : number;
+										display.textContent =  number;
+
+										if (--timer < 0) {
+											timer = duration;
+										}
+									}, 1000);
+								}
+								var fiveMinutes = timer,
+										display = document.querySelector('#time1');
+								startTimer(fiveMinutes, display);
+
 							});
 						</script>
 						<p class="actionbuttons">
 							<input type="submit" name="ctl00$cphLeftColumn$ctl00$btnFind"
 								value="Eat me!" id="submitButton">
 						</p>
-						
+
 					</form>
 					</p>
 
 				</div>
-				<table class="data">
-					<tbody class="data-tbody">
-						<tr>
-							<th colspan="2" class="single">Shop Lift</th>
-						</tr>
-						<tr class="odd">
-							<td class="width40">Stamina required:</td>
-							<td><a id="j1"
-								href="/World/Popmundo.aspx/Locale/26591">Helsinki-Vantaan
-									lentoasema</a></td>
-						</tr>
-						<tr class="even">
-							<td>Spirit:</td>
-							<td><a id="j2"
-								href="/World/Popmundo.aspx/Locale/80029">Marian sairaala</a></td>
-						</tr>
-						<tr class="odd">
-							<td>Robery power:</td>
-							<td><a id="j3"
-								href="/World/Popmundo.aspx/Locale/26594">Helsingin
-									kaupungintalo</a></td>
-						</tr>
-						<tr class="even">
-							<td>Reward:</td>
-							<td><a id="j4"
-								href="/World/Popmundo.aspx/Locale/198201">Oikeustalo</a></td>
-						</tr>
-						<tr class="odd">
-							<td>Success probability:</td>
-							<td><a id="j5"
-								href="/World/Popmundo.aspx/Locale/2893834">Maantie
-									Maailmalle</a></td>
-						</tr>
+                    <table class="data">
+                        <tbody class="data-tbody">
+                        <tr>
+                            <th colspan="2" class="single">Freelance Job Info</th>
+                        </tr>
+                        <tr class="odd">
+                            <td class="width40" id="stamina">Stamina required:</td>
+                            <td><p class="required">-</p></td>
+                        </tr>
+                        <tr class="odd">
+                            <td id="money">Money:</td>
+                            <td><p class="required">-</p></td>
+                        </tr>
+                        <tr class="even">
+                            <td id="time">Time:</td>
+                            <td><p class="required">-DEMO-</p></td>
+                        </tr>
+                        <tr>
+                            <td>Job Status:</td>
 
-
-
-					</tbody>
-				</table>
+                            <%if (null != session.getAttribute("job")) {%>
+                            <td><p class="required"><%=session.getAttribute("job")%></p></td>
+                            <%session.removeAttribute("job");%>
+                            <%}%>
+                        </tr>
+                        </tbody>
+                    </table>
 			</div>
 			<div class="clear center" style="background-color: transparent;">
 				<img
