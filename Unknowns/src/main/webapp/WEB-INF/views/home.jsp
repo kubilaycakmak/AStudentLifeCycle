@@ -170,8 +170,8 @@
                 </div>
                 <div id="ctl00_cphLeftColumn_ctl00_pnlHotTrace" class="box">
                     <h2>Dead Lines</h2>
-                    <h4>Freelance Job: </h4><p id="timer" style="display: none">${freelancetime}-DEMO</p>
-                    <h4>FastFood: </h4><p id="timer" style="display: none">${fastfoodtime}-DEMO-</p>
+                    <h4>Freelance Job: </h4><p id="timer">${freelancetime}</p>
+                    <h4>FastFood: </h4><p id="timer" >${fastfoodtime}</p>
                 </div>
                 <div class="box">
                     <h2>Company Information</h2>

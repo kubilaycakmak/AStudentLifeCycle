@@ -35,6 +35,9 @@ public class MyController {
 	@RequestMapping("home")
 	public String getHome(HttpServletRequest request) {
 		session = request.getSession();
+		String email = (String)session.getAttribute("email");
+		session.setAttribute("freelancetime", queries.getFreelanceTime(email));
+		session.setAttribute("fastfoodtime", queries.getFastFoodTime(email));
 		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
 		return "home";
 	}
@@ -130,6 +133,8 @@ public class MyController {
 		queries = Queries.getQueries();
 		if (queries.signIn(email, password)) {
 			session = request.getSession();
+			session.setAttribute("freelancetime", queries.getFreelanceTime(email));
+			session.setAttribute("fastfoodtime", queries.getFastFoodTime(email));
 			session.setAttribute("email", email);
 			session.setAttribute("user", queries.getUser(email));
 			return "home";
