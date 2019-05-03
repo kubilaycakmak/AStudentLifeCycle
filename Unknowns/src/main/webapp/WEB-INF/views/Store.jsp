@@ -141,15 +141,15 @@
                                 <tbody>
                                 <tr>
                                     <td>Stamina:</td>
-                                    <td class="stat">${user.userinfo.stamina}</td>
+                                    <td class="stat"><strong>${user.userinfo.stamina}</strong></td>
                                     <td>Money:</td>
-                                    <td class="stat">$ ${user.userinfo.money}</td>
+                                    <td class="stat"><strong>$ ${user.userinfo.money}</strong></td>
                                 </tr>
                                 <tr>
                                     <td>Experience:</td>
-                                    <td class="stat">${user.userinfo.xp}</td>
+                                    <td class="stat"><strong>${user.userinfo.xp}</strong></td>
                                     <td>Equipments:</td>
-                                    <td class="stat">DESKTOP</td>
+                                    <td class="stat"><strong>DEMO</strong></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -161,7 +161,7 @@
                 <div id="ctl00_cphLeftColumn_ctl00_divRecentEvents" class="box">
                     <h2>STORE</h2>
                     <table class="data"
-                           style="border-spacing:30 !important; float:none; margin: 0 -10 15px !important; border: 0px solid transparent !important;">
+                           style="border-spacing:30 !important; float:none; margin: 15 30 15px !important; border: 0px solid transparent !important; width: 400px;">
                         <form method="POST">
                             <c:if test="${user.userinfo.company != null}">
                                 <tbody class="data-tbody">

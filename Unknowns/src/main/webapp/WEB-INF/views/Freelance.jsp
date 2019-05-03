@@ -146,15 +146,15 @@
                                 <tbody>
                                 <tr>
                                     <td>Stamina:</td>
-                                    <td class="stat">${user.userinfo.stamina}</td>
+                                    <td class="stat"><strong>${user.userinfo.stamina}</strong></td>
                                     <td>Money:</td>
-                                    <td class="stat">$ ${user.userinfo.money}</td>
+                                    <td class="stat"><strong>$ ${user.userinfo.money}</strong></td>
                                 </tr>
                                 <tr>
                                     <td>Experience:</td>
-                                    <td class="stat">${user.userinfo.xp}</td>
+                                    <td class="stat"><strong>${user.userinfo.xp}</strong></td>
                                     <td>Equipments:</td>
-                                    <td class="stat">DESKTOP</td>
+                                    <td class="stat"><strong>DEMO</strong></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -231,23 +231,28 @@
                             } else if (freeOption == "1") {
                                 freeElement[0].textContent = "-  10";
                                 freeElement[1].textContent = "+  1";
-                                freeElement[2].textContent = "+ $10";
+                                freeElement[2].textContent = "+ $25";
+                                freeElement[3].textContent = "120 second";
                             } else if (freeOption == "2") {
-                                freeElement[0].textContent = "-  15";
+                                freeElement[0].textContent = "-  20";
                                 freeElement[1].textContent = "+  2";
-                                freeElement[2].textContent = "+ $20";
+                                freeElement[2].textContent = "+ $55";
+                                freeElement[3].textContent = "240 second";
                             } else if (freeOption == "3") {
-                                freeElement[0].textContent = "-  20";
+                                freeElement[0].textContent = "-  30";
                                 freeElement[1].textContent = "+  3";
-                                freeElement[2].textContent = "+ $30";
+                                freeElement[2].textContent = "+ $115";
+                                freeElement[3].textContent = "480 second";
                             } else if (freeOption == "4") {
-                                freeElement[0].textContent = "-  20";
-                                freeElement[1].textContent = "+  3";
-                                freeElement[2].textContent = "+ $30";
+                                freeElement[0].textContent = "-  40";
+                                freeElement[1].textContent = "+  4";
+                                freeElement[2].textContent = "+ $155";
+                                freeElement[3].textContent = "960 second";
                             } else if (freeOption == "5") {
-                                freeElement[0].textContent = "-  20";
-                                freeElement[1].textContent = "+  3";
-                                freeElement[2].textContent = "+ $30";
+                                freeElement[0].textContent = "-  50";
+                                freeElement[1].textContent = "+  5";
+                                freeElement[2].textContent = "+ $205";
+                                freeElement[3].textContent = "1920 second";
                             }
                         });
 
@@ -296,7 +301,7 @@
     </tr>
     <tr class="even">
         <td id="time">Time:</td>
-        <td><p class="required">-DEMO-</p></td>
+        <td><p class="required">-</p></td>
     </tr>
     <tr>
         <td>Job Status:</td>

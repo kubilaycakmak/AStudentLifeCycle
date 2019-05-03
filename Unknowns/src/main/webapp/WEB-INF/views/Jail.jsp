@@ -143,15 +143,15 @@
                                 <tbody>
                                 <tr>
                                     <td>Stamina:</td>
-                                    <td class="stat">${user.userinfo.stamina}</td>
+                                    <td class="stat"><strong>${user.userinfo.stamina}</strong></td>
                                     <td>Money:</td>
-                                    <td class="stat">$ ${user.userinfo.money}</td>
+                                    <td class="stat"><strong>$ ${user.userinfo.money}</strong></td>
                                 </tr>
                                 <tr>
                                     <td>Experience:</td>
-                                    <td class="stat">${user.userinfo.xp}</td>
+                                    <td class="stat"><strong>${user.userinfo.xp}</strong></td>
                                     <td>Equipments:</td>
-                                    <td class="stat">DESKTOP</td>
+                                    <td class="stat"><strong>DEMO</strong></td>
                                 </tr>
                                 </tbody>
                             </table>

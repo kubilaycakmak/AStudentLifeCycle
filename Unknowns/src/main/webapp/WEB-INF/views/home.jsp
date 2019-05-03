@@ -143,15 +143,15 @@
                                 <tbody>
                                 <tr>
                                     <td>Stamina:</td>
-                                    <td class="stat">${user.userinfo.stamina}</td>
+                                    <td class="stat"><strong>${user.userinfo.stamina}</strong></td>
                                     <td>Money:</td>
-                                    <td class="stat">$ ${user.userinfo.money}</td>
+                                    <td class="stat"><strong>$ ${user.userinfo.money}</strong></td>
                                 </tr>
                                 <tr>
                                     <td>Experience:</td>
-                                    <td class="stat">${user.userinfo.xp}</td>
+                                    <td class="stat"><strong>${user.userinfo.xp}</strong></td>
                                     <td>Equipments:</td>
-                                    <td class="stat">DESKTOP</td>
+                                    <td class="stat"><strong>DEMO</strong></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -161,16 +161,26 @@
 
                 <div class="clear"></div>
                 <div id="ctl00_cphLeftColumn_ctl00_divRecentEvents" class="box">
-                    <h2>Recent diary entries</h2>
+                    <h2>Recent diary mail</h2>
                     <ul class="noheader diaryExtraspace">
-                        <!-- alt satırlarda dinamik -->
+                        <p>“Teaching staff say that universities are risking their reputations by taking on students who are not capable of advanced levels of learning,” ABC promo for Monday’s Four Corners.
+
+                            Universities, “are selling access to millions of foreign students and reaping many billions of dollars of revenue but now the alarm has been raised that increasingly Australian universities are exposing themselves to corrupt practise, to lower standards,  Four Corners, April 20 2015.</p>
                     </ul>
                 </div>
                 <div id="ctl00_cphLeftColumn_ctl00_pnlHotTrace" class="box">
-                    <h2>Hot Trace</h2>
+                    <h2>Dead Lines</h2>
+                    <h4>Freelance Job: </h4><p id="timer" style="display: none">${freelancetime}-DEMO</p>
+                    <h4>FastFood: </h4><p id="timer" style="display: none">${fastfoodtime}-DEMO-</p>
                 </div>
                 <div class="box">
-                    <h2>Prominent Clothes & Tattoos</h2>
+                    <h2>Company Information</h2>
+                    <c:if test="${user.userinfo.company == null}">
+                        <h4>Don't you have any Company? Why don't you go Company page and create a new one!</h4>
+                    </c:if>
+                    <c:if test="${user.userinfo.company != null}">
+                        <h4>Company Name: </h4><p>${user.userinfo.company.name }</p>
+                    </c:if>
                 </div>
             </div>
             <div id="ppm-sidemenu" role="navigation">

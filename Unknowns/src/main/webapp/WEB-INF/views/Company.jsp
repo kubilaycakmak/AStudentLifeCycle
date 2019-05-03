@@ -144,15 +144,15 @@
                                 <tbody>
                                 <tr>
                                     <td>Stamina:</td>
-                                    <td class="stat">${user.userinfo.stamina}</td>
+                                    <td class="stat"><strong>${user.userinfo.stamina}</strong></td>
                                     <td>Money:</td>
-                                    <td class="stat">$ ${user.userinfo.money}</td>
+                                    <td class="stat"><strong>$ ${user.userinfo.money}</strong></td>
                                 </tr>
                                 <tr>
                                     <td>Experience:</td>
-                                    <td class="stat">${user.userinfo.xp}</td>
+                                    <td class="stat"><strong>${user.userinfo.xp}</strong></td>
                                     <td>Equipments:</td>
-                                    <td class="stat">DESKTOP</td>
+                                    <td class="stat"><strong>DEMO</strong></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -171,7 +171,7 @@
                             </form>
                         </c:if>
                         <c:if test="${user.userinfo.company != null}">
-                            ${user.userinfo.company.name }
+                            <h4>${user.userinfo.company.name }</h4>
                         </c:if>
 
                     </ul>
@@ -194,7 +194,7 @@
                     <c:if test="${user.userinfo.company.workers.size() != 0}">
                         <c:forEach var="worker" items="${user.userinfo.company.workers }">
                             <form formaction="${worker.id}" method="POST">
-                                <p>${worker.lvl } : <input type="submit" value="Improve"
+                                <p>${worker.lvl } : <input type="submit" value="Improve" style="color: black;"
                                                            formaction="/improve=${worker.id}"></p>
                             </form>
                         </c:forEach>

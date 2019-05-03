@@ -40,7 +40,6 @@ table.data tbody tr td {
     font-size: 12px;
 }
 table.data {
-    border: 1px solid #87777c;
     border-spacing: 0;
     margin: 0 0 15px;
     width: 45%;
@@ -368,6 +367,9 @@ div.editor a.button:hover {
 }body {
      background: #1b1819 url(/static/assets/images/city_background.jpg) repeat-x;
  }
+ p{
+     font-size: 11px !important;
+ }
 
 div#topcolumn {
     margin: 0 25px;
@@ -442,10 +444,9 @@ div.avatar {
     margin-right: 10px;
 }
 #crimes {
-    width: 30%;
-    margin-top: 15px;
-    margin-left: 20px;
+    width: 42%;
     float: left;
+    margin: 15px 25px 10px;
 }
 
 div#header-logo img {
@@ -488,7 +489,7 @@ textarea {
     font-family: "Lucida Grande", Verdana, Sans-Serif;
     font-size: 11px;
 }
-h1, h2 {
+h1, h2 , h4{
     color: white;
 }
 #headbar {

@@ -145,15 +145,15 @@
                                 <tbody>
                                 <tr>
                                     <td>Stamina:</td>
-                                    <td class="stat">${user.userinfo.stamina}</td>
+                                    <td class="stat"><strong>${user.userinfo.stamina}</strong></td>
                                     <td>Money:</td>
-                                    <td class="stat">$ ${user.userinfo.money}</td>
+                                    <td class="stat"><strong>$ ${user.userinfo.money}</strong></td>
                                 </tr>
                                 <tr>
                                     <td>Experience:</td>
-                                    <td class="stat">${user.userinfo.xp}</td>
+                                    <td class="stat"><strong>${user.userinfo.xp}</strong></td>
                                     <td>Equipments:</td>
-                                    <td class="stat">DESKTOP</td>
+                                    <td class="stat"><strong>DEMO</strong></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -187,21 +187,6 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div>
-                <h2>
-                    <%
-                        if (null != session.getAttribute("job")) {
-                    %>
-                    <h3 style="font-size: 14px; line-height: 0px;"><%=session.getAttribute("job")%>
-                    </h3>
-                    <%
-                        session.removeAttribute("job");
-                    %>
-                    <%
-                        }
-                    %>
-                </h2>
             </div>
             <div class="box" id="crimes">
                 <h2>Fastfood</h2>
@@ -238,20 +223,25 @@
                                 document.getElementById("submitButton").disabled = true;
                                 document.getElementById("submitButton").style.color = "grey";
                             } else if (freeOption == "m1") {
-                                freeElement[0].textContent = "-  10";
-                                freeElement[1].textContent = "+ $10";
+                                freeElement[0].textContent = "+  10";
+                                freeElement[1].textContent = "-  $5";
+                                freeElement[2].textContent = "120 second";
                             } else if (freeOption == "m2") {
-                                freeElement[0].textContent = "-  15";
-                                freeElement[1].textContent = "+ $20";
+                                freeElement[0].textContent = "+  20";
+                                freeElement[1].textContent = "-  $15";
+                                freeElement[2].textContent = "240 second";
                             } else if (freeOption == "m3") {
-                                freeElement[0].textContent = "-  20";
-                                freeElement[1].textContent = "+ $30";
+                                freeElement[0].textContent = "+  40";
+                                freeElement[1].textContent = "-  $20";
+                                freeElement[2].textContent = "480 second";
                             } else if (freeOption == "m4") {
-                                freeElement[0].textContent = "-  20";
-                                freeElement[1].textContent = "+ $30";
+                                freeElement[0].textContent = "+  50";
+                                freeElement[1].textContent = "-  $20";
+                                freeElement[2].textContent = "960 second";
                             } else if (freeOption == "m5") {
-                                freeElement[0].textContent = "-  20";
-                                freeElement[1].textContent = "+ $30";
+                                freeElement[0].textContent = "+  100";
+                                freeElement[1].textContent = "-  $25";
+                                freeElement[2].textContent = "1920 second";
                             }
                         });
 
@@ -271,7 +261,6 @@
                         var fiveMinutes = timer,
                             display = document.querySelector('#time1');
                         startTimer(fiveMinutes, display);
-
                     });
                 </script>
                 <p class="actionbuttons">
@@ -292,16 +281,16 @@
         <td class="width40" id="stamina">Stamina required:</td>
         <td><p class="required">-</p></td>
     </tr>
-    <tr class="odd">
+    <tr class="even">
         <td id="money">Money:</td>
         <td><p class="required">-</p></td>
     </tr>
-    <tr class="even">
+    <tr class="odd">
         <td id="time">Time:</td>
-        <td><p class="required">-DEMO-</p></td>
+        <td><p class="required">-</p></td>
     </tr>
     <tr>
-        <td>Job Status:</td>
+        <td>Status:</td>
 
         <%if (null != session.getAttribute("job")) {%>
         <td><p class="required"><%=session.getAttribute("job")%>
