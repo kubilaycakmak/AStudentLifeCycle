@@ -68,6 +68,8 @@ public class Queries {
 		int stamina = 0;
 		int xp = 0;
 		int money = 0;
+		session = HibernateUtil.getSessionFactory().getCurrentSession();
+		transaction = session.beginTransaction();
 		List<User> users = session.createQuery("from User where email = '" + email + "'", User.class).list();
 		if (choose.equals("1")) {
 			stamina = 10;
@@ -101,8 +103,6 @@ public class Queries {
 			users.get(0).getUserinfo().setMoney(users.get(0).getUserinfo().getMoney() + money);
 			users.get(0).getUserinfo().setFreelancedate(new Date());
 			users.get(0).getUserinfo().setFreelancetype(fchoose);
-			session = HibernateUtil.getSessionFactory().openSession();
-			transaction = session.beginTransaction();
 			if (users.get(0).getUserinfo().getCompany() != null) {
 				users.get(0).getUserinfo().setCompany(users.get(0).getUserinfo().getCompany());
 				if(users.get(0).getUserinfo().getCompany().getWorkers().size() != 0) {
@@ -117,6 +117,9 @@ public class Queries {
 			session.update(users.get(0));
 			transaction.commit();
 			check = true;
+			session.close();
+			session = HibernateUtil.getSessionFactory().getCurrentSession();
+			transaction = session.beginTransaction();
 			List<Userinfo> userinfos = session.createQuery("from Userinfo", Userinfo.class).list();
 		}
 		session.close();
@@ -128,6 +131,8 @@ public class Queries {
 		int fchoose = 0;
 		int stamina = 0;
 		int money = 0;
+		session = HibernateUtil.getSessionFactory().getCurrentSession();
+		transaction = session.beginTransaction();
 		List<User> users = session.createQuery("from User where email = '" + email + "'", User.class).list();
 		if (choose.equals("m1")) {
 			stamina = 10;
@@ -159,7 +164,6 @@ public class Queries {
 			users.get(0).getUserinfo().setMoney(users.get(0).getUserinfo().getMoney() - money);
 			users.get(0).getUserinfo().setFastFooddate(new Date());
 			users.get(0).getUserinfo().setFastFoodtype(fchoose);
-	
 			if (users.get(0).getUserinfo().getCompany() != null) {
 				users.get(0).getUserinfo().setCompany(users.get(0).getUserinfo().getCompany());
 				if(users.get(0).getUserinfo().getCompany().getWorkers().size() != 0) {
@@ -170,9 +174,6 @@ public class Queries {
 			} else {
 				users.get(0).getUserinfo().setCompany(null);
 			}
-
-			session = HibernateUtil.getSessionFactory().getCurrentSession();
-			transaction = session.beginTransaction();
 			session.update(users.get(0).getUserinfo());
 			session.update(users.get(0));
 			transaction.commit();

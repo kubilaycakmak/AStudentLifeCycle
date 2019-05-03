@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<textarea id="messagesTextArea" rows="10" cols="46"></textarea>
+		<textarea id="usersTextArea" rows="10" cols="10" readonly="readonly"></textarea><br>
+		<input id="textMessage" size="52" type="text"><input type="button" onclick="sendMessage();" value="Send">
+		<script type="text/javascript">
+			var webSocket = new WebSocket("ws://localhost:8080/WebSocketTest03/endpointserverdemo");
+			var messagesTextArea = document.getElementById("messagesTextArea");
+			webSocket.onmessage = function processMessage(message) {
+				var jsonData = JSON.parse(message.data);
+				if(jsonData.message != null)
+					messagesTextArea.value += jsonData.message + "\n";
+				if(jsonData.users != null){
+					usersTextArea.value = "";
+					var i = 0; 
+					while(i<jsonData.users.length)
+						usersTextArea.value += jsonData.users[i++] + "\n";
+				}
+			}
+			function sendMessage(){
+				webSocket.send(textMessage.value);
+				textMessage.value="";
+			}
+			window.onbeforeunload = function(){
+				webSocket.onclose = function(){};
+				webSocket.close();
+			}
+		</script>
+	</body>
+</html>
