@@ -173,37 +173,37 @@
                                     <th colspan="1" class="single">You Have</th>
                                 </tr>
                                 <tr class="odd">
-                                    <td class="width40" id="stamina">Laptop</td>
-                                    <td id="cstamina">16GBRAM</td>
-                                    <td id="cstamina">$1000</td>
+                                    <td class="width40" id="stamina">Dell PowerEdge T30 Server</td>
+                                    <td id="cstamina">3.3 GHZ Intel XEON</td>
+                                    <td id="cstamina">$800</td>
                                     <td><input formaction="/buy=1" type="submit" value="buy"></td>
                                     <td id="cstamina">${user.userinfo.company.items.count1}</td>
                                 </tr>
                                 <tr class="even">
-                                    <td class="width40" id="stamina">Laptop</td>
-                                    <td id="cstamina">1</td>
-                                    <td id="cstamina">1</td>
+                                    <td class="width40" id="stamina">DELL PowerEdge T140 server</td>
+                                    <td id="cstamina">3.5 GHz Intel Xeon E-2124</td>
+                                    <td id="cstamina">$1610</td>
                                     <td><input formaction="/buy=2" type="submit" value="buy"></td>
                                     <td id="cstamina">${user.userinfo.company.items.count2}</td>
                                 </tr>
                                 <tr class="odd">
-                                    <td class="width40" id="stamina">Laptop</td>
-                                    <td id="cstamina">1</td>
-                                    <td id="cstamina">1</td>
+                                    <td class="width40" id="stamina">Lenovo ThinkSystem ST50 server</td>
+                                    <td id="cstamina">3.7 GHz Intel Xeon E-2124G</td>
+                                    <td id="cstamina">$2500</td>
                                     <td><input formaction="/buy=3" type="submit" value="buy"></td>
                                     <td id="cstamina">${user.userinfo.company.items.count3}</td>
                                 </tr>
                                 <tr class="even">
-                                    <td class="width40" id="stamina">Laptop</td>
-                                    <td id="cstamina">1</td>
-                                    <td id="cstamina">1</td>
+                                    <td class="width40" id="stamina">Fujitsu PRIMERGY TX2550 M4 server</td>
+                                    <td id="cstamina">3.4 GHz Intel Xeon Gold 6128 Tower (4U)</td>
+                                    <td id="cstamina">$8000</td>
                                     <td><input formaction="/buy=4" type="submit" value="buy"></td>
                                     <td id="cstamina">${user.userinfo.company.items.count4}</td>
                                 </tr>
                                 <tr class="odd">
-                                    <td class="width40" id="stamina">Laptop</td>
-                                    <td id="cstamina">1</td>
-                                    <td id="cstamina">1</td>
+                                    <td class="width40" id="stamina">DELL PowerEdge R240 server</td>
+                                    <td id="cstamina">4.2 GHz Intel Xeon E-2134</td>
+                                    <td id="cstamina">$16000</td>
                                     <td><input formaction="/buy=5" type="submit" value="buy"></td>
                                     <td id="cstamina">${user.userinfo.company.items.count5}</td>
                                 </tr>
