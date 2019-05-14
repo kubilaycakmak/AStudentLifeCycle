@@ -114,6 +114,7 @@
                     <div class="float_left characterPresentation">
                         <p>
                             is a
+                            <strong>
                             <c:if test="${user.userinfo.type == 1}">
                                 Computer Student
                             </c:if>
@@ -150,8 +151,15 @@
                                 <tr>
                                     <td>Experience:</td>
                                     <td class="stat"><strong>${user.userinfo.xp}</strong></td>
-                                    <td>Equipments:</td>
-                                    <td class="stat"><strong>DEMO</strong></td>
+                                    <td>Company:</td>
+											<td class="stat"><c:choose>
+													<c:when test="${user.userinfo.company == null}">
+														<a href="Company">Create!</a>
+													</c:when>
+													<c:when test="${freelancetime != null}">
+														<strong>${user.userinfo.company.name}</strong>
+													</c:when>
+												</c:choose></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -170,8 +178,65 @@
                 </div>
                 <div id="ctl00_cphLeftColumn_ctl00_pnlHotTrace" class="box">
                     <h2>Dead Lines</h2>
-                    <h4>Freelance Job: </h4><p id="timer">${freelancetime}</p>
-                    <h4>FastFood: </h4><p id="timer" >${fastfoodtime}</p>
+                    <script type="text/javascript">
+                    	window.addEventListener("load",
+                    			function(){
+                    		var timer = parseInt(document.getElementById("timer").innerHTML);
+                    		var timer1 = parseInt(document.getElementById("timer1").innerHTML);
+                    		
+                    		function startTimerFreelance(duration, display) {
+                                var timer = duration, number;
+                                setInterval(function () {
+                                    number = parseInt(timer, 10);
+                                    number = number < 10 ? "0" + number : number;
+                                    display.textContent = number;
+
+                                    if (--timer < 0) {
+                                        timer = duration;
+                                    }
+                                }, 1000);
+                            }
+                    		
+                    		function startTimerFastfood(duration, display) {
+                                var timer1 = duration, number;
+                                setInterval(function () {
+                                    number = parseInt(timer1, 10);
+                                    number = number < 10 ? "0" + number : number;
+                                    display.textContent = number;
+
+                                    if (--timer1 < 0) {
+                                        timer1 = duration;
+                                    }
+                                }, 1000);
+                            }
+
+                            var freelance = timer,
+                                display = document.querySelector('#time1');
+                            startTimerFreelance(freelance, display);
+                            
+                            var fastfood = timer1,
+                            display = document.querySelector('#time2');
+                            startTimerFastfood(fastfood, display);
+                            
+                            
+                    	});
+                    </script>
+                    <p id="timer" style="display: none">${freelancetime}</p>
+                    <p id="timer1" style="display: none">${fastfoodtime}</p>
+                    
+					  <c:if test="${freelancetime == 0}">
+					    <h4>Freelance Job:</h4><p> You can work on <srong><a href="Freelance">Freelance</a></srong> job!</p>
+					  </c:if>
+					  <c:if test="${freelancetime != 0}">
+                		<div><h4>Freelance Job: </h4><p>You have <span id="time1" style="color: white;"></span> seconds to finish!</p></div>
+					  </c:if>
+					
+					  <c:if test="${fastfoodtime == 0}">
+					    <h4>FastFood:</h4><p> You can eat <srong><a href="FastFood">FastFood</a></srong>!</p>
+					  </c:if>
+					  <c:if test="${fastfoodtime != 0}">
+                		<div><h4>FastFood: </h4><p>You have <span id="time2" style="color: white;"></span> seconds to finish!</p></div>
+					  </c:if>
                 </div>
                 <div class="box">
                     <h2>Company Information</h2>

@@ -73,29 +73,63 @@ public class Queries {
 		List<User> users = session.createQuery("from User where email = '" + email + "'", User.class).list();
 		if (choose.equals("1")) {
 			stamina = 10;
-			xp = 1;
+			xp = 15;
 			fchoose = 1;
-			money = 25;
+			money = 35;
 		} else if (choose.equals("2")) {
-			stamina = 20;
-			xp = 2;
-			fchoose = 2;
-			money = 55;
+			if(users.get(0).getUserinfo().getXp() >= 150) {
+				stamina = 15;
+				xp = 25;
+				fchoose = 2;
+				money = 500;
+			}
+			else {
+				stamina = 0;
+				xp = 0;
+				fchoose = 2;
+				money = 0;
+			}
+			
 		} else if (choose.equals("3")) {
-			stamina = 30;
-			xp = 3;
-			fchoose = 3;
-			money = 115;
+			if(users.get(0).getUserinfo().getXp() >= 350) {
+				stamina = 25;
+				xp = 40;
+				fchoose = 3;
+				money = 1500;
+			}
+			else {
+				stamina = 0;
+				xp = 0;
+				fchoose = 3;
+				money = 0;
+			}
+			
 		} else if (choose.equals("4")) {
-			stamina = 40;
-			xp = 4;
-			fchoose = 4;
-			money = 155;
+			if(users.get(0).getUserinfo().getXp() >= 550) {
+				stamina = 40;
+				xp = 60;
+				fchoose = 4;
+				money = 3500;
+			}
+			else {
+				stamina = 0;
+				xp = 0;
+				fchoose = 4;
+				money = 0;
+			}
 		} else if (choose.equals("5")) {
-			stamina = 50;
-			xp = 5;
-			fchoose = 5;
-			money = 205;
+			if(users.get(0).getUserinfo().getXp() >= 650) {
+				stamina = 50;
+				xp = 80;
+				fchoose = 5;
+				money = 10500;
+			}
+			else {
+				stamina = 0;
+				xp = 0;
+				fchoose = 5;
+				money = 0;
+			}
 		}
 		if (users.get(0).getUserinfo().getStamina() >= stamina) {
 			users.get(0).getUserinfo().setStamina(users.get(0).getUserinfo().getStamina() - stamina);

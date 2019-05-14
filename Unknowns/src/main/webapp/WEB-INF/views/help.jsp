@@ -17,16 +17,19 @@
     <div id="header" role="banner">
         <div id="headbar" class="cityofcrime" style="display: block;">
             <ul>
-                <form method="post">
-                    <li><input class="input-nav" formaction="/home" type="submit"
+                
+                	<c:if test="${user.userinfo.id == null}">
+                		<a href="index">Go Login/Register Page</a>
+                	</c:if>
+                	<c:if test="${user.userinfo.id != null}">
+                	<form method="post">
+                		<li><input class="input-nav" formaction="/home" type="submit"
                                value="Welcome" name="welcome"></li>
                     <li><input class="input-nav" formaction="/user" type="submit"
                                value="Character" name="character"></li>
-                    <li><input class="input-nav" formaction="/help" type="submit"
-                               value="Help" name="help"></li>
                     <li><input class="input-nav" formaction="/logout"
                                type="submit" value="Logout" name="logout"></li>
-                    <li style="color: #1b1819 !important;">
+                               <li style="color: #1b1819 !important;">
                         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
                             Live!
                         </button>
@@ -86,10 +89,10 @@
                             </div>
                         </div>
                     </li>
-                </form>
+                    </form>
+                	</c:if>
             </ul>
         </div>
-    </div>
     </div>
     <div id="ppm-wrapper">
         <div id="sub-header" role="banner">

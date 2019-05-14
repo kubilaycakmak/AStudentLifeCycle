@@ -10,7 +10,6 @@
     <div id="header" role="banner">
         <div id="headbar" class="cityofcrime" style="display: block;">
             <ul>
-                <li><a href="">Welcome</a></li>
                 <li><a href="">About Us</a></li>
                 <li><a href="help">Help</a></li>
                 <li><a href="">Contact</a></li>
@@ -38,7 +37,7 @@
                 <div class="box signupBox signup_Random_2">
                     <form action="/signUp" method="post">
                         <div class="width49 float_left">
-                            <h3 class="register">Register to join the war!</h3>
+                            <h3 class="register">Register to join Life-Cycle!</h3>
                             <p>
                                 <strong>User Name:</strong><br>
                                 <input name="nickname" type="text" maxlength="20" class="round width90 text-dark">
@@ -82,7 +81,7 @@
                     Success in the game is determined by careful strategy and good timing, not by constant online
                     presence. It's perfectly possible to be successful in the game by logging in a couple of times a
                     week to check up on things.</p>
-                <p>City of Crime is free of charge and no downloads are necessary to play it. If you can read this
+                <p>Life Cycle is free of charge and no downloads are necessary to play it. If you can read this
                     you're
                     good to go.</p>
             </div>

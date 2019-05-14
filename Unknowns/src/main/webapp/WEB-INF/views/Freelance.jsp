@@ -116,7 +116,9 @@
                     </div>
                     <div class="float_left characterPresentation">
                         <p>
-                            is a <c:if test="${user.userinfo.type == 1}">
+                            is a 
+                            <strong>
+                            <c:if test="${user.userinfo.type == 1}">
                             Computer Student
                         </c:if>
                             <c:if test="${user.userinfo.type == 2}">
@@ -153,8 +155,15 @@
                                 <tr>
                                     <td>Experience:</td>
                                     <td class="stat"><strong>${user.userinfo.xp}</strong></td>
-                                    <td>Equipments:</td>
-                                    <td class="stat"><strong>DEMO</strong></td>
+                                    <td>Company:</td>
+											<td class="stat"><c:choose>
+													<c:when test="${user.userinfo.company == null}">
+														<a href="Company">Create!</a>
+													</c:when>
+													<c:when test="${freelancetime != null}">
+														<strong>${user.userinfo.company.name}</strong>
+													</c:when>
+												</c:choose></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -165,12 +174,11 @@
                     <img
                             src="https://github.com/kubilayckmk/AStudentLifeCycle/blob/master/Unknowns/src/main/webapp/WEB-INF/views/assets/images/fl.jpeg?raw=true"
                             width="212px" height="140px">
-                    <p>Rumor says that the perfect crime is to stab someone with
-                        an icice. Self-destructing evidence... Make it fast and clean
-                        then maybe you will get away with some fresh dineros. Some crimes
-                        are too hard to handle by your own, to succeed you will need help
-                        from your crew in the mob. You will discover more and harder
-                        robberies after completing new levels!</p>
+                    <p>There are some freelance job you can find, So if your experience enough 
+                    to make it, go on.
+                    Do not forget, when your experience getting better, You can find more good job also!
+                    	
+                    </p>
                 </div>
                 <div class="clear"></div>
 
@@ -201,15 +209,18 @@
                         <select name="freelanceChoose"
                                 id="choice"
                                 class="maxwidth125px round">
-                            <option value="info">Select the Freelance</option>
-                            <option value="1">Job1</option>
-                            <option value="2">Job2</option>
-                            <option value="3">Job3</option>
-                            <option value="4">Job4</option>
-                            <option value="5">Job5</option>
+                                <option value="info">Select the Freelance</option>
+                                <c:if test="${user.userinfo.xp >= 0}"><option value="1">Create a basic Web site</option></c:if>
+                            	<c:if test="${user.userinfo.xp >= 150}"><option value="2">Develop a Web site front-end</option></c:if>
+                            	<c:if test="${user.userinfo.xp >= 350}"><option value="3">Create a shop Web site</option></c:if>
+                            	<c:if test="${user.userinfo.xp >= 550}"><option value="4">Develop an android application</option></c:if>
+                            	<c:if test="${user.userinfo.xp >= 650}"><option value="5">Develop a software application</option></c:if>
                         </select><br>
                 <p id="timer" style="display: none">${time}</p>
-                <div><span id="time1" style="color: white;"></span></div>
+                <c:if test="${freelancetime != 0}">
+                	<div><p><span id="time1" style="color: white;"></span> seconds left!</p></div>
+                </c:if>
+                
                 <script>
                     window.addEventListener("load", function () {
                         var choice = document.getElementById("choice");
@@ -230,28 +241,28 @@
                                 document.getElementById("submitButton").style.color = "grey";
                             } else if (freeOption == "1") {
                                 freeElement[0].textContent = "-  10";
-                                freeElement[1].textContent = "+  1";
-                                freeElement[2].textContent = "+ $25";
+                                freeElement[1].textContent = "+  15";
+                                freeElement[2].textContent = "+ $35";
                                 freeElement[3].textContent = "120 second";
                             } else if (freeOption == "2") {
-                                freeElement[0].textContent = "-  20";
-                                freeElement[1].textContent = "+  2";
-                                freeElement[2].textContent = "+ $55";
+                                freeElement[0].textContent = "-  15";
+                                freeElement[1].textContent = "+  40";
+                                freeElement[2].textContent = "+ $500";
                                 freeElement[3].textContent = "240 second";
                             } else if (freeOption == "3") {
-                                freeElement[0].textContent = "-  30";
-                                freeElement[1].textContent = "+  3";
-                                freeElement[2].textContent = "+ $115";
+                                freeElement[0].textContent = "-  25";
+                                freeElement[1].textContent = "+  40";
+                                freeElement[2].textContent = "+ $1500";
                                 freeElement[3].textContent = "480 second";
                             } else if (freeOption == "4") {
                                 freeElement[0].textContent = "-  40";
-                                freeElement[1].textContent = "+  4";
-                                freeElement[2].textContent = "+ $155";
+                                freeElement[1].textContent = "+  60";
+                                freeElement[2].textContent = "+ $3500";
                                 freeElement[3].textContent = "960 second";
                             } else if (freeOption == "5") {
                                 freeElement[0].textContent = "-  50";
-                                freeElement[1].textContent = "+  5";
-                                freeElement[2].textContent = "+ $205";
+                                freeElement[1].textContent = "+  80";
+                                freeElement[2].textContent = "+ $10500";
                                 freeElement[3].textContent = "1920 second";
                             }
                         });

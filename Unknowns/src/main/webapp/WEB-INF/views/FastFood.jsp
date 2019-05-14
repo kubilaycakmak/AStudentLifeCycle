@@ -115,6 +115,7 @@
                     <div class="float_left characterPresentation">
                         <p>
                             is a
+                            <strong>
                             <c:if test="${user.userinfo.type == 1}">
                                 Computer Student
                             </c:if>
@@ -152,8 +153,15 @@
                                 <tr>
                                     <td>Experience:</td>
                                     <td class="stat"><strong>${user.userinfo.xp}</strong></td>
-                                    <td>Equipments:</td>
-                                    <td class="stat"><strong>DEMO</strong></td>
+                                    <td>Company:</td>
+											<td class="stat"><c:choose>
+													<c:when test="${user.userinfo.company == null}">
+														<a href="Company">Create!</a>
+													</c:when>
+													<c:when test="${freelancetime != null}">
+														<strong>${user.userinfo.company.name}</strong>
+													</c:when>
+												</c:choose></td>
                                 </tr>
                                 </tbody>
                             </table>
