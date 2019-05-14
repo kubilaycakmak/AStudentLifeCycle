@@ -42,7 +42,7 @@ public class MyController {
 		return "home";
 	}
 
-	@RequestMapping("profile")
+	@RequestMapping({"user","profile"})
 	public String getProfile(HttpServletRequest request) {
 		session = request.getSession();
 		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
@@ -61,6 +61,7 @@ public class MyController {
 	@RequestMapping("Bank")
 	public String getBank(HttpServletRequest request) {
 		session = request.getSession();
+		session.setAttribute("bank", queries.getBank((String)session.getAttribute("email")));
 		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
 		return "Bank";
 	}
@@ -249,6 +250,26 @@ public class MyController {
 		session.setAttribute("user", queries.getUser(email));
 		session.setAttribute("email", email);
 		return "Store";
+	}
+	@RequestMapping(value="deposit",method = RequestMethod.POST)
+	public String deposit(HttpServletRequest request) {
+		session = request.getSession();
+		String email = (String)session.getAttribute("email");
+		queries.deposit(email,Integer.parseInt(request.getParameter("checking")));
+		session.setAttribute("user", queries.getUser(email));
+		session.setAttribute("email", email);
+		session.setAttribute("bank", queries.getBank(email));
+		return "Bank";
+	}
+	@RequestMapping(value="withdraw",method = RequestMethod.POST)
+	public String withdraw(HttpServletRequest request) {
+		session = request.getSession();
+		String email = (String)session.getAttribute("email");
+		queries.withdraw(email,Integer.parseInt(request.getParameter("checking")));
+		session.setAttribute("user", queries.getUser(email));
+		session.setAttribute("email", email);
+		session.setAttribute("bank", queries.getBank(email));
+		return "Bank";
 	}
 	
 	@RequestMapping(value="logout",method=RequestMethod.POST)

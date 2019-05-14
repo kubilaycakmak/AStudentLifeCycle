@@ -50,7 +50,7 @@
                                                 document.getElementById("sendButton").click();
                                             });
 
-                                            var webSocket = new WebSocket("ws://localhost:8080/WebSocketTest03/endpointserverdemo");
+                                            var webSocket = new WebSocket("ws:///192.168.137.1:8080/ChatServer/endpointserverdemo");
                                             var messagesTextArea = document.getElementById("messagesTextArea");
                                             webSocket.onmessage = function processMessage(message) {
                                                 var jsonData = JSON.parse(message.data);
@@ -168,9 +168,9 @@
                 <div id="ctl00_cphLeftColumn_ctl00_divRecentEvents" class="box">
                     <h2>BANK ACCOUNT</h2>
                     <ul class="noheader diaryExtraspace">
-                        <p>Checking Account: </p>
-                        <p>Pocket: </p>
-                        <form>
+                        <p>Checking Account: ${bank}</p>
+                        <p>Pocket: ${user.userinfo.money}</p>
+                        <form method="Post">
                             <input type="number" placeholder="Enter value of money" name="checking">
                             <br><br>
                             <input formaction="/deposit" type="submit" value="Deposit" name="deposit">

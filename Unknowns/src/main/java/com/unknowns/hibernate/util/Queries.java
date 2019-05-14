@@ -33,7 +33,7 @@ public class Queries {
 				check = false;
 		}
 		if (check) {
-			Userinfo userinfo = new Userinfo(0, 100, type, 100, null, new Date(), 0, new Date(), 0,new Date(),0);
+			Userinfo userinfo = new Userinfo(0, 100, type, 100, null, new Date(), 0, new Date(), 0,new Date(),0,0);
 			User user = new User(name, lastname, email, nickname, password, hintcode, userinfo);
 			transaction = session.beginTransaction();
 			session.save(userinfo);
@@ -515,6 +515,41 @@ public class Queries {
 			session.close();
 		}
 			
+		
+	}
+
+	public int getBank(String email) {
+		session = HibernateUtil.getSessionFactory().openSession();
+ 		List<User> users = session.createQuery("from User where email = '"+email+"'",User.class).list();
+ 		session.close();
+		return  users.get(0).getUserinfo().getBank();
+	}
+
+	public void deposit(String email, int money) {
+		session = HibernateUtil.getSessionFactory().openSession();
+ 		List<User> users = session.createQuery("from User where email = '"+email+"'",User.class).list();
+ 		if(users.get(0).getUserinfo().getMoney() >= money) {
+ 			users.get(0).getUserinfo().setMoney(users.get(0).getUserinfo().getMoney()-money);
+ 			users.get(0).getUserinfo().setBank(users.get(0).getUserinfo().getBank()+money);
+ 		}
+ 		transaction = session.beginTransaction();
+ 		session.update(users.get(0));
+ 		transaction.commit();
+ 		session.close();
+		
+	}
+
+	public void withdraw(String email, int money) {
+		session = HibernateUtil.getSessionFactory().openSession();
+ 		List<User> users = session.createQuery("from User where email = '"+email+"'",User.class).list();
+ 		if(users.get(0).getUserinfo().getBank() >= money) {
+ 			users.get(0).getUserinfo().setMoney(users.get(0).getUserinfo().getMoney()+money);
+ 			users.get(0).getUserinfo().setBank(users.get(0).getUserinfo().getBank()-money);
+ 		}
+ 		transaction = session.beginTransaction();
+ 		session.update(users.get(0));
+ 		transaction.commit();
+ 		session.close();
 		
 	}
 

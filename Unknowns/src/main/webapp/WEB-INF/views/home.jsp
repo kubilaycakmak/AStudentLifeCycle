@@ -50,7 +50,7 @@
                                                 document.getElementById("sendButton").click();
                                             });
 
-                                            var webSocket = new WebSocket("ws://localhost:8080/ChatServer/endpointserverdemo");
+                                            var webSocket = new WebSocket("ws:///192.168.137.1:8080/ChatServer/endpointserverdemo");
                                             var messagesTextArea = document.getElementById("messagesTextArea");
                                             webSocket.onmessage = function processMessage(message) {
                                                 var jsonData = JSON.parse(message.data);

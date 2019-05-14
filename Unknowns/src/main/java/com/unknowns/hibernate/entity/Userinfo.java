@@ -24,7 +24,7 @@ public class Userinfo {
 	int money;
 	int type;
 	int stamina;
-
+	int bank;
 	@OneToOne
 	@Cascade(CascadeType.ALL)
 	Company Company;
@@ -45,7 +45,7 @@ public class Userinfo {
 	}
 
 	public Userinfo(int xp, int money, int type, int stamina, Company Company, Date freelancedate,
-			int freelancetype, Date fastFooddate, int fastFoodtype,Date Hackdate,int jail) {
+			int freelancetype, Date fastFooddate, int fastFoodtype,Date Hackdate,int jail ,int bank) {
 		super();
 		this.xp = xp;
 		this.money = money;
@@ -58,6 +58,7 @@ public class Userinfo {
 		this.FastFoodtype = fastFoodtype;
 		this.Hackdate = Hackdate;
 		this.jail = jail;
+		this.bank = bank;
 	}
 
 	public int getId() {
@@ -154,6 +155,14 @@ public class Userinfo {
 
 	public void setJail(int jail) {
 		this.jail = jail;
+	}
+
+	public int getBank() {
+		return bank;
+	}
+
+	public void setBank(int bank) {
+		this.bank = bank;
 	}
 	
 
