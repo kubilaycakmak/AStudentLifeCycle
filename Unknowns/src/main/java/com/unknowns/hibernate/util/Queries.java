@@ -189,6 +189,9 @@ public class Queries {
 		int successchance = 0;
 		int fchoose = 0;
 		int money = 0;
+
+		session = HibernateUtil.getSessionFactory().openSession();
+		transaction = session.beginTransaction();
 		List<User> users = session.createQuery("from User where email = '" + email + "'", User.class).list();
 		if (choose.equals("1")) {
 			jailchance = 5;
@@ -233,14 +236,18 @@ public class Queries {
 		users.get(0).getUserinfo().setHackdate(new Date());
 		if (users.get(0).getUserinfo().getCompany() != null) {
 			users.get(0).getUserinfo().setCompany(users.get(0).getUserinfo().getCompany());
+			if(users.get(0).getUserinfo().getCompany().getWorkers().size() != 0) {
+				users.get(0).getUserinfo().getCompany().setWorkers(users.get(0).getUserinfo().getCompany().getWorkers());
+			} else {
+				users.get(0).getUserinfo().getCompany().setWorkers(null);
+			}
 		} else {
 			users.get(0).getUserinfo().setCompany(null);
 		}
-		session = HibernateUtil.getSessionFactory().openSession();
-		transaction = session.beginTransaction();
 		session.update(users.get(0).getUserinfo());
 		session.update(users.get(0));
 		transaction.commit();
+		session.close();
 		return result;
 	}
 
@@ -343,6 +350,7 @@ public class Queries {
 			second = 0;
 			break;
 		}
+		session.close();
 		return second;
 	}
 	public int getHackTime(String email) {
@@ -364,6 +372,7 @@ public class Queries {
 			else
 				second = 86400-second;
 		}
+		session.close();
 		return second;
 	}
 	public int getJailTime(String email) {
@@ -382,6 +391,7 @@ public class Queries {
 		else {
 			second = 0;
 		}
+		session.close();
 		return second;
 	}
 	public boolean bribe(String email) {
@@ -390,6 +400,7 @@ public class Queries {
 		List<User> users = session.createQuery("from User where email='" + email + "'", User.class).list();
 		if(users.get(0).getUserinfo().getMoney()>=users.get(0).getUserinfo().getJail()) {
 			users.get(0).getUserinfo().setMoney(users.get(0).getUserinfo().getMoney()-users.get(0).getUserinfo().getJail());
+			users.get(0).getUserinfo().setJail(0);
 			users.get(0).getUserinfo().setFastFoodtype(0);
 			users.get(0).getUserinfo().setFreelancetype(0);
 			check = true;
@@ -399,14 +410,13 @@ public class Queries {
 		} else {
 			users.get(0).getUserinfo().setCompany(null);
 		}
-		
-		session = HibernateUtil.getSessionFactory().openSession();
 		transaction = session.beginTransaction();
 		session.update(users.get(0).getUserinfo());
 		session.update(users.get(0));
 		transaction.commit();
 		check = true;
 		List<Userinfo> userinfos = session.createQuery("from Userinfo", Userinfo.class).list();
+		session.close();
 		return check;
 	}
 	public static Queries getQueries() {

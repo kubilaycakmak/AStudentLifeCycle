@@ -22,11 +22,6 @@ public class MyController {
 		return "index";
 	}
 
-	@RequestMapping("/createAccount")
-	public String getCreate(HttpServletRequest request) {
-		return "createAccount";
-	}
-
 	@RequestMapping(value="/forgetPassword", method=RequestMethod.POST)
 	public String getForgetPassword(HttpServletRequest request) {
 		return "ForgetPassword";
@@ -90,6 +85,7 @@ public class MyController {
 	@RequestMapping("Hack")
 	public String getHack(HttpServletRequest request) {
 		session = request.getSession();
+		session.setAttribute("time", queries.getHackTime((String) session.getAttribute("email")));
 		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
 		return "Hack";
 	}
@@ -121,7 +117,7 @@ public class MyController {
 		session = request.getSession();
 		queries = Queries.getQueries();
 		if (!queries.signUp(name, lastname, email, nickname, password, hintcode, type))
-			session.setAttribute("warning", "Email or nickname already exists.");
+			session.setAttribute("warningUp", "Email or nickname already exists.");
 			
 		return "index";
 		
@@ -141,7 +137,7 @@ public class MyController {
 			return "home";
 		} else {
 			session = request.getSession();
-			session.setAttribute("warning", "Email or password is wrong.");
+			session.setAttribute("warningIn", "Email or password is wrong.");
 			return "index";
 		}
 	}
