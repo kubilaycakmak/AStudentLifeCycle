@@ -218,7 +218,10 @@
                         </select><br>
                 <p id="timer" style="display: none">${time}</p>
                 <c:if test="${freelancetime != 0}">
-                	<div><p><span id="time1" style="color: white;"></span> seconds left!</p></div>
+                	<div><p style="display: none" class="freelanceStatus" ><span id="time1" style="color: white;"></span> seconds left!</p></div>
+                </c:if>
+                <c:if test="${freelancetime == 0}">
+                    <div><p style="display: none" class="freelanceStatus">Free to do Freelance!</p></div>
                 </c:if>
                 
                 <script>
@@ -226,13 +229,16 @@
                         var choice = document.getElementById("choice");
                         var freeElement = document.querySelectorAll("td > p");
                         var timer = parseInt(document.getElementById("timer").innerHTML);
+                        var status = document.getElementsByClassName("freelancestatus")[0];
 
                         if (timer > 0) {
                             document.getElementById("submitButton").disabled = true;
                             document.getElementById("submitButton").style.color = "grey";
+                            status.style.display = "block";
                         } else if (timer == 0) {
                             document.getElementById("submitButton").disabled = false;
                             document.getElementById("submitButton").style.color = "green";
+                            status.style.display = "none";
                         }
                         choice.addEventListener("change", function () {
                             var freeOption = this.options[this.selectedIndex].value;
@@ -277,6 +283,7 @@
                                 if (--timer < 0) {
                                     timer = duration;
                                 }
+
                             }, 1000);
                         }
 
