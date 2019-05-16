@@ -25,66 +25,66 @@
                                value="Help" name="help"></li>
                     <li><input class="input-nav" formaction="/logout"
                                type="submit" value="Logout" name="logout"></li>
-                    <li style="color: #1b1819 !important;">
-                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
-                            Live!
-                        </button>
-                        <!-- Modal -->
-                        <div class="modal fade" id="myModal" role="dialog">
-                            <div class="modal-dialog">
+<%--                    <li style="color: #1b1819 !important;">--%>
+<%--                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">--%>
+<%--                            Live!--%>
+<%--                        </button>--%>
+<%--                        <!-- Modal -->--%>
+<%--                        <div class="modal fade" id="myModal" role="dialog">--%>
+<%--                            <div class="modal-dialog">--%>
 
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">HelpDESK</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <textarea id="messagesTextArea" rows="10" cols="46"></textarea>
-                                        <textarea id="usersTextArea" rows="10" cols="10" readonly="readonly"></textarea><br>
-                                        <input id="textMessage" size="52" type="text" value="${user.nickname }"><input
-                                            type="button" onclick="sendMessage();" id="sendButton" value="Send">
-                                        <script type="text/javascript">
+<%--                                <div class="modal-content">--%>
+<%--                                    <div class="modal-header">--%>
+<%--                                        <button type="button" class="close" data-dismiss="modal">&times;</button>--%>
+<%--                                        <h4 class="modal-title">HelpDESK</h4>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="modal-body">--%>
+<%--                                        <textarea id="messagesTextArea" rows="10" cols="46"></textarea>--%>
+<%--                                        <textarea id="usersTextArea" rows="10" cols="10" readonly="readonly"></textarea><br>--%>
+<%--                                        <input id="textMessage" size="52" type="text" value="${user.nickname }"><input--%>
+<%--                                            type="button" onclick="sendMessage();" id="sendButton" value="Send">--%>
+<%--                                        <script type="text/javascript">--%>
 
-                                            $(window).on('shown.bs.modal', function () {
-                                                $('#code').modal('show');
-                                                document.getElementById("sendButton").click();
-                                            });
+<%--                                            $(window).on('shown.bs.modal', function () {--%>
+<%--                                                $('#code').modal('show');--%>
+<%--                                                document.getElementById("sendButton").click();--%>
+<%--                                            });--%>
 
-                                            var webSocket = new WebSocket("ws:///192.168.137.1:8080/ChatServer/endpointserverdemo");
-                                            var messagesTextArea = document.getElementById("messagesTextArea");
-                                            webSocket.onmessage = function processMessage(message) {
-                                                var jsonData = JSON.parse(message.data);
-                                                if (jsonData.message != null)
-                                                    messagesTextArea.value += jsonData.message + "\n";
-                                                if (jsonData.users != null) {
-                                                    usersTextArea.value = "";
-                                                    var i = 0;
-                                                    while (i < jsonData.users.length)
-                                                        usersTextArea.value += jsonData.users[i++] + "\n";
-                                                }
-                                            }
+<%--                                            var webSocket = new WebSocket("ws:///192.168.137.1:8080/ChatServer/endpointserverdemo");--%>
+<%--                                            var messagesTextArea = document.getElementById("messagesTextArea");--%>
+<%--                                            webSocket.onmessage = function processMessage(message) {--%>
+<%--                                                var jsonData = JSON.parse(message.data);--%>
+<%--                                                if (jsonData.message != null)--%>
+<%--                                                    messagesTextArea.value += jsonData.message + "\n";--%>
+<%--                                                if (jsonData.users != null) {--%>
+<%--                                                    usersTextArea.value = "";--%>
+<%--                                                    var i = 0;--%>
+<%--                                                    while (i < jsonData.users.length)--%>
+<%--                                                        usersTextArea.value += jsonData.users[i++] + "\n";--%>
+<%--                                                }--%>
+<%--                                            }--%>
 
-                                            function sendMessage() {
-                                                webSocket.send(textMessage.value);
-                                                textMessage.value = "";
-                                            }
+<%--                                            function sendMessage() {--%>
+<%--                                                webSocket.send(textMessage.value);--%>
+<%--                                                textMessage.value = "";--%>
+<%--                                            }--%>
 
-                                            window.onbeforeunload = function () {
-                                                webSocket.onclose = function () {
-                                                };
-                                                webSocket.close();
-                                            }
-                                        </script>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close
-                                        </button>
-                                    </div>
-                                </div>
+<%--                                            window.onbeforeunload = function () {--%>
+<%--                                                webSocket.onclose = function () {--%>
+<%--                                                };--%>
+<%--                                                webSocket.close();--%>
+<%--                                            }--%>
+<%--                                        </script>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="modal-footer">--%>
+<%--                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close--%>
+<%--                                        </button>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
 
-                            </div>
-                        </div>
-                    </li>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </li>--%>
                 </form>
             </ul>
         </div>
@@ -156,11 +156,11 @@
 													<c:when test="${user.userinfo.company == null}">
 														<a href="Company">Create!</a>
 													</c:when>
-													<c:when test="${freelancetime != null}">
+													<c:when test="${user.userinfo.company != null}">
 														<strong>${user.userinfo.company.name}</strong>
 													</c:when>
 												</c:choose></td>
-                                </tr>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -190,9 +190,8 @@
                                     number = parseInt(timer, 10);
                                     number = number < 10 ? "0" + number : number;
                                     display.textContent = number;
-
                                     if (--timer < 0) {
-                                        timer = duration;
+                                        timer = 0;
                                     }
                                 }, 1000);
                             }
@@ -205,7 +204,7 @@
                                     display.textContent = number;
 
                                     if (--timer1 < 0) {
-                                        timer1 = duration;
+                                        timer1 = 0;
                                     }
                                 }, 1000);
                             }
@@ -221,14 +220,14 @@
                             
                     	});
                     </script>
+                    <p id="asd"></p>
                     <p id="timer" style="display: none">${freelancetime}</p>
                     <p id="timer1" style="display: none">${fastfoodtime}</p>
-                    
 					  <c:if test="${freelancetime == 0}">
-					    <h4>Freelance Job:</h4><p> You can work on <srong><a href="Freelance">Freelance</a></srong> job!</p>
+                         <h4>Freelance Job:</h4><p> You can work on <srong><a href="Freelance">Freelance</a></srong> job!</p>
 					  </c:if>
 					  <c:if test="${freelancetime != 0}">
-                		<div><h4>Freelance Job: </h4><p>You have <span id="time1" style="color: white;"></span> seconds to finish!</p></div>
+                		<h4>Freelance Job: </h4><p>You have <span id="time1" style="color: white;"></span> seconds to finish!</p>
 					  </c:if>
 					
 					  <c:if test="${fastfoodtime == 0}">

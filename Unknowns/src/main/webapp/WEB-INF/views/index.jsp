@@ -1,5 +1,5 @@
 <head>
-    <title>City of Crime</title>
+    <title>Life Cycle</title>
     <meta http-equiv="X-UA-Compatible" content="IE=9">
     <meta name="format-detection" content="telephone=no">
     <%@ include file="main.css" %>
@@ -71,7 +71,12 @@
                                 <option data-icon="fa-heart" value="3">Law</option>
                             </select>
                         </p>
-                        <p>
+                        <h5> <%if (null != session.getAttribute("warningUp")) {%>
+                            <td><h4 class="required"><%=session.getAttribute("warningUp")%>
+                    </h4></td>
+                        <%session.removeAttribute("warningUp");%>
+                        <%}%>
+
                             <input type="submit" value="Register" class="cnf btn btn-dark">
                         </p>
                     </div>
@@ -100,6 +105,12 @@
                         <input name="password" type="password" maxlength="100" class="round width100">
                     </p>
                     <p class="right">
+                     <%if (null != session.getAttribute("warningIn")) {%>
+                        <td><p class="required"><%=session.getAttribute("warningIn")%>
+                        </p></td>
+                    <%session.removeAttribute("warningIn");%>
+                    <%}%>
+
                         <input type="submit" name="loginSubmit" value="OK!" onclick="" id="loginSubmit"
                                class="cnf btn btn-dark">
                     </p>
@@ -109,9 +120,9 @@
                     <h2>TOP 5 - Clever User</h2>
                     <table>
                         <tr>
-                            <th>Position</th>
-                            <th>Nickname</th>
-                            <th>Experience</th>
+                            <th>Position&nbsp;</th>
+                            <th>Nickname&nbsp;</th>
+                            <th>Experience&nbsp;</th>
                         </tr>
                     <tr>
                         <td>1</td>
@@ -145,9 +156,9 @@
                 <h2>TOP 5 - Rich User</h2>
                 <table>
                     <tr>
-                        <th>Position</th>
-                        <th>Nickname</th>
-                        <th>Money</th>
+                        <th>Position&nbsp;</th>
+                        <th>Nickname&nbsp;</th>
+                        <th>Money&nbsp;</th>
                     </tr>
                     <tr>
                         <td>1</td>
@@ -182,8 +193,10 @@
             </div>
             <style>
                 td,th{
-                    font-size: 11px;
+                    font-size: 10px;
                     padding: auto;
+                    margin: auto;
+                    text-align: center;
                     color: white;
                 }
             </style>

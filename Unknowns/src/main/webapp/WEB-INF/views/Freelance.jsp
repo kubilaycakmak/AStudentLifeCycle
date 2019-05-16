@@ -28,66 +28,66 @@
                                value="Help" name="help"></li>
                     <li><input class="input-nav" formaction="/logout"
                                type="submit" value="Logout" name="logout"></li>
-                    <li style="color: #1b1819 !important;">
-                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
-                            Live!
-                        </button>
-                        <!-- Modal -->
-                        <div class="modal fade" id="myModal" role="dialog">
-                            <div class="modal-dialog">
+<%--                    <li style="color: #1b1819 !important;">--%>
+<%--                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">--%>
+<%--                            Live!--%>
+<%--                        </button>--%>
+<%--                        <!-- Modal -->--%>
+<%--                        <div class="modal fade" id="myModal" role="dialog">--%>
+<%--                            <div class="modal-dialog">--%>
 
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">HelpDESK</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <textarea id="messagesTextArea" rows="10" cols="46"></textarea>
-                                        <textarea id="usersTextArea" rows="10" cols="10" readonly="readonly"></textarea><br>
-                                        <input id="textMessage" size="52" type="text" value="${user.nickname }"><input
-                                            type="button" onclick="sendMessage();" id="sendButton" value="Send">
-                                        <script type="text/javascript">
+<%--                                <div class="modal-content">--%>
+<%--                                    <div class="modal-header">--%>
+<%--                                        <button type="button" class="close" data-dismiss="modal">&times;</button>--%>
+<%--                                        <h4 class="modal-title">HelpDESK</h4>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="modal-body">--%>
+<%--                                        <textarea id="messagesTextArea" rows="10" cols="46"></textarea>--%>
+<%--                                        <textarea id="usersTextArea" rows="10" cols="10" readonly="readonly"></textarea><br>--%>
+<%--                                        <input id="textMessage" size="52" type="text" value="${user.nickname }"><input--%>
+<%--                                            type="button" onclick="sendMessage();" id="sendButton" value="Send">--%>
+<%--                                        <script type="text/javascript">--%>
 
-                                            $(window).on('shown.bs.modal', function () {
-                                                $('#code').modal('show');
-                                                document.getElementById("sendButton").click();
-                                            });
+<%--                                            $(window).on('shown.bs.modal', function () {--%>
+<%--                                                $('#code').modal('show');--%>
+<%--                                                document.getElementById("sendButton").click();--%>
+<%--                                            });--%>
 
-                                            var webSocket = new WebSocket("ws:///192.168.137.1:8080/ChatServer/endpointserverdemo");
-                                            var messagesTextArea = document.getElementById("messagesTextArea");
-                                            webSocket.onmessage = function processMessage(message) {
-                                                var jsonData = JSON.parse(message.data);
-                                                if (jsonData.message != null)
-                                                    messagesTextArea.value += jsonData.message + "\n";
-                                                if (jsonData.users != null) {
-                                                    usersTextArea.value = "";
-                                                    var i = 0;
-                                                    while (i < jsonData.users.length)
-                                                        usersTextArea.value += jsonData.users[i++] + "\n";
-                                                }
-                                            }
+<%--                                            var webSocket = new WebSocket("ws:///192.168.137.1:8080/ChatServer/endpointserverdemo");--%>
+<%--                                            var messagesTextArea = document.getElementById("messagesTextArea");--%>
+<%--                                            webSocket.onmessage = function processMessage(message) {--%>
+<%--                                                var jsonData = JSON.parse(message.data);--%>
+<%--                                                if (jsonData.message != null)--%>
+<%--                                                    messagesTextArea.value += jsonData.message + "\n";--%>
+<%--                                                if (jsonData.users != null) {--%>
+<%--                                                    usersTextArea.value = "";--%>
+<%--                                                    var i = 0;--%>
+<%--                                                    while (i < jsonData.users.length)--%>
+<%--                                                        usersTextArea.value += jsonData.users[i++] + "\n";--%>
+<%--                                                }--%>
+<%--                                            }--%>
 
-                                            function sendMessage() {
-                                                webSocket.send(textMessage.value);
-                                                textMessage.value = "";
-                                            }
+<%--                                            function sendMessage() {--%>
+<%--                                                webSocket.send(textMessage.value);--%>
+<%--                                                textMessage.value = "";--%>
+<%--                                            }--%>
 
-                                            window.onbeforeunload = function () {
-                                                webSocket.onclose = function () {
-                                                };
-                                                webSocket.close();
-                                            }
-                                        </script>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close
-                                        </button>
-                                    </div>
-                                </div>
+<%--                                            window.onbeforeunload = function () {--%>
+<%--                                                webSocket.onclose = function () {--%>
+<%--                                                };--%>
+<%--                                                webSocket.close();--%>
+<%--                                            }--%>
+<%--                                        </script>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="modal-footer">--%>
+<%--                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close--%>
+<%--                                        </button>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
 
-                            </div>
-                        </div>
-                    </li>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </li>--%>
                 </form>
             </ul>
         </div>
@@ -142,7 +142,7 @@
                                 <span class="em">I guess I need to work for my future...</span>
                             </div>
                         </div>
-                        <br></br>
+                        <br>
                         <div id="stats">
                             <table align="center">
                                 <tbody>
@@ -223,52 +223,59 @@
                 <c:if test="${freelancetime == 0}">
                     <div><p style="display: none" class="freelanceStatus">Free to do Freelance!</p></div>
                 </c:if>
-                
+
+                <c:if test="${user.userinfo.jail != 0}">
+                    <h4>You are in JAIL,<a href="/Jail">Go to Jail to bribe</a>!</h4>
+                </c:if>
+
                 <script>
                     window.addEventListener("load", function () {
                         var choice = document.getElementById("choice");
+                        var timer = parseInt(document.getElementById("timer").innerHTML);
                         var freeElement = document.querySelectorAll("td > p");
                         var timer = parseInt(document.getElementById("timer").innerHTML);
                         var status = document.getElementsByClassName("freelancestatus")[0];
 
                         if (timer > 0) {
                             document.getElementById("submitButton").disabled = true;
-                            document.getElementById("submitButton").style.color = "grey";
+                            document.getElementById("submitButton").style.color = "red";
                             status.style.display = "block";
                         } else if (timer == 0) {
                             document.getElementById("submitButton").disabled = false;
-                            document.getElementById("submitButton").style.color = "green";
+                            document.getElementById("submitButton").style.color = "orange";
                             status.style.display = "none";
                         }
+
                         choice.addEventListener("change", function () {
                             var freeOption = this.options[this.selectedIndex].value;
                             if (freeOption == "info") {
                                 document.getElementById("submitButton").disabled = true;
                                 document.getElementById("submitButton").style.color = "grey";
+
                             } else if (freeOption == "1") {
-                                freeElement[0].textContent = "-  10";
-                                freeElement[1].textContent = "+  15";
-                                freeElement[2].textContent = "+ $35";
+                                freeElement[0].textContent = "-   10";
+                                freeElement[1].textContent = "+   15";
+                                freeElement[2].textContent = "+  $35";
                                 freeElement[3].textContent = "120 second";
                             } else if (freeOption == "2") {
-                                freeElement[0].textContent = "-  15";
-                                freeElement[1].textContent = "+  40";
-                                freeElement[2].textContent = "+ $500";
+                                freeElement[0].textContent = "-   15";
+                                freeElement[1].textContent = "+   25";
+                                freeElement[2].textContent = "+  $250";
                                 freeElement[3].textContent = "240 second";
                             } else if (freeOption == "3") {
-                                freeElement[0].textContent = "-  25";
-                                freeElement[1].textContent = "+  40";
-                                freeElement[2].textContent = "+ $1500";
+                                freeElement[0].textContent = "-   25";
+                                freeElement[1].textContent = "+   40";
+                                freeElement[2].textContent = "+  $750";
                                 freeElement[3].textContent = "480 second";
                             } else if (freeOption == "4") {
-                                freeElement[0].textContent = "-  40";
-                                freeElement[1].textContent = "+  60";
-                                freeElement[2].textContent = "+ $3500";
+                                freeElement[0].textContent = "-   40";
+                                freeElement[1].textContent = "+   60";
+                                freeElement[2].textContent = "+  $1500";
                                 freeElement[3].textContent = "960 second";
                             } else if (freeOption == "5") {
-                                freeElement[0].textContent = "-  50";
-                                freeElement[1].textContent = "+  80";
-                                freeElement[2].textContent = "+ $10500";
+                                freeElement[0].textContent = "-   50";
+                                freeElement[1].textContent = "+   80";
+                                freeElement[2].textContent = "+  $3000";
                                 freeElement[3].textContent = "1920 second";
                             }
                         });
@@ -281,17 +288,20 @@
                                 display.textContent = number;
 
                                 if (--timer < 0) {
-                                    timer = duration;
+                                    timer = 0;
+                                    document.getElementById("submitButton").disabled = false;
+                                    status.style.display = "none";
                                 }
-
                             }, 1000);
                         }
+
 
                         var fiveMinutes = timer,
                             display = document.querySelector('#time1');
                         startTimer(fiveMinutes, display);
                     });
                 </script>
+
                 <p class="actionbuttons">
                     <input type="submit" name="ctl00$cphLeftColumn$ctl00$btnFind"
                            value="work on it!" id="submitButton">
