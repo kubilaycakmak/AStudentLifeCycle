@@ -160,7 +160,7 @@
 													<c:when test="${user.userinfo.company == null}">
 														<a href="Company">Create!</a>
 													</c:when>
-													<c:when test="${freelancetime != null}">
+													<c:when test="${user.userinfo.company != null}">
 														<strong>${user.userinfo.company.name}</strong>
 													</c:when>
 												</c:choose></td>
@@ -216,7 +216,7 @@
                             	<c:if test="${user.userinfo.xp >= 550}"><option value="4">Develop an android application</option></c:if>
                             	<c:if test="${user.userinfo.xp >= 650}"><option value="5">Develop a software application</option></c:if>
                         </select><br>
-                <p id="timer" style="display: none">${time}</p>
+                <p id="timer" style="display: none">${freelancetime}</p>
                 <c:if test="${freelancetime != 0}">
                 	<div><p style="display: none" class="freelanceStatus" ><span id="time1" style="color: white;"></span> seconds left!</p></div>
                 </c:if>

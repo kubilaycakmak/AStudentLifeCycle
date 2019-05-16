@@ -176,7 +176,7 @@
                 <div id="ctl00_cphLeftColumn_ctl00_divRecentEvents" class="box">
                     <h2>JAIL</h2>
                     <ul class="noheader diaryExtraspace">
-                        <p>Status: You are in jail for ${time} second</p>
+                        <p>Status: You are in jail for ${jailtime} second</p>
                         <p>Need for Free: ${user.userinfo.jail} </p>
                         <form action="/bribe" method="post">
                             <input type="submit" value="Submit" name="bribe">

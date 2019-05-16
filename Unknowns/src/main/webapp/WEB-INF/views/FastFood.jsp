@@ -158,7 +158,7 @@
 													<c:when test="${user.userinfo.company == null}">
 														<a href="Company">Create!</a>
 													</c:when>
-													<c:when test="${freelancetime != null}">
+													<c:when test="${user.userinfo.company != null}">
 														<strong>${user.userinfo.company.name}</strong>
 													</c:when>
 												</c:choose></td>
@@ -209,7 +209,7 @@
                             <option value="m4">Menu4</option>
                             <option value="m5">Menu5</option>
                         </select><br>
-                <p id="timer" style="display: none">${time}</p>
+                <p id="timer" style="display: none">${fastfoodtime}</p>
                 <div><span id="time1" style="color: white;"></span></div>
 
                 <script>

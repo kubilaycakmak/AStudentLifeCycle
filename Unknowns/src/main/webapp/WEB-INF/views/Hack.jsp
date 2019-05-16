@@ -230,7 +230,7 @@
                             <option value="4">DEMO</option>
                             <option value="5">DEMO</option>
                         </select><br>
-                <p id="timer">${time}</p>
+                <p id="timer">${hacktime}</p>
                 <script>
 
                     function getSelectedOption(choise) {
