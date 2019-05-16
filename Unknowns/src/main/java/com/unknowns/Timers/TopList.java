@@ -23,10 +23,11 @@ public class TopList {
 	static Session session;
 	static Transaction transaction;
 	public static void Top5List() {
-		Timer myTimer = new Timer();
-		TimerTask gorev = new TimerTask() {
+		Timer myTimer2 = new Timer();
+		TimerTask gorev2 = new TimerTask() {
 			@Override
 			public void run() {
+				System.out.println("Liste");
 				top5XpList = new ArrayList<User>();
 				top5MoneyList = new ArrayList<User>();
 				queries = Queries.getQueries();
@@ -49,10 +50,12 @@ public class TopList {
 						}
 					}
 				}
+				session.close();
 			}
+			
 		};
 
-		myTimer.schedule(gorev, 0, 3600000);
+		myTimer2.schedule(gorev2, 0, 3600000);
 
 	}
 	

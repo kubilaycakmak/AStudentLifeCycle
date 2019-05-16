@@ -15,12 +15,12 @@ import com.unknowns.hibernate.util.Queries;
 
 @Controller
 public class MyController {
-	Queries queries;
+	Queries queries ;
 	HttpSession session;
 	static TopList topList = new TopList();
 	@GetMapping({ "/index", "/" })
 	public String getindex(HttpServletRequest request) {
-	
+		
 		session = request.getSession();
 		session.setAttribute("top5Xp", topList.getTop5XpList());
 		session.setAttribute("top5Money", topList.getTop5MoneyList());
