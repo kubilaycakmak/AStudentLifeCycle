@@ -179,14 +179,20 @@
                             </form>
                         </c:if>
                         <c:if test="${user.userinfo.company != null}">
-                            <h4>${user.userinfo.company.name }</h4>
+                        <h4>Budget: DEMO</h4>
+                        <h4>Total Employee: DEMO</h4>
+                        <br>
+                        <h2>Company Name:</h2>
+                            <strong><h3 style="text-align: center; margin: auto;">${user.userinfo.company.name }</h3>
                         </c:if>
 
                     </ul>
                 </div>
                 <div id="ctl00_cphLeftColumn_ctl00_pnlHotTrace" class="box">
                     <h2>Hiring</h2>
-                    <p>You have ${user.userinfo.company.workers.size() } employee.</p>
+                    <p><strong>Every +50 experiences, You can hire 1 Employee to your Company!</strong></p>
+                    <p><strong>But the Employee's need to be survive at this life. So, You need to give them salary. When You hire new Employee your money will decrease!</strong></p>
+                   <p><strong>You have ${user.userinfo.company.workers.size() } employee.</strong></p>
                     <c:if test="${user.userinfo.company == null}">
                     </c:if>
                     <c:if test="${user.userinfo.company.workers != null}">
@@ -197,12 +203,14 @@
                 </div>
                 <div class="box">
                     <h2>Improvement</h2>
+                    <p><strong>While you improvement your employee, you spend some dollars, but that will provide you %5 earning points from Company equipments!</strong></p>
+                    <p><strong>Do not forget, the limit of level is 5. So, you cannot improve your Employee's more than lv 5.</strong></p>
                     <c:if test="${user.userinfo.company.workers.size() == 0}">
                     </c:if>
                     <c:if test="${user.userinfo.company.workers.size() != 0}">
                         <c:forEach var="worker" items="${user.userinfo.company.workers }">
                             <form formaction="${worker.id}" method="POST">
-                                <p>${worker.lvl } : <input type="submit" value="Improve" style="color: black;"
+                                <p>${worker.lvl } lv : <input type="submit" value="Improve" style="color: black;"
                                                            formaction="/improve=${worker.id}"></p>
                             </form>
                         </c:forEach>

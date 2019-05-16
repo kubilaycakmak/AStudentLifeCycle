@@ -24,7 +24,7 @@
     </div>
     <div id="ppm-main">
         <div id="topcolumn">
-            <div class="StartImage gameimage" style="height: 100px !important;"></div>
+            <div class="StartImage gameimage" style="height: 20px !important;"></div>
         </div>
         <div id="ppm-content" role="main" class="content">
             <h1 id="welcome">Welcome to Life-Cycle</h1>
