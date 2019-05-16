@@ -83,7 +83,7 @@ public class Queries {
 				stamina = 15;
 				xp = 25;
 				fchoose = 2;
-				money = 500;
+				money = 250;
 			}
 			else {
 				stamina = 0;
@@ -97,7 +97,7 @@ public class Queries {
 				stamina = 25;
 				xp = 40;
 				fchoose = 3;
-				money = 1500;
+				money = 750;
 			}
 			else {
 				stamina = 0;
@@ -111,7 +111,7 @@ public class Queries {
 				stamina = 40;
 				xp = 60;
 				fchoose = 4;
-				money = 3500;
+				money = 1500;
 			}
 			else {
 				stamina = 0;
@@ -124,7 +124,7 @@ public class Queries {
 				stamina = 50;
 				xp = 80;
 				fchoose = 5;
-				money = 10500;
+				money = 3000;
 			}
 			else {
 				stamina = 0;
