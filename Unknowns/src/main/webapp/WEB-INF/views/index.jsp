@@ -105,8 +105,8 @@
                     </p>
                 </form>
             </div>
-            <div class="box" style="-webkit-border-radius: 7px !important; height: 220px;">
-                    <h2>TOP 5 - Knowledge</h2>
+            <div class="box" style="-webkit-border-radius: 7px !important; height: 130px;">
+                    <h2>TOP 5 - Clever User</h2>
                     <table>
                         <tr>
                             <th>Position</th>
@@ -114,35 +114,35 @@
                             <th>Experience</th>
                         </tr>
                     <tr>
-                        <td>test</td>
+                        <td>1</td>
                         <td>${top5Xp.get(0).nickname }</td>
-                        <td>test</td>
+                        <td>${top5Xp.get(0).userinfo.xp }</td>
                     </tr>
                     <tr>
-                        <td></td>
+                        <td>2</td>
                         <td>${top5Xp.get(1).nickname }</td>
-                        <td></td>
+                        <td>${top5Xp.get(1).userinfo.xp }</td>
                     </tr>
                     <tr>
-                        <td></td>
+                        <td>3</td>
                         <td>${top5Xp.get(2).nickname }</td>
-                        <td></td>
+                        <td>${top5Xp.get(2).userinfo.xp }</td>
                     </tr>
                     <tr>
-                        <td></td>
+                        <td>4</td>
                         <td>${top5Xp.get(3).nickname }</td>
-                        <td></td>
+                        <td>${top5Xp.get(3).userinfo.xp }</td>
                     </tr>
   					<tr>
-                        <td></td>
+                        <td>5</td>
                         <td>${top5Xp.get(4).nickname }</td>
-                        <td></td>
+                        <td>${top5Xp.get(4).userinfo.xp }</td>
                     </tr>
 
                 </table>
             </div>
-            <div class="box" style="-webkit-border-radius: 7px !important; height: 220px;">
-                <h2>TOP 5 - Rich</h2>
+            <div class="box" style="-webkit-border-radius: 7px !important; height: 130px;">
+                <h2>TOP 5 - Rich User</h2>
                 <table>
                     <tr>
                         <th>Position</th>
@@ -151,32 +151,40 @@
                     </tr>
                     <tr>
                         <td>1</td>
-                        <td>kubilayckmk</td>
-                        <td>100030</td>
+                        <td>${top5Money.get(0).nickname }</td>
+                        <td>${top5Money.get(0).userinfo.bank + top5Money.get(0).userinfo.money}</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>2</td>
+                        <td>${top5Money.get(1).nickname }</td>
+                        <td>${top5Money.get(1).userinfo.bank + top5Money.get(1).userinfo.money}</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>3</td>
+                        <td>${top5Money.get(2).nickname }</td>
+                        <td>${top5Money.get(2).userinfo.bank + top5Money.get(2).userinfo.money}</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>4</td>
+                        <td>${top5Money.get(3).nickname }</td>
+                        <td>${top5Money.get(3).userinfo.bank + top5Money.get(3).userinfo.money}</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>${top5Money.get(4).nickname }</td>
+                        <td>${top5Money.get(4).userinfo.bank + top5Money.get(4).userinfo.money}</td>
                     </tr>
                 </table>
             </div>
+            <div class="box" style="-webkit-border-radius: 7px !important; height: 50px;">
+                <h2>STATUS</h2>
+                <p><strong>Total User: </strong> ${countOfUser}</p>
+            </div>
             <style>
                 td,th{
-                    font-size: 12px;
+                    font-size: 11px;
                     padding: auto;
                     color: white;
-
                 }
             </style>
         </div>

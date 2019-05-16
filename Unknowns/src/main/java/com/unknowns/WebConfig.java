@@ -9,9 +9,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
-/**
- * Created by ken on 16-10-12.
- */
+
 @Configuration
 @EnableWebMvc
 @ComponentScan("web")
