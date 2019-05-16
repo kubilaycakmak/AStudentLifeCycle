@@ -8,8 +8,6 @@ import java.util.Random;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.unknowns.Timers.CompanyMoney;
-import com.unknowns.Timers.TopList;
 import com.unknowns.hibernate.entity.Company;
 import com.unknowns.hibernate.entity.Items;
 import com.unknowns.hibernate.entity.User;
@@ -456,10 +454,8 @@ public class Queries {
 		return check;
 	}
 	public static Queries getQueries() {
-		if (queries == null) {
+		if (queries == null)
 			queries = new Queries();
-		}
-			
 
 		return queries;
 	}

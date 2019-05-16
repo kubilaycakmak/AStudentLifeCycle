@@ -13,13 +13,12 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 public class UnknownsApplication extends SpringBootServletInitializer {
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		CompanyMoney.TimerMoney();
-		TopList.Top5List();
 		return application.sources(UnknownsApplication.class);
 	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(UnknownsApplication.class, args);
-
+		CompanyMoney.TimerMoney();
+		TopList.Top5List();
 	}
 }
