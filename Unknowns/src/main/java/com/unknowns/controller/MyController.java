@@ -17,10 +17,10 @@ import com.unknowns.hibernate.util.Queries;
 public class MyController {
 	Queries queries;
 	HttpSession session;
-
+	static TopList topList = new TopList();
 	@GetMapping({ "/index", "/" })
 	public String getindex(HttpServletRequest request) {
-		TopList topList = new TopList();
+	
 		session = request.getSession();
 		session.setAttribute("top5Xp", topList.getTop5XpList());
 		session.setAttribute("top5Money", topList.getTop5MoneyList());
@@ -123,7 +123,9 @@ public class MyController {
 		queries = Queries.getQueries();
 		if (!queries.signUp(name, lastname, email, nickname, password, hintcode, type))
 			session.setAttribute("warningUp", "Email or nickname already exists.");
-			
+		
+		session.setAttribute("top5Xp", topList.getTop5XpList());
+		session.setAttribute("top5Money", topList.getTop5MoneyList());
 		return "index";
 		
 	}
@@ -143,6 +145,8 @@ public class MyController {
 		} else {
 			session = request.getSession();
 			session.setAttribute("warningIn", "Email or password is wrong.");
+			session.setAttribute("top5Xp", topList.getTop5XpList());
+			session.setAttribute("top5Money", topList.getTop5MoneyList());
 			return "index";
 		}
 	}
@@ -276,6 +280,9 @@ public class MyController {
 	public String logout(HttpServletRequest request) {
 		session = request.getSession();
 		session.invalidate();
+		session = request.getSession();
+		session.setAttribute("top5Xp", topList.getTop5XpList());
+		session.setAttribute("top5Money", topList.getTop5MoneyList());
 		return "index";
 	}
 	@RequestMapping(value = "/profile", method = RequestMethod.GET)
