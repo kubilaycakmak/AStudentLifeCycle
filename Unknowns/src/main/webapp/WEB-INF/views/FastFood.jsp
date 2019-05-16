@@ -210,19 +210,30 @@
                             <option value="m5">Menu5</option>
                         </select><br>
                 <p id="timer" style="display: none">${fastfoodtime}</p>
-                <div><span id="time1" style="color: white;"></span></div>
+                <c:if test="${fastfoodtime != 0}">
+                <div><p style="display: none" class="freelanceStatus" ><span id="time1" style="color: white;"></span> seconds left!</p></div>
+                </c:if>
+                <c:if test="${fastfoodtime == 0}">
+                <div><p style="display: none" class="freelanceStatus">Free to do Freelance!</p></div>
+                </c:if>
 
                 <script>
                     window.addEventListener("load", function () {
                         var choice = document.getElementById("choice");
                         var timer = parseInt(document.getElementById("timer").innerHTML);
                         var freeElement = document.querySelectorAll("td > p");
+                        var timer = parseInt(document.getElementById("timer").innerHTML);
+                        var status = document.getElementsByClassName("freelancestatus")[0];
+
                         if (timer > 0) {
                             document.getElementById("submitButton").disabled = true;
                             document.getElementById("submitButton").style.color = "red";
+                            status.style.display = "block";
                         } else if (timer == 0) {
                             document.getElementById("submitButton").disabled = false;
                             document.getElementById("submitButton").style.color = "orange";
+                            status.style.display = "none";
+                            timer = 0;
                         }
 
                         choice.addEventListener("change", function () {
@@ -230,6 +241,7 @@
                             if (freeOption == "info") {
                                 document.getElementById("submitButton").disabled = true;
                                 document.getElementById("submitButton").style.color = "grey";
+
                             } else if (freeOption == "m1") {
                                 freeElement[0].textContent = "+  10";
                                 freeElement[1].textContent = "-  $5";
@@ -265,6 +277,7 @@
                                 }
                             }, 1000);
                         }
+                        
 
                         var fiveMinutes = timer,
                             display = document.querySelector('#time1');
