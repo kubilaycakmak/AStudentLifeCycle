@@ -535,23 +535,23 @@ public class Queries {
  		List<User> users = session.createQuery("from User where email = '"+email+"'",User.class).list();
 		switch (id) {
 		case "1":
-			money = 1000;
+			money = 10000;
 			users.get(0).getUserinfo().getCompany().getItems().setCount1(users.get(0).getUserinfo().getCompany().getItems().getCount1()+1);
 			break;
 		case "2":
-			money = 2000;
+			money = 20000;
 			users.get(0).getUserinfo().getCompany().getItems().setCount2(users.get(0).getUserinfo().getCompany().getItems().getCount2()+1);
 			break;
 		case "3":
-			money = 3000;
+			money = 50000;
 			users.get(0).getUserinfo().getCompany().getItems().setCount3(users.get(0).getUserinfo().getCompany().getItems().getCount3()+1);
 			break;
 		case "4":
-			money = 4000;
+			money = 80000;
 			users.get(0).getUserinfo().getCompany().getItems().setCount4(users.get(0).getUserinfo().getCompany().getItems().getCount4()+1);
 			break;
 		case "5":
-			money = 5000;
+			money = 200000;
 			users.get(0).getUserinfo().getCompany().getItems().setCount5(users.get(0).getUserinfo().getCompany().getItems().getCount5()+1);
 			break;
 		}

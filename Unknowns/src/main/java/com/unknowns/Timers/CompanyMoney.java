@@ -35,9 +35,9 @@ public class CompanyMoney {
 					if(users.get(i).getUserinfo().getCompany() != null) {
 						money += users.get(i).getUserinfo().getCompany().getItems().getCount1()*100;
 						money += users.get(i).getUserinfo().getCompany().getItems().getCount2()*200;
-						money += users.get(i).getUserinfo().getCompany().getItems().getCount3()*300;
-						money += users.get(i).getUserinfo().getCompany().getItems().getCount4()*400;
-						money += users.get(i).getUserinfo().getCompany().getItems().getCount5()*500;
+						money += users.get(i).getUserinfo().getCompany().getItems().getCount3()*500;
+						money += users.get(i).getUserinfo().getCompany().getItems().getCount4()*800;
+						money += users.get(i).getUserinfo().getCompany().getItems().getCount5()*2000;
 						for(Workers worker : users.get(i).getUserinfo().getCompany().getWorkers()) 
 							workermoney += worker.getLvl();
 						money = (money/100)*workermoney;
