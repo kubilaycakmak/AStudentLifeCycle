@@ -24,6 +24,7 @@ public class MyController {
 		session = request.getSession();
 		session.setAttribute("top5Xp", topList.getTop5XpList());
 		session.setAttribute("top5Money", topList.getTop5MoneyList());
+		session.setAttribute("countOfUser", topList.getCountOfUser());
 		return "index";
 	}
 
@@ -126,6 +127,7 @@ public class MyController {
 		
 		session.setAttribute("top5Xp", topList.getTop5XpList());
 		session.setAttribute("top5Money", topList.getTop5MoneyList());
+		session.setAttribute("countOfUser", topList.getCountOfUser());
 		return "index";
 		
 	}
@@ -147,6 +149,7 @@ public class MyController {
 			session.setAttribute("warningIn", "Email or password is wrong.");
 			session.setAttribute("top5Xp", topList.getTop5XpList());
 			session.setAttribute("top5Money", topList.getTop5MoneyList());
+			session.setAttribute("countOfUser", topList.getCountOfUser());
 			return "index";
 		}
 	}
@@ -283,6 +286,7 @@ public class MyController {
 		session = request.getSession();
 		session.setAttribute("top5Xp", topList.getTop5XpList());
 		session.setAttribute("top5Money", topList.getTop5MoneyList());
+		session.setAttribute("countOfUser", topList.getCountOfUser());
 		return "index";
 	}
 	@RequestMapping(value = "/profile", method = RequestMethod.GET)

@@ -18,6 +18,7 @@ import com.unknowns.hibernate.util.Queries;
 public class TopList {
 	static ArrayList<User> top5XpList ;
 	static ArrayList<User> top5MoneyList;
+	static int countOfUser;
 	static Queries queries ;
 	static Session session;
 	static Transaction transaction;
@@ -31,6 +32,7 @@ public class TopList {
 				queries = Queries.getQueries();
 				session = HibernateUtil.getSessionFactory().openSession();
 				List<User> users = session.createQuery("from User",User.class).list();
+				countOfUser = users.size();
 				List<Userinfo> userinfo = session.createQuery("from Userinfo Order By xp DESC",Userinfo.class).list();
 				for(int i = 0 ; i < 5 ; i++) {
 					for (int j = 0; j < users.size(); j++) {
@@ -59,5 +61,8 @@ public class TopList {
 	}
 	public ArrayList<User> getTop5MoneyList(){
 		return top5MoneyList;
+	}
+	public int getCountOfUser() {
+		return countOfUser;
 	}
 }
