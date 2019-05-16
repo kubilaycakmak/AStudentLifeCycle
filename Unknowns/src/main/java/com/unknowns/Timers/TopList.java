@@ -16,8 +16,8 @@ import com.unknowns.hibernate.util.Queries;
 
 
 public class TopList {
-	static List<User> top5XpList ;
-	static List<User> top5MoneyList;
+	static ArrayList<User> top5XpList ;
+	static ArrayList<User> top5MoneyList;
 	static Queries queries ;
 	static Session session;
 	static Transaction transaction;
@@ -57,10 +57,10 @@ public class TopList {
 
 	}
 	
-	public List<User> getTop5XpList(){
+	public ArrayList<User> getTop5XpList(){
 		return top5XpList;
 	}
-	public List<User> getTop5MoneyList(){
+	public ArrayList<User> getTop5MoneyList(){
 		return top5MoneyList;
 	}
 }
