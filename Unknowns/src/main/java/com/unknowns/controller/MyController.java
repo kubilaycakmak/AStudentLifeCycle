@@ -84,7 +84,7 @@ public class MyController {
 	@RequestMapping("Hack")
 	public String getHack(HttpServletRequest request) {
 		session = request.getSession();
-		session.setAttribute("time", queries.getHackTime((String) session.getAttribute("email")));
+		session.setAttribute("hacktime", queries.getHackTime((String) session.getAttribute("email")));
 		session.setAttribute("user", queries.getUser((String) session.getAttribute("email")));
 		return "Hack";
 	}
