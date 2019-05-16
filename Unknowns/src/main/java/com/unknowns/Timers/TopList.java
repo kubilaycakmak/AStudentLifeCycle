@@ -47,9 +47,6 @@ public class TopList {
 						}
 					}
 				}
-				for (int i = 0; i < top5MoneyList.size(); i++) {
-					System.out.println(top5MoneyList.get(i).getUserinfo().getMoney());
-				}
 			}
 		};
 

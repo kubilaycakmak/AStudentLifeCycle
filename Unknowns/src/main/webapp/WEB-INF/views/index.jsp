@@ -115,22 +115,27 @@
                         </tr>
                     <tr>
                         <td>test</td>
+                        <td>${top5Xp.get(0).nickname }</td>
                         <td>test</td>
-                        <td>test</td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
+                        <td>${top5Xp.get(1).nickname }</td>
                         <td></td>
                     </tr>
                     <tr>
                         <td></td>
+                        <td>${top5Xp.get(2).nickname }</td>
                         <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>${top5Xp.get(3).nickname }</td>
+                        <td></td>
+                    </tr>
+  					<tr>
+                        <td></td>
+                        <td>${top5Xp.get(4).nickname }</td>
                         <td></td>
                     </tr>
 
