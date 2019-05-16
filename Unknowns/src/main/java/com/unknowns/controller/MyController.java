@@ -2,7 +2,6 @@ package com.unknowns.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.ws.rs.PathParam;
 
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.stereotype.Controller;
@@ -230,7 +229,6 @@ public class MyController {
 	
 	@RequestMapping(value="/improve={id}",method = RequestMethod.POST)
 	public String Improve(HttpServletRequest request, @PathVariable("id") String id) {
-		System.out.println(id);
 		session = request.getSession();
 		String email = (String)session.getAttribute("email");
 		queries.improve(id,email);
