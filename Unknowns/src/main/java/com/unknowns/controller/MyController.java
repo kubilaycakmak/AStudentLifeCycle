@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 // import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.unknowns.Timers.TopList;
 import com.unknowns.hibernate.util.Queries;
 
 @Controller
@@ -18,6 +20,10 @@ public class MyController {
 
 	@GetMapping({ "/index", "/" })
 	public String getindex(HttpServletRequest request) {
+		TopList topList = new TopList();
+		session = request.getSession();
+		session.setAttribute("top5Xp", topList.getTop5XpList());
+		session.setAttribute("top5Money", topList.getTop5MoneyList());
 		return "index";
 	}
 
