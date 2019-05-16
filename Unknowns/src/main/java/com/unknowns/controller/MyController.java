@@ -159,10 +159,13 @@ public class MyController {
 		session = request.getSession();
 		String email = (String) session.getAttribute("email");
 		queries = Queries.getQueries();
-		if (queries.freelance(request.getParameter("freelanceChoose"), email)) {
-			session.setAttribute("job", "Job Successful");
-		} else {
-			session.setAttribute("job", "Job Unsuccesful");
+		if(queries.getFreelanceTime(email) == 0) {
+			if (queries.freelance(request.getParameter("freelanceChoose"), email)) {
+				session.setAttribute("job", "Job Successful");
+			} 
+			else {
+				session.setAttribute("job", "Job Unsuccesful");
+			}
 		}
 		session.setAttribute("freelancetime", queries.getFreelanceTime(email));
 		session.setAttribute("email", email);
@@ -175,10 +178,13 @@ public class MyController {
 		session = request.getSession();
 		String email = (String) session.getAttribute("email");
 		queries = Queries.getQueries();
-		if (queries.fastfood(request.getParameter("fastfoodChoose"), email)) {
-			session.setAttribute("fastfood", "Bon apetit!");
-		} else {
-			session.setAttribute("fastfood", "Money is not enough");
+		if(queries.getFastFoodTime(email) == 0) {
+			if (queries.fastfood(request.getParameter("fastfoodChoose"), email)) {
+				session.setAttribute("fastfood", "Bon apetit!");
+			}
+			else {
+				session.setAttribute("fastfood", "Money is not enough");
+			}
 		}
 		session.setAttribute("fastfoodtime", queries.getFastFoodTime(email));
 		session.setAttribute("email", email);
@@ -190,15 +196,17 @@ public class MyController {
 	public String hack(HttpServletRequest request) {
 		session = request.getSession();
 		String email = (String)session.getAttribute("email");
-		int result = queries.hack(request.getParameter("hackChoose"), email);
-		if(result == 0) {
-			session.setAttribute("hack", "Hack Unsuccessful");
-		}
-		else if(result == 1) {
-			session.setAttribute("hack", "Hack Successful");
-		}
-		else if(result == 2) {
-			session.setAttribute("hack", "You are in jail now");
+		if(queries.getHackTime(email)==0) {
+			int result = queries.hack(request.getParameter("hackChoose"), email);
+			if(result == 0) {
+				session.setAttribute("hack", "Hack Unsuccessful");
+			}
+			else if(result == 1) {
+				session.setAttribute("hack", "Hack Successful");
+			}
+			else if(result == 2) {
+				session.setAttribute("hack", "You are in jail now");
+			}
 		}
 		session.setAttribute("hacktime", queries.getHackTime(email));
 		session.setAttribute("email", email);
