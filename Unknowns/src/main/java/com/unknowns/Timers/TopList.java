@@ -27,7 +27,6 @@ public class TopList {
 		TimerTask gorev2 = new TimerTask() {
 			@Override
 			public void run() {
-				System.out.println("Liste");
 				top5XpList = new ArrayList<User>();
 				top5MoneyList = new ArrayList<User>();
 				queries = Queries.getQueries();

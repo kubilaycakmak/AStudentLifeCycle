@@ -21,8 +21,6 @@ public class CompanyMoney {
 
 			@Override
 			public void run() {
-
-				System.out.println("Money");
 				int money = 0;
 				int workermoney = 0;
 				queries = Queries.getQueries();
