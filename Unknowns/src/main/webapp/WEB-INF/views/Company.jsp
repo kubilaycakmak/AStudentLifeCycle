@@ -3,11 +3,14 @@
     <title>
         LifeCycle
     </title>
+    <meta charset="ISO-8859-1">
     <meta http-equiv="X-UA-Compatible" content="IE=9">
     <meta name="format-detection" content="telephone=no">
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+            crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <%@ include file="main.css" %>
@@ -26,66 +29,66 @@
                                value="Help" name="help"></li>
                     <li><input class="input-nav" formaction="/logout"
                                type="submit" value="Logout" name="logout"></li>
-<%--                    <li style="color: #1b1819 !important;">--%>
-<%--                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">--%>
-<%--                            Live!--%>
-<%--                        </button>--%>
-<%--                        <!-- Modal -->--%>
-<%--                        <div class="modal fade" id="myModal" role="dialog">--%>
-<%--                            <div class="modal-dialog">--%>
+                    <%--                    <li style="color: #1b1819 !important;">--%>
+                    <%--                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">--%>
+                    <%--                            Live!--%>
+                    <%--                        </button>--%>
+                    <%--                        <!-- Modal -->--%>
+                    <%--                        <div class="modal fade" id="myModal" role="dialog">--%>
+                    <%--                            <div class="modal-dialog">--%>
 
-<%--                                <div class="modal-content">--%>
-<%--                                    <div class="modal-header">--%>
-<%--                                        <button type="button" class="close" data-dismiss="modal">&times;</button>--%>
-<%--                                        <h4 class="modal-title">HelpDESK</h4>--%>
-<%--                                    </div>--%>
-<%--                                    <div class="modal-body">--%>
-<%--                                        <textarea id="messagesTextArea" rows="10" cols="46"></textarea>--%>
-<%--                                        <textarea id="usersTextArea" rows="10" cols="10" readonly="readonly"></textarea><br>--%>
-<%--                                        <input id="textMessage" size="52" type="text" value="${user.nickname }"><input--%>
-<%--                                            type="button" onclick="sendMessage();" id="sendButton" value="Send">--%>
-<%--                                        <script type="text/javascript">--%>
+                    <%--                                <div class="modal-content">--%>
+                    <%--                                    <div class="modal-header">--%>
+                    <%--                                        <button type="button" class="close" data-dismiss="modal">&times;</button>--%>
+                    <%--                                        <h4 class="modal-title">HelpDESK</h4>--%>
+                    <%--                                    </div>--%>
+                    <%--                                    <div class="modal-body">--%>
+                    <%--                                        <textarea id="messagesTextArea" rows="10" cols="46"></textarea>--%>
+                    <%--                                        <textarea id="usersTextArea" rows="10" cols="10" readonly="readonly"></textarea><br>--%>
+                    <%--                                        <input id="textMessage" size="52" type="text" value="${user.nickname }"><input--%>
+                    <%--                                            type="button" onclick="sendMessage();" id="sendButton" value="Send">--%>
+                    <%--                                        <script type="text/javascript">--%>
 
-<%--                                            $(window).on('shown.bs.modal', function () {--%>
-<%--                                                $('#code').modal('show');--%>
-<%--                                                document.getElementById("sendButton").click();--%>
-<%--                                            });--%>
+                    <%--                                            $(window).on('shown.bs.modal', function () {--%>
+                    <%--                                                $('#code').modal('show');--%>
+                    <%--                                                document.getElementById("sendButton").click();--%>
+                    <%--                                            });--%>
 
-<%--                                            var webSocket = new WebSocket("ws:///192.168.137.1:8080/ChatServer/endpointserverdemo");--%>
-<%--                                            var messagesTextArea = document.getElementById("messagesTextArea");--%>
-<%--                                            webSocket.onmessage = function processMessage(message) {--%>
-<%--                                                var jsonData = JSON.parse(message.data);--%>
-<%--                                                if (jsonData.message != null)--%>
-<%--                                                    messagesTextArea.value += jsonData.message + "\n";--%>
-<%--                                                if (jsonData.users != null) {--%>
-<%--                                                    usersTextArea.value = "";--%>
-<%--                                                    var i = 0;--%>
-<%--                                                    while (i < jsonData.users.length)--%>
-<%--                                                        usersTextArea.value += jsonData.users[i++] + "\n";--%>
-<%--                                                }--%>
-<%--                                            }--%>
+                    <%--                                            var webSocket = new WebSocket("ws:///192.168.137.1:8080/ChatServer/endpointserverdemo");--%>
+                    <%--                                            var messagesTextArea = document.getElementById("messagesTextArea");--%>
+                    <%--                                            webSocket.onmessage = function processMessage(message) {--%>
+                    <%--                                                var jsonData = JSON.parse(message.data);--%>
+                    <%--                                                if (jsonData.message != null)--%>
+                    <%--                                                    messagesTextArea.value += jsonData.message + "\n";--%>
+                    <%--                                                if (jsonData.users != null) {--%>
+                    <%--                                                    usersTextArea.value = "";--%>
+                    <%--                                                    var i = 0;--%>
+                    <%--                                                    while (i < jsonData.users.length)--%>
+                    <%--                                                        usersTextArea.value += jsonData.users[i++] + "\n";--%>
+                    <%--                                                }--%>
+                    <%--                                            }--%>
 
-<%--                                            function sendMessage() {--%>
-<%--                                                webSocket.send(textMessage.value);--%>
-<%--                                                textMessage.value = "";--%>
-<%--                                            }--%>
+                    <%--                                            function sendMessage() {--%>
+                    <%--                                                webSocket.send(textMessage.value);--%>
+                    <%--                                                textMessage.value = "";--%>
+                    <%--                                            }--%>
 
-<%--                                            window.onbeforeunload = function () {--%>
-<%--                                                webSocket.onclose = function () {--%>
-<%--                                                };--%>
-<%--                                                webSocket.close();--%>
-<%--                                            }--%>
-<%--                                        </script>--%>
-<%--                                    </div>--%>
-<%--                                    <div class="modal-footer">--%>
-<%--                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close--%>
-<%--                                        </button>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
+                    <%--                                            window.onbeforeunload = function () {--%>
+                    <%--                                                webSocket.onclose = function () {--%>
+                    <%--                                                };--%>
+                    <%--                                                webSocket.close();--%>
+                    <%--                                            }--%>
+                    <%--                                        </script>--%>
+                    <%--                                    </div>--%>
+                    <%--                                    <div class="modal-footer">--%>
+                    <%--                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close--%>
+                    <%--                                        </button>--%>
+                    <%--                                    </div>--%>
+                    <%--                                </div>--%>
 
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                    </li>--%>
+                    <%--                            </div>--%>
+                    <%--                        </div>--%>
+                    <%--                    </li>--%>
                 </form>
             </ul>
         </div>
@@ -116,15 +119,15 @@
                         <p>
                             is a
                             <strong>
-                            <c:if test="${user.userinfo.type == 1}">
-                                Computer Student
-                            </c:if>
-                            <c:if test="${user.userinfo.type == 2}">
-                                Medicine Student
-                            </c:if>
-                            <c:if test="${user.userinfo.type == 3}">
-                                Law Student
-                            </c:if>
+                                <c:if test="${user.userinfo.type == 1}">
+                                    Computer Student
+                                </c:if>
+                                <c:if test="${user.userinfo.type == 2}">
+                                    Medicine Student
+                                </c:if>
+                                <c:if test="${user.userinfo.type == 3}">
+                                    Law Student
+                                </c:if>
 
                             </strong> and is located in <a href="">Istanbul Aydin University</a>
                         </p>
@@ -152,16 +155,16 @@
                                 <tr>
                                     <td>Experience:</td>
                                     <td class="stat"><strong>${user.userinfo.xp}</strong></td>
-											<td>Company:</td>
-											<td class="stat"><c:choose>
-													<c:when test="${user.userinfo.company == null}">
-														<a href="Company">Create!</a>
-													</c:when>
-													<c:when test="${freelancetime != null}">
-														<strong>${user.userinfo.company.name}</strong>
-													</c:when>
-												</c:choose></td>
-										</tr>
+                                    <td>Company:</td>
+                                    <td class="stat"><c:choose>
+                                        <c:when test="${user.userinfo.company == null}">
+                                            <a href="Company">Create!</a>
+                                        </c:when>
+                                        <c:when test="${freelancetime != null}">
+                                            <strong>${user.userinfo.company.name}</strong>
+                                        </c:when>
+                                    </c:choose></td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -183,16 +186,17 @@
                         <h4>Total Employee: DEMO</h4>
                         <br>
                         <h2>Company Name:</h2>
-                            <strong><h3 style="text-align: center; margin: auto;">${user.userinfo.company.name }</h3>
-                        </c:if>
+                        <strong><h3 style="text-align: center; margin: auto;">${user.userinfo.company.name }</h3>
+                            </c:if>
 
                     </ul>
                 </div>
                 <div id="ctl00_cphLeftColumn_ctl00_pnlHotTrace" class="box">
                     <h2>Hiring</h2>
                     <p><strong>Every +50 experiences, You can hire 1 Employee to your Company!</strong></p>
-                    <p><strong>But the Employee's need to be survive at this life. So, You need to give them salary. When You hire new Employee your money will decrease!</strong></p>
-                   <p><strong>You have ${user.userinfo.company.workers.size() } employee.</strong></p>
+                    <p><strong>But the Employee's need to be survive at this life. So, You need to give them salary.
+                        When You hire new Employee your money will decrease!</strong></p>
+                    <p><strong>You have ${user.userinfo.company.workers.size() } employee.</strong></p>
                     <c:if test="${user.userinfo.company == null}">
                     </c:if>
                     <c:if test="${user.userinfo.company.workers != null}">
@@ -203,22 +207,41 @@
                 </div>
                 <div class="box">
                     <h2>Improvement</h2>
-                    <p><strong>While you improvement your employee, you spend some dollars, but that will provide you %5 earning points from Company equipments!</strong></p>
-                    <p><strong>Do not forget, the limit of level is 5. So, you cannot improve your Employee's more than lv 5.</strong></p>
+                    <p><strong>While you improvement your employee, you spend some dollars, but that will provide you %5
+                        earning points from Company equipments!</strong></p>
+                    <p><strong>Do not forget, the limit of level is 5. So, you cannot improve your Employee's more than
+                        lv 5.</strong></p>
                     <c:if test="${user.userinfo.company.workers.size() == 0}">
                     </c:if>
                     <c:if test="${user.userinfo.company.workers.size() != 0}">
-                        <c:forEach var="worker" items="${user.userinfo.company.workers }">
-                            <form formaction="${worker.id}" method="POST">
-                                <p>${worker.lvl } lv : <input type="submit" value="Improve" style="color: black;"
-                                                           formaction="/improve=${worker.id}"></p>
-                            </form>
-                        </c:forEach>
+                        <table style="color: white;">
+                            <tr>
+                                <th>LEVEL&nbsp&nbsp&nbsp</th>
+                                <th>%&nbsp&nbsp&nbsp</th>
+                                <th>Improve&nbsp&nbsp&nbsp</th>
+                            </tr>
+                            <c:forEach var="worker" items="${user.userinfo.company.workers }">
 
+
+                            <tr>
+                                <form formaction="${worker.id}" method="POST" style="color: white;">
+
+
+                                    <td>${worker.lvl } lv :</td>
+                                    <td> -</td>
+                                    <td><input type="submit" value="Improve"
+                                               style="color: black;"
+                                               formaction="/improve=${worker.id}"></td>
+
+                                </form>
+
+                                </c:forEach>
+                            </tr>
+                        </table>
                     </c:if>
                 </div>
             </div>
-            <div id="ppm-sidemenu" role="navigation">
+            <div id="ppm-sidemenu" role="navigation" style="font-weight: lighter !important;">
                 <div class="box">
                     <div class="menu">
                         <h3 class="menu">Menu</h3>

@@ -3,6 +3,7 @@
     <title>
         LifeCycle
     </title>
+    <meta charset="ISO-8859-1">
     <meta http-equiv="X-UA-Compatible" content="IE=9">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
@@ -171,7 +172,7 @@
                 <div id="ctl00_cphLeftColumn_ctl00_divRecentEvents" class="box">
                     <h2>Recent diary mail</h2>
                     <ul class="noheader diaryExtraspace">
-                        <p>“Teaching staff say that universities are risking their reputations by taking on students who are not capable of advanced levels of learning,” ABC promo for Monday’s Four Corners.
+                        <p>Teaching staff say that universities are risking their reputations by taking on students who are not capable of advanced levels of learning,” ABC promo for Monday’s Four Corners.
 
                             Universities, “are selling access to millions of foreign students and reaping many billions of dollars of revenue but now the alarm has been raised that increasingly Australian universities are exposing themselves to corrupt practise, to lower standards,  Four Corners, April 20 2015.</p>
                     </ul>
@@ -256,7 +257,6 @@
                             <li id="mnuToolTipImproveCharacter"><a href="FastFood">FastFood</a></li>
                             <li><a href="Bank">Bank</a></li>
                             <li><a href="Store">Store</a></li>
-                            <li id="mnuToolTipSongs"><a href="Hack">Hack</a></li>
                             <li><a href="Jail">Jail</a></li>
                             <li><a href="Company">Company</a></li>
                         </ul>

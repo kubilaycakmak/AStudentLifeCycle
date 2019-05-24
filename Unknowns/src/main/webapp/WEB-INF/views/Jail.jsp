@@ -170,7 +170,7 @@
                     <img
                             src="https://github.com/kubilayckmk/AStudentLifeCycle/blob/master/Unknowns/src/main/webapp/WEB-INF/views/assets/images/jail.jpg?raw=true"
                             width="212px" height="140px">
-                    <p>JAILJAILJAILJAILJAILJAIL</p>
+                    <p>The freedom is everything right? There is a chance to give your bribe and be free.</p>
                 </div>
                 <div class="clear"></div>
                 <div id="ctl00_cphLeftColumn_ctl00_divRecentEvents" class="box">
@@ -179,7 +179,7 @@
                         <p>Status: You are in jail for ${jailtime} second</p>
                         <p>Need for Free: $ ${user.userinfo.jail} </p>
                         <form action="/bribe" method="post">
-                            <input type="submit" value="Submit" name="bribe">
+                            <input type="submit" value="Bribe" name="bribe">
                         </form>
                     </ul>
                 </div>

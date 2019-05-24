@@ -1,3 +1,4 @@
+<%@ page import="com.unknowns.hibernate.util.Queries" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <head>
     <title>
@@ -7,8 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=9">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" type="text/css"/>
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+            crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <%@ include file="main.css" %>
@@ -28,66 +32,66 @@
                                value="Help" name="help"></li>
                     <li><input class="input-nav" formaction="/logout"
                                type="submit" value="Logout" name="logout"></li>
-<%--                    <li style="color: #1b1819 !important;">--%>
-<%--                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">--%>
-<%--                            Live!--%>
-<%--                        </button>--%>
-<%--                        <!-- Modal -->--%>
-<%--                        <div class="modal fade" id="myModal" role="dialog">--%>
-<%--                            <div class="modal-dialog">--%>
+                    <%--                    <li style="color: #1b1819 !important;">--%>
+                    <%--                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">--%>
+                    <%--                            Live!--%>
+                    <%--                        </button>--%>
+                    <%--                        <!-- Modal -->--%>
+                    <%--                        <div class="modal fade" id="myModal" role="dialog">--%>
+                    <%--                            <div class="modal-dialog">--%>
 
-<%--                                <div class="modal-content">--%>
-<%--                                    <div class="modal-header">--%>
-<%--                                        <button type="button" class="close" data-dismiss="modal">&times;</button>--%>
-<%--                                        <h4 class="modal-title">HelpDESK</h4>--%>
-<%--                                    </div>--%>
-<%--                                    <div class="modal-body">--%>
-<%--                                        <textarea id="messagesTextArea" rows="10" cols="46"></textarea>--%>
-<%--                                        <textarea id="usersTextArea" rows="10" cols="10" readonly="readonly"></textarea><br>--%>
-<%--                                        <input id="textMessage" size="52" type="text" value="${user.nickname }"><input--%>
-<%--                                            type="button" onclick="sendMessage();" id="sendButton" value="Send">--%>
-<%--                                        <script type="text/javascript">--%>
+                    <%--                                <div class="modal-content">--%>
+                    <%--                                    <div class="modal-header">--%>
+                    <%--                                        <button type="button" class="close" data-dismiss="modal">&times;</button>--%>
+                    <%--                                        <h4 class="modal-title">HelpDESK</h4>--%>
+                    <%--                                    </div>--%>
+                    <%--                                    <div class="modal-body">--%>
+                    <%--                                        <textarea id="messagesTextArea" rows="10" cols="46"></textarea>--%>
+                    <%--                                        <textarea id="usersTextArea" rows="10" cols="10" readonly="readonly"></textarea><br>--%>
+                    <%--                                        <input id="textMessage" size="52" type="text" value="${user.nickname }"><input--%>
+                    <%--                                            type="button" onclick="sendMessage();" id="sendButton" value="Send">--%>
+                    <%--                                        <script type="text/javascript">--%>
 
-<%--                                            $(window).on('shown.bs.modal', function () {--%>
-<%--                                                $('#code').modal('show');--%>
-<%--                                                document.getElementById("sendButton").click();--%>
-<%--                                            });--%>
+                    <%--                                            $(window).on('shown.bs.modal', function () {--%>
+                    <%--                                                $('#code').modal('show');--%>
+                    <%--                                                document.getElementById("sendButton").click();--%>
+                    <%--                                            });--%>
 
-<%--                                            var webSocket = new WebSocket("ws:///192.168.137.1:8080/ChatServer/endpointserverdemo");--%>
-<%--                                            var messagesTextArea = document.getElementById("messagesTextArea");--%>
-<%--                                            webSocket.onmessage = function processMessage(message) {--%>
-<%--                                                var jsonData = JSON.parse(message.data);--%>
-<%--                                                if (jsonData.message != null)--%>
-<%--                                                    messagesTextArea.value += jsonData.message + "\n";--%>
-<%--                                                if (jsonData.users != null) {--%>
-<%--                                                    usersTextArea.value = "";--%>
-<%--                                                    var i = 0;--%>
-<%--                                                    while (i < jsonData.users.length)--%>
-<%--                                                        usersTextArea.value += jsonData.users[i++] + "\n";--%>
-<%--                                                }--%>
-<%--                                            }--%>
+                    <%--                                            var webSocket = new WebSocket("ws:///192.168.137.1:8080/ChatServer/endpointserverdemo");--%>
+                    <%--                                            var messagesTextArea = document.getElementById("messagesTextArea");--%>
+                    <%--                                            webSocket.onmessage = function processMessage(message) {--%>
+                    <%--                                                var jsonData = JSON.parse(message.data);--%>
+                    <%--                                                if (jsonData.message != null)--%>
+                    <%--                                                    messagesTextArea.value += jsonData.message + "\n";--%>
+                    <%--                                                if (jsonData.users != null) {--%>
+                    <%--                                                    usersTextArea.value = "";--%>
+                    <%--                                                    var i = 0;--%>
+                    <%--                                                    while (i < jsonData.users.length)--%>
+                    <%--                                                        usersTextArea.value += jsonData.users[i++] + "\n";--%>
+                    <%--                                                }--%>
+                    <%--                                            }--%>
 
-<%--                                            function sendMessage() {--%>
-<%--                                                webSocket.send(textMessage.value);--%>
-<%--                                                textMessage.value = "";--%>
-<%--                                            }--%>
+                    <%--                                            function sendMessage() {--%>
+                    <%--                                                webSocket.send(textMessage.value);--%>
+                    <%--                                                textMessage.value = "";--%>
+                    <%--                                            }--%>
 
-<%--                                            window.onbeforeunload = function () {--%>
-<%--                                                webSocket.onclose = function () {--%>
-<%--                                                };--%>
-<%--                                                webSocket.close();--%>
-<%--                                            }--%>
-<%--                                        </script>--%>
-<%--                                    </div>--%>
-<%--                                    <div class="modal-footer">--%>
-<%--                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close--%>
-<%--                                        </button>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
+                    <%--                                            window.onbeforeunload = function () {--%>
+                    <%--                                                webSocket.onclose = function () {--%>
+                    <%--                                                };--%>
+                    <%--                                                webSocket.close();--%>
+                    <%--                                            }--%>
+                    <%--                                        </script>--%>
+                    <%--                                    </div>--%>
+                    <%--                                    <div class="modal-footer">--%>
+                    <%--                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close--%>
+                    <%--                                        </button>--%>
+                    <%--                                    </div>--%>
+                    <%--                                </div>--%>
 
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                    </li>--%>
+                    <%--                            </div>--%>
+                    <%--                        </div>--%>
+                    <%--                    </li>--%>
                 </form>
             </ul>
         </div>
@@ -116,17 +120,17 @@
                     </div>
                     <div class="float_left characterPresentation">
                         <p>
-                            is a 
+                            is a
                             <strong>
-                            <c:if test="${user.userinfo.type == 1}">
-                            Computer Student
-                        </c:if>
-                            <c:if test="${user.userinfo.type == 2}">
-                                Medicine Student
-                            </c:if>
-                            <c:if test="${user.userinfo.type == 3}">
-                                Law Student
-                            </c:if>
+                                <c:if test="${user.userinfo.type == 1}">
+                                    Computer Student
+                                </c:if>
+                                <c:if test="${user.userinfo.type == 2}">
+                                    Medicine Student
+                                </c:if>
+                                <c:if test="${user.userinfo.type == 3}">
+                                    Law Student
+                                </c:if>
 
 
                             </strong> and is located in <a href="">Istanbul Aydin University</a>
@@ -156,14 +160,14 @@
                                     <td>Experience:</td>
                                     <td class="stat"><strong>${user.userinfo.xp}</strong></td>
                                     <td>Company:</td>
-											<td class="stat"><c:choose>
-													<c:when test="${user.userinfo.company == null}">
-														<a href="Company">Create!</a>
-													</c:when>
-													<c:when test="${user.userinfo.company != null}">
-														<strong>${user.userinfo.company.name}</strong>
-													</c:when>
-												</c:choose></td>
+                                    <td class="stat"><c:choose>
+                                        <c:when test="${user.userinfo.company == null}">
+                                            <a href="Company">Create!</a>
+                                        </c:when>
+                                        <c:when test="${user.userinfo.company != null}">
+                                            <strong>${user.userinfo.company.name}</strong>
+                                        </c:when>
+                                    </c:choose></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -222,26 +226,37 @@
                 <p>
                     <form action="hack" method="POST">
                         <select name="hackChoose"
-                                id="choice"
+                                id="hackChoose"
                                 class="maxwidth125px round">
-                            <option value="1">Attack Wifi</option>
-                            <option value="2">Attack Bank Accounts</option>
-                            <option value="3">Attack Police Department</option>
-                            <option value="4">DEMO</option>
-                            <option value="5">DEMO</option>
+                            <option value="info">Select the Hack</option>
+                            <c:if test="${user.userinfo.xp >= 0}">
+                                <option value="1">Attack Wifi</option>
+                            </c:if>
+                            <c:if test="${user.userinfo.xp >= 300}">
+                                <option value="2">Attack Bank Accounts</option>
+                            </c:if>
+                            <c:if test="${user.userinfo.xp >= 600}">
+                                <option value="3">Attack Police Department</option>
+                            </c:if>
+                            <c:if test="${user.userinfo.xp >= 900}">
+                                <option value="4">DEMO</option>
+                            </c:if>
+                            <c:if test="${user.userinfo.xp >= 1200}">
+                                <option value="5">DEMO</option>
+                            </c:if>
                         </select><br>
                 <p id="timer" style="display: none">${hacktime}</p>
                 <c:if test="${hacktime != 0}">
-                <div><p style="display: none" class="freelanceStatus" ><span id="time1" style="color: white;"></span> seconds left!</p></div>
+                <div><p style="display: none" class="freelanceStatus"><span id="time1" style="color: white;"></span>
+                    seconds left!</p></div>
                 </c:if>
                 <c:if test="${hacktime == 0}">
-                <div><p style="display: none" class="freelanceStatus">Free to do Freelance!</p></div>
+                <div><p style="display: none" class="freelanceStatus">Free to do Hack!</p></div>
                 </c:if>
 
                 <script>
                     window.addEventListener("load", function () {
-                        var choice = document.getElementById("choice");
-                        var timer = parseInt(document.getElementById("timer").innerHTML);
+                        var hackChoose = document.getElementById("hackChoose");
                         var freeElement = document.querySelectorAll("td > p");
                         var timer = parseInt(document.getElementById("timer").innerHTML);
                         var status = document.getElementsByClassName("freelancestatus")[0];
@@ -254,36 +269,34 @@
                             document.getElementById("submitButton").disabled = false;
                             document.getElementById("submitButton").style.color = "orange";
                             status.style.display = "none";
-                            timer = 0;
                         }
 
-
-                        choice.addEventListener("change", function () {
+                        hackChoose.addEventListener("change", function () {
                             var freeOption = this.options[this.selectedIndex].value;
                             if (freeOption == "info") {
                                 document.getElementById("submitButton").disabled = true;
                                 document.getElementById("submitButton").style.color = "grey";
 
-                            } else if (freeOption == "m1") {
-                                freeElement[0].textContent = "+  10";
-                                freeElement[1].textContent = "-  $5";
-                                freeElement[2].textContent = "120 second";
-                            } else if (freeOption == "m2") {
-                                freeElement[0].textContent = "+  20";
-                                freeElement[1].textContent = "-  $15";
-                                freeElement[2].textContent = "240 second";
-                            } else if (freeOption == "m3") {
-                                freeElement[0].textContent = "+  40";
-                                freeElement[1].textContent = "-  $20";
-                                freeElement[2].textContent = "480 second";
-                            } else if (freeOption == "m4") {
-                                freeElement[0].textContent = "+  50";
-                                freeElement[1].textContent = "-  $20";
-                                freeElement[2].textContent = "960 second";
-                            } else if (freeOption == "m5") {
-                                freeElement[0].textContent = "+  100";
-                                freeElement[1].textContent = "-  $25";
-                                freeElement[2].textContent = "1920 second";
+                            } else if (freeOption == "1") {
+                                freeElement[0].textContent = "   %60";
+                                freeElement[1].textContent = "   %20";
+                                freeElement[2].textContent = "+   50";
+                            } else if (freeOption == "2") {
+                                freeElement[0].textContent = "   %60";
+                                freeElement[1].textContent = "   %20";
+                                freeElement[2].textContent = "+   300";
+                            } else if (freeOption == "3") {
+                                freeElement[0].textContent = "   %60";
+                                freeElement[1].textContent = "   %20";
+                                freeElement[2].textContent = "+   50";
+                            } else if (freeOption == "4") {
+                                freeElement[0].textContent = "   DEMO";
+                                freeElement[1].textContent = "   DEMO";
+                                freeElement[2].textContent = "+   DEMO";
+                            } else if (freeOption == "5") {
+                                freeElement[0].textContent = "   DEMO";
+                                freeElement[1].textContent = "   DEMO";
+                                freeElement[2].textContent = "+   DEMO";
                             }
                         });
 
@@ -322,25 +335,26 @@
         <th colspan="2" class="single">HACK Info</th>
     </tr>
     <tr class="odd">
-        <td class="width40" id="stamina">Stamina required:</td>
-        <td id="cstamina"></td>
+        <td class="width40" id="stamina">Complete Chance:</td>
+        <td id="cstamina"><p></p></td>
     </tr>
     <tr class="even">
-        <td id="xp">Experience:</td>
-        <td id="cxp"></td>
+        <td id="xp">Jail Chance:</td>
+        <td id="cxp"><p></p></td>
     </tr>
     <tr class="odd">
         <td id="money">Money:</td>
-        <td id="cmoney"></td>
+        <td id="cmoney"><p></p></td>
     </tr>
     <tr class="even">
         <td id="time">Time:</td>
-        <td id="ctime"></td>
+        <td id="ctime">7200</td>
     </tr>
     <tr class="odd">
         <td>Success or Failed:</td>
         <% if (null != session.getAttribute("hack")) {%>
-        <td><p class="required"><%=session.getAttribute("hack")%></p></td>
+        <td><p class="required"><%=session.getAttribute("hack")%>
+        </p></td>
         <%session.removeAttribute("hack");%>
         <%}%>
     </tr>

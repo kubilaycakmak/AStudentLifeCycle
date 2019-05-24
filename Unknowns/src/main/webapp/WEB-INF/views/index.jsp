@@ -191,6 +191,12 @@
                 <h2>STATUS</h2>
                 <p><strong>Total User: </strong> ${countOfUser}</p>
             </div>
+            <div class="box" style="-webkit-border-radius: 7px !important; height: 85px;">
+                <h2>Information</h2>
+                <p><strong>Current Version: </strong> BETA</p>
+                <p><strong>Next Version: </strong> STABLE</p>
+                <p><strong>Update: </strong> 25 May 2019</p>
+            </div>
             <style>
                 td,th{
                     font-size: 10px;

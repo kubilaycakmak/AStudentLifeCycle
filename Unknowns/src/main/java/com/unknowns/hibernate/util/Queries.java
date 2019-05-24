@@ -229,15 +229,39 @@ public class Queries {
 		transaction = session.beginTransaction();
 		users = session.createQuery("from User where email = '" + email + "'", User.class).list();
 		if (choose.equals("1")) {
-			jailchance = 5;
-			successchance = 70;
-			fchoose = 1;
-			money = 50;
+			if (users.get(0).getUserinfo().getXp() > 0 && users.get(0).getUserinfo().getXp() < 300){
+				jailchance = 20;
+				successchance = 60;
+				fchoose = 1;
+				money = 50;
+			}else if (users.get(0).getUserinfo().getXp() > 300 && users.get(0).getUserinfo().getXp() < 600){
+				jailchance = 10;
+				successchance = 80;
+				fchoose = 1;
+				money = 150;
+			}else {
+				jailchance = 5;
+				successchance = 80;
+				fchoose = 1;
+				money = 200;
+			}
 		} else if (choose.equals("2")) {
-			jailchance = 10;
-			successchance = 65;
-			fchoose = 2;
-			money = 100;
+			if (users.get(0).getUserinfo().getXp() > 600 && users.get(0).getUserinfo().getXp() < 900){
+				jailchance = 20;
+				successchance = 60;
+				fchoose = 2;
+				money = 300;
+			}else if (users.get(0).getUserinfo().getXp() > 900 && users.get(0).getUserinfo().getXp() < 1200){
+				jailchance = 10;
+				successchance = 80;
+				fchoose = 2;
+				money = 650;
+			}else {
+				jailchance = 5;
+				successchance = 80;
+				fchoose = 2;
+				money = 1000;
+			}
 		} else if (choose.equals("3")) {
 			jailchance = 15;
 			successchance = 60;
@@ -284,6 +308,7 @@ public class Queries {
 		transaction.commit();
 		session.close();
 		return result;
+
 	}
 
 	public int getFreelanceTime(String email) {
