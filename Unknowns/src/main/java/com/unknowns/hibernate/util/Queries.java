@@ -511,7 +511,7 @@ public class Queries {
 		session = HibernateUtil.getSessionFactory().openSession();
 		List<Workers> workers = new ArrayList<Workers>();
 		users = session.createQuery("from User where email = '" + email + "'", User.class).list();
-		if (users.get(0).getUserinfo().getCompany().getWorkers().size() < users.get(0).getUserinfo().getXp() / 50) {
+		if (users.get(0).getUserinfo().getCompany().getWorkers().size() < users.get(0).getUserinfo().getXp() / 250) {
 			if (users.get(0).getUserinfo().getCompany().getWorkers().size() != 0)
 				workers = users.get(0).getUserinfo().getCompany().getWorkers();
 			Workers worker = new Workers(1);
