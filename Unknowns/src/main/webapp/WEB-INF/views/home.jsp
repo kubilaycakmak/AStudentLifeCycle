@@ -257,6 +257,7 @@
                             <li id="mnuToolTipImproveCharacter"><a href="FastFood">FastFood</a></li>
                             <li><a href="Bank">Bank</a></li>
                             <li><a href="Store">Store</a></li>
+                            <li><a href="Hack">Hack</a></li>
                             <li><a href="Jail">Jail</a></li>
                             <li><a href="Company">Company</a></li>
                         </ul>
