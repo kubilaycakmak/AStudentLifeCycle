@@ -30,9 +30,18 @@ public class MyController {
 
 	@RequestMapping(value="/forgetPassword", method=RequestMethod.POST)
 	public String getForgetPassword(HttpServletRequest request) {
-		return "ForgetPassword";
+		return "forgetPassword";
 	}
 
+	@RequestMapping("/changePassword")
+	public String getChangePassword(){
+		return "ChangePassword";
+	}
+
+	@RequestMapping("/forgetPassword")
+	public String getForgetPasswordPage(){
+		return "forgetPassword";
+	}
 	@RequestMapping("home")
 	public String getHome(HttpServletRequest request) {
 		session = request.getSession();

@@ -114,9 +114,10 @@
                         </p></td>
                     <%session.removeAttribute("warningIn");%>
                     <%}%>
-
+                        <a href="forgetPassword">FORGET PASSWORD?</a>
                         <input type="submit" name="loginSubmit" value="OK!" onclick="" id="loginSubmit"
                                class="cnf btn btn-dark">
+
                     </p>
                 </form>
             </div>
