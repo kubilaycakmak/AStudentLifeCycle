@@ -6,8 +6,11 @@
     <meta charset="ISO-8859-1">
     <meta http-equiv="X-UA-Compatible" content="IE=9">
     <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+            crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <%@ include file="main.css" %>
@@ -26,70 +29,86 @@
                                value="Help" name="help"></li>
                     <li><input class="input-nav" formaction="/logout"
                                type="submit" value="Logout" name="logout"></li>
-<%--                    <li style="color: #1b1819 !important;">--%>
-<%--                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">--%>
-<%--                            Live!--%>
-<%--                        </button>--%>
-<%--                        <!-- Modal -->--%>
-<%--                        <div class="modal fade" id="myModal" role="dialog">--%>
-<%--                            <div class="modal-dialog">--%>
+                    <li style="color: #1b1819 !important;">
+                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
+                            Live!
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
 
-<%--                                <div class="modal-content">--%>
-<%--                                    <div class="modal-header">--%>
-<%--                                        <button type="button" class="close" data-dismiss="modal">&times;</button>--%>
-<%--                                        <h4 class="modal-title">HelpDESK</h4>--%>
-<%--                                    </div>--%>
-<%--                                    <div class="modal-body">--%>
-<%--                                        <textarea id="messagesTextArea" rows="10" cols="46"></textarea>--%>
-<%--                                        <textarea id="usersTextArea" rows="10" cols="10" readonly="readonly"></textarea><br>--%>
-<%--                                        <input id="textMessage" size="52" type="text" value="${user.nickname }"><input--%>
-<%--                                            type="button" onclick="sendMessage();" id="sendButton" value="Send">--%>
-<%--                                        <script type="text/javascript">--%>
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Town Square</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <textarea id="messagesTextArea" rows="10" cols="46"></textarea>
+                                        <textarea id="usersTextArea" rows="10" cols="10" readonly="readonly"></textarea><br>
+                                        <input id="textMessage" size="56" type="text" value="${user.nickname }"><input
+                                            type="button" onclick="sendMessage();" id="sendButton" value="Send">
+                                        <script type="text/javascript">
 
-<%--                                            $(window).on('shown.bs.modal', function () {--%>
-<%--                                                $('#code').modal('show');--%>
-<%--                                                document.getElementById("sendButton").click();--%>
-<%--                                            });--%>
+                                            $(window).on('shown.bs.modal', function () {
+                                                $('#code').modal('show');
+                                                document.getElementById("sendButton").click();
+                                            });
 
-<%--                                            var webSocket = new WebSocket("ws:///192.168.137.1:8080/ChatServer/endpointserverdemo");--%>
-<%--                                            var messagesTextArea = document.getElementById("messagesTextArea");--%>
-<%--                                            webSocket.onmessage = function processMessage(message) {--%>
-<%--                                                var jsonData = JSON.parse(message.data);--%>
-<%--                                                if (jsonData.message != null)--%>
-<%--                                                    messagesTextArea.value += jsonData.message + "\n";--%>
-<%--                                                if (jsonData.users != null) {--%>
-<%--                                                    usersTextArea.value = "";--%>
-<%--                                                    var i = 0;--%>
-<%--                                                    while (i < jsonData.users.length)--%>
-<%--                                                        usersTextArea.value += jsonData.users[i++] + "\n";--%>
-<%--                                                }--%>
-<%--                                            }--%>
+                                            var webSocket = new WebSocket("ws://104.211.2.147:8080/WebSocketTest03/endpointserverdemo");
+                                            var messagesTextArea = document.getElementById("messagesTextArea");
+                                            webSocket.onmessage = function processMessage(message) {
+                                                var jsonData = JSON.parse(message.data);
+                                                if (jsonData.message != null)
+                                                    messagesTextArea.value += jsonData.message + "\n";
+                                                if (jsonData.users != null) {
+                                                    usersTextArea.value = "";
+                                                    var i = 0;
+                                                    while (i < jsonData.users.length)
+                                                        usersTextArea.value += jsonData.users[i++] + "\n";
+                                                }
+                                            }
 
-<%--                                            function sendMessage() {--%>
-<%--                                                webSocket.send(textMessage.value);--%>
-<%--                                                textMessage.value = "";--%>
-<%--                                            }--%>
+                                            function sendMessage() {
+                                                webSocket.send(textMessage.value);
+                                                textMessage.value = "";
+                                            }
 
-<%--                                            window.onbeforeunload = function () {--%>
-<%--                                                webSocket.onclose = function () {--%>
-<%--                                                };--%>
-<%--                                                webSocket.close();--%>
-<%--                                            }--%>
-<%--                                        </script>--%>
-<%--                                    </div>--%>
-<%--                                    <div class="modal-footer">--%>
-<%--                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close--%>
-<%--                                        </button>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
+                                            window.onbeforeunload = function () {
+                                                webSocket.onclose = function () {
+                                                };
+                                                webSocket.close();
+                                            }
+                                        </script>
+                                        <style>
+                                            .modal {
 
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                    </li>--%>
+                                            }
+
+                                            .modal-header {
+                                                background-color: darkslategray;
+                                            }
+
+                                            .modal-body {
+                                                background-color: darkslategray;
+                                            }
+
+                                            .modal-footer {
+                                                background-color: darkslategray;
+                                            }
+
+                                            #sendButton {
+                                                background-color: darkslategray;
+                                                color: white;
+                                            }
+                                        </style>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                 </form>
             </ul>
         </div>
-    </div>
     </div>
     <div id="ppm-wrapper">
         <div id="sub-header" role="banner">
@@ -116,15 +135,15 @@
                         <p>
                             is a
                             <strong>
-                            <c:if test="${user.userinfo.type == 1}">
-                                Computer Student
-                            </c:if>
-                            <c:if test="${user.userinfo.type == 2}">
-                                Medicine Student
-                            </c:if>
-                            <c:if test="${user.userinfo.type == 3}">
-                                Law Student
-                            </c:if>
+                                <c:if test="${user.userinfo.type == 1}">
+                                    Computer Student
+                                </c:if>
+                                <c:if test="${user.userinfo.type == 2}">
+                                    Medicine Student
+                                </c:if>
+                                <c:if test="${user.userinfo.type == 3}">
+                                    Law Student
+                                </c:if>
 
                             </strong> and is located in <a href="">Istanbul Aydin University</a>
                         </p>
@@ -153,15 +172,15 @@
                                     <td>Experience:</td>
                                     <td class="stat"><strong>${user.userinfo.xp}</strong></td>
                                     <td>Company:</td>
-											<td class="stat"><c:choose>
-													<c:when test="${user.userinfo.company == null}">
-														<a href="Company">Create!</a>
-													</c:when>
-													<c:when test="${user.userinfo.company != null}">
-														<strong>${user.userinfo.company.name}</strong>
-													</c:when>
-												</c:choose></td>
-                                    </tr>
+                                    <td class="stat"><c:choose>
+                                        <c:when test="${user.userinfo.company == null}">
+                                            <a href="Company">Create!</a>
+                                        </c:when>
+                                        <c:when test="${user.userinfo.company != null}">
+                                            <strong>${user.userinfo.company.name}</strong>
+                                        </c:when>
+                                    </c:choose></td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -172,79 +191,95 @@
                 <div id="ctl00_cphLeftColumn_ctl00_divRecentEvents" class="box">
                     <h2>Recent diary mail</h2>
                     <ul class="noheader diaryExtraspace">
-                        <p>Teaching staff say that universities are risking their reputations by taking on students who are not capable of advanced levels of learning,” ABC promo for Monday’s Four Corners.
+                        <p>Teaching staff say that universities are risking their reputations by taking on students who
+                            are not capable of advanced levels of learning,” ABC promo for Monday’s Four Corners.
 
-                            Universities, “are selling access to millions of foreign students and reaping many billions of dollars of revenue but now the alarm has been raised that increasingly Australian universities are exposing themselves to corrupt practise, to lower standards,  Four Corners, April 20 2015.</p>
+                            Universities, “are selling access to millions of foreign students and reaping many billions
+                            of dollars of revenue but now the alarm has been raised that increasingly Australian
+                            universities are exposing themselves to corrupt practise, to lower standards, Four Corners,
+                            April 20 2015.</p>
                     </ul>
                 </div>
                 <div id="ctl00_cphLeftColumn_ctl00_pnlHotTrace" class="box">
                     <h2>Dead Lines</h2>
                     <script type="text/javascript">
-                    	window.addEventListener("load",
-                    			function(){
-                    		var timer = parseInt(document.getElementById("timer").innerHTML);
-                    		var timer1 = parseInt(document.getElementById("timer1").innerHTML);
-                    		
-                    		function startTimerFreelance(duration, display) {
-                                var timer = duration, number;
-                                setInterval(function () {
-                                    number = parseInt(timer, 10);
-                                    number = number < 10 ? "0" + number : number;
-                                    display.textContent = number;
-                                    if (--timer < 0) {
-                                        timer = 0;
-                                    }
-                                }, 1000);
-                            }
-                    		
-                    		function startTimerFastfood(duration, display) {
-                                var timer1 = duration, number;
-                                setInterval(function () {
-                                    number = parseInt(timer1, 10);
-                                    number = number < 10 ? "0" + number : number;
-                                    display.textContent = number;
+                        window.addEventListener("load",
+                            function () {
+                                var timer = parseInt(document.getElementById("timer").innerHTML);
+                                var timer1 = parseInt(document.getElementById("timer1").innerHTML);
 
-                                    if (--timer1 < 0) {
-                                        timer1 = 0;
-                                    }
-                                }, 1000);
-                            }
+                                function startTimerFreelance(duration, display) {
+                                    var timer = duration, number;
+                                    setInterval(function () {
+                                        number = parseInt(timer, 10);
+                                        number = number < 10 ? "0" + number : number;
+                                        display.textContent = number;
+                                        if (--timer < 0) {
+                                            timer = 0;
+                                        }
+                                    }, 1000);
+                                }
 
-                            var freelance = timer,
-                                display = document.querySelector('#time1');
-                            startTimerFreelance(freelance, display);
-                            
-                            var fastfood = timer1,
-                            display = document.querySelector('#time2');
-                            startTimerFastfood(fastfood, display);
-                            
-                            
-                    	});
+                                function startTimerFastfood(duration, display) {
+                                    var timer1 = duration, number;
+                                    setInterval(function () {
+                                        number = parseInt(timer1, 10);
+                                        number = number < 10 ? "0" + number : number;
+                                        display.textContent = number;
+
+                                        if (--timer1 < 0) {
+                                            timer1 = 0;
+                                        }
+                                    }, 1000);
+                                }
+
+                                var freelance = timer,
+                                    display = document.querySelector('#time1');
+                                startTimerFreelance(freelance, display);
+
+                                var fastfood = timer1,
+                                    display = document.querySelector('#time2');
+                                startTimerFastfood(fastfood, display);
+
+
+                            });
                     </script>
                     <p id="asd"></p>
                     <p id="timer" style="display: none">${freelancetime}</p>
                     <p id="timer1" style="display: none">${fastfoodtime}</p>
-					  <c:if test="${freelancetime == 0}">
-                         <h4>Freelance Job:</h4><p> You can work on <srong><a href="Freelance">Freelance</a></srong> job!</p>
-					  </c:if>
-					  <c:if test="${freelancetime != 0}">
-                		<h4>Freelance Job: </h4><p>You have <span id="time1" style="color: white;"></span> seconds to finish!</p>
-					  </c:if>
-					
-					  <c:if test="${fastfoodtime == 0}">
-					    <h4>FastFood:</h4><p> You can eat <srong><a href="FastFood">FastFood</a></srong>!</p>
-					  </c:if>
-					  <c:if test="${fastfoodtime != 0}">
-                		<div><h4>FastFood: </h4><p>You have <span id="time2" style="color: white;"></span> seconds to finish!</p></div>
-					  </c:if>
+                    <c:if test="${freelancetime == 0}">
+                        <h4>Freelance Job:</h4>
+                        <p> You can work on
+                            <srong><a href="Freelance">Freelance</a></srong>
+                            job!
+                        </p>
+                    </c:if>
+                    <c:if test="${freelancetime != 0}">
+                        <h4>Freelance Job: </h4>
+                        <p>You have <span id="time1" style="color: white;"></span> seconds to finish!</p>
+                    </c:if>
+
+                    <c:if test="${fastfoodtime == 0}">
+                        <h4>FastFood:</h4>
+                        <p> You can eat
+                            <srong><a href="FastFood">FastFood</a></srong>
+                            !
+                        </p>
+                    </c:if>
+                    <c:if test="${fastfoodtime != 0}">
+                        <div><h4>FastFood: </h4>
+                            <p>You have <span id="time2" style="color: white;"></span> seconds to finish!</p></div>
+                    </c:if>
                 </div>
                 <div class="box">
                     <h2>Company Information</h2>
                     <c:if test="${user.userinfo.company == null}">
-                        <h4>Don't you have any Company? Why don't you go Company page and create a new one!</h4>
+                        <h4>Don't you have any Company? Why don't you go Company page or <a href="Company">click here
+                            to </a> create a new one!</h4>
                     </c:if>
                     <c:if test="${user.userinfo.company != null}">
-                        <h4>Company Name: </h4><p>${user.userinfo.company.name }</p>
+                        <h4>Company Name: </h4>
+                        <p>${user.userinfo.company.name }</p>
                     </c:if>
                 </div>
             </div>

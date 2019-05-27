@@ -1,9 +1,13 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<html>
 <head>
-    <title>Life Cycle</title>
+    <title>
+        LifeCycle
+    </title>
+    <meta charset="ISO-8859-1">
     <meta http-equiv="X-UA-Compatible" content="IE=9">
     <meta name="format-detection" content="telephone=no">
     <%@ include file="main.css" %>
-
 </head>
 
 <body data-gr-c-s-loaded="true" style="">
