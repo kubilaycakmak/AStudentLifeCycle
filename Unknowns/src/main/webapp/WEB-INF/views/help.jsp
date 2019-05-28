@@ -13,7 +13,6 @@
 </head>
 
 <body data-gr-c-s-loaded="true" style="">
-<form name="javaForm" method="post" action="./Character" id="javaForm">
     <div id="header" role="banner">
         <div id="headbar" class="cityofcrime" style="display: block;">
             <ul>
@@ -378,7 +377,6 @@
     </div>
     <div id="ppm-bottom-spacer"></div>
     </div>
-</form>
 
 </body>
 
