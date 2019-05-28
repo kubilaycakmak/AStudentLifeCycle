@@ -200,7 +200,7 @@
                 <h2>Information</h2>
                 <p><strong>Current Version: </strong> BETA</p>
                 <p><strong>Next Version: </strong> STABLE</p>
-                <p><strong>Update: </strong> 25 May 2019</p>
+                <p><strong>Update: </strong> 25 June 2019</p>
             </div>
             <style>
                 td,th{

@@ -212,7 +212,7 @@
                 <div id="ctl00_cphLeftColumn_ctl00_pnlHotTrace" class="box">
                     <h2>Hiring</h2>
                     <p><strong>When you reach 100 xp, you can create a company, before 100 xp do not even try!</strong></p>
-                    <p><strong>Every +50 experiences, You can hire 1 Employee to your Company!</strong></p>
+                    <p><strong>Every +150 experiences, You can hire 1 Employee to your Company!</strong></p>
                     <p><strong>But the Employee's need to be survive at this life. So, You need to give them salary.
                         When You hire new Employee your money will decrease!</strong></p>
                     <c:if test="${user.userinfo.company.workers.size() == null}">
