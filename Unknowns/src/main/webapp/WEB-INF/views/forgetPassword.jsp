@@ -17,14 +17,14 @@
         <div class="content">
             <p style="font-size: 16px !important;">Change your password!</p>
         </div>
-        <form action="/changePassword" method="post">
+        <form action="/getChangePassword" method="post">
             <p>
                 <strong>Hint Code:</strong><br>
                 <input name="hintcode" type="text" maxlength="20" class="round width90">
             </p>
             <p>
                 <strong>Email:</strong><br>
-                <input name="email" type="email" maxlength="20" class="round width90">
+                <input name="email" type="email" maxlength="45" class="round width90">
             </p>
             <input type="submit" value="Check!">
         </form>

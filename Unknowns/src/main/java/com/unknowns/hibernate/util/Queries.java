@@ -631,5 +631,22 @@ public class Queries {
 		session.close();
 
 	}
+	public boolean checkhint(String email,String hint) {
+		session = HibernateUtil.getSessionFactory().openSession();
+		users = session.createQuery("from User where email = '" + email + "'", User.class).list();
+		if(users.get(0).getHintcode().equals(hint)) {
+			return true;
+		}
+		return false;
+	}
+	public void changePassword(String email,String password) {
+		session = HibernateUtil.getSessionFactory().openSession();
+		users = session.createQuery("from User where email = '" + email + "'", User.class).list();
+		users.get(0).setPassword(password);
+		transaction = session.beginTransaction();
+		session.save(users.get(0));
+		transaction.commit();
+		session.close();
+	}
 
 }

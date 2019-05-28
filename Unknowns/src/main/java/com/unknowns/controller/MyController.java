@@ -296,6 +296,33 @@ public class MyController {
 		return "Bank";
 	}
 	
+	@RequestMapping(value="getChangePassword",method=RequestMethod.POST)
+	public String getChangePassword(HttpServletRequest request) {
+		session = request.getSession();
+		String email = request.getParameter("email");
+		String hint = request.getParameter("hintcode");
+		queries = Queries.getQueries();
+		if(queries.checkhint(email, hint)) {
+			session.setAttribute("email", email);
+			return "ChangePassword";
+		}
+		else{
+			session.setAttribute("hinterror", "Hint code is wrong!!!");
+			return "forgetPassword";
+		}
+			
+	}
+	
+	@RequestMapping(value="changePassword",method=RequestMethod.POST)
+	public String changePassword(HttpServletRequest request) {
+		session = request.getSession();
+		String email = (String)session.getAttribute("email");
+		String password = request.getParameter("password");
+		queries = Queries.getQueries();
+		queries.changePassword(email,password);
+		return "index";
+	}
+	
 	@RequestMapping(value="logout",method=RequestMethod.POST)
 	public String logout(HttpServletRequest request) {
 		session = request.getSession();
